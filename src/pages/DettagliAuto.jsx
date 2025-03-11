@@ -5,45 +5,66 @@ import { useParams } from 'react-router-dom'
 const DettagliAuto = () => {
   const { id } = useParams()
   const [auto, setAuto] = useState(null)
-  const [img, setImg] = useState(null)
+  const [img, setImg] = useState([])
+
+  const token =
+    'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMdWNhIFByb3ZlIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTc0MTcwMjk1NCwiZXhwIjoxNzQxNzIyOTU0fQ.YCvYgNSP4yG4H9gryxNweQmPsq3AwWcuGtv6tXcoku0'
+
   useEffect(() => {
-    const fetchDataAuto = async () => {
+    const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/auto/${id}`)
-        console.log(res.data)
-        setAuto(res.data)
+        const headers = {
+          Authorization: `Bearer ${token}`,
+        }
+
+        const [resAuto, resImg] = await Promise.all([
+          axios.get(`http://localhost:8080/auto/${id}`, { headers }),
+          axios.get(`http://localhost:8080/immagini/auto/${id}`, { headers }),
+        ])
+
+        console.log(resImg.data)
+        setAuto(resAuto.data)
+        setImg(resImg.data)
       } catch (error) {
-        console.log('Errore! ', error)
+        console.error('Errore nel caricamento:', error)
+
+        if (error.response) {
+          console.error('Risposta del server:', error.response.data)
+          console.error('Status Code:', error.response.status)
+        } else if (error.request) {
+          console.error('Nessuna risposta ricevuta dal server.')
+        } else {
+          console.error('Errore nella richiesta:', error.message)
+        }
       }
     }
-    fetchDataAuto()
-    const fetchImg = async () => {
-      try {
-        const res = await axios.get(`http://localhost:8080/immagini/auto/${id}`)
-        setImg(res.data)
-      } catch (error) {
-        console.log('Errore! ', error)
-      }
-    }
-    fetchImg()
+
+    fetchData()
   }, [id])
 
-  if (!auto) return <p>Caricamento...</p>
+  if (!auto) return <p className="text-center text-gray-500">Caricamento...</p>
 
   return (
     <div className="container mx-auto">
       <h1 className="text-3xl font-bold text-center mb-6">{auto.modello}</h1>
       <p className="text-center text-gray-600">{auto.brand}</p>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-        {img.map((image) => (
-          <img
-            key={image.id}
-            src={image.immagineUrl}
-            alt={auto.modello}
-            className="w-full h-40 object-cover rounded-lg shadow"
-          />
-        ))}
-      </div>
+
+      {img.length > 0 ? (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+          {img.map((image) => (
+            <img
+              key={image.id}
+              src={image.immagineUrl}
+              alt={auto.modello}
+              className="w-full h-40 object-cover rounded-lg shadow"
+            />
+          ))}
+        </div>
+      ) : (
+        <p className="text-center text-gray-500 mt-4">
+          Nessuna immagine disponibile.
+        </p>
+      )}
     </div>
   )
 }
