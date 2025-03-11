@@ -17,6 +17,7 @@ const DettagliAuto = () => {
           Authorization: `Bearer ${token}`,
         }
 
+        // eseguo due richieste in parallelo e una serve a riportare un auto specifica mentre l'altra ritorna le immagini di quell'auto. Dato che l'id che viene inserito dentro, viene passato come parametro nel backend e lo usa per riportare tutte le immagini con "autoId" uguale all'id dell'automobile
         const [resAuto, resImg] = await Promise.all([
           axios.get(`http://localhost:8080/auto/${id}`, { headers }),
           axios.get(`http://localhost:8080/immagini/auto/${id}`, { headers }),
