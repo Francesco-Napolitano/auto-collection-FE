@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
-import DettagliAuto from './pages/DettagliAuto'
 import Brand from './pages/Brand'
 import Nazioni from './pages/Nazioni'
-import AutoPerNazione from './pages/AutoPerNazione'
+import DettagliAuto from './components/DettagliAuto'
+import AutoPerNazione from './components/AutoPerNazione'
 
 function App() {
   return (
