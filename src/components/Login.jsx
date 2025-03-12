@@ -46,7 +46,7 @@ const Login = () => {
         />
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white p-2 rounded"
+          className="w-full bg-blue-500 text-black p-2 rounded"
         >
           Login
         </button>

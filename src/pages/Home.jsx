@@ -25,7 +25,9 @@ const Home = () => {
         {auto.length > 0 ? (
           auto.map((car) => (
             <div key={car.id} className="bg-white shadow-lg rounded-lg p-4">
-              <h2 className="text-xl font-semibold mb-2">{car.modello}</h2>
+              <h2 className="text-xl font-semibold mb-2">
+                {car.nome} {car.modello}
+              </h2>
               <p className="text-gray-600">{car.brand}</p>
               <Link
                 to={`/auto/${car.id}`}

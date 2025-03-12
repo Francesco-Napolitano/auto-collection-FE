@@ -6,13 +6,14 @@ const AutoPerNazione = () => {
   const { id } = useParams()
   const [nazione, setNazione] = useState({})
 
-  const token =
-    'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMdWNhIFByb3ZlIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTc0MTcwMjk1NCwiZXhwIjoxNzQxNzIyOTU0fQ.YCvYgNSP4yG4H9gryxNweQmPsq3AwWcuGtv6tXcoku0'
-
   useEffect(() => {
     //useEffect per creare la funzione che restituisce le auto legate alla nazione, utilizza il metodo creato in AutoRepository
     const fetchData = async () => {
       try {
+        const token = sessionStorage.getItem('token')
+        if (!token) {
+          throw new Error('Token non trovato')
+        }
         const resNazione = await axios.get(
           `http://localhost:8080/nazioni/${id}/automobili`,
           { headers: { Authorization: `Bearer ${token}` } }
@@ -24,7 +25,7 @@ const AutoPerNazione = () => {
       }
     }
     fetchData()
-  }, [id, token])
+  }, [id])
 
   if (!nazione)
     return <p className="text-center text-gray-500">Caricamento...</p>

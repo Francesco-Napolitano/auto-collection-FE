@@ -7,12 +7,11 @@ const DettagliAuto = () => {
   const [auto, setAuto] = useState(null)
   const [img, setImg] = useState([])
 
-  const token =
-    'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJMdWNhIFByb3ZlIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTc0MTcwMjk1NCwiZXhwIjoxNzQxNzIyOTU0fQ.YCvYgNSP4yG4H9gryxNweQmPsq3AwWcuGtv6tXcoku0'
-
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const token = sessionStorage.getItem('token')
+
         const headers = {
           Authorization: `Bearer ${token}`,
         }
