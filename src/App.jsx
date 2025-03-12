@@ -7,6 +7,7 @@ import DettagliAuto from './components/DettagliAuto'
 import AutoPerNazione from './components/AutoPerNazione'
 import Login from './components/Login'
 import Logout from './components/Logout'
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   return (
@@ -15,10 +16,25 @@ function App() {
         <Logout />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/auto/:id" element={<DettagliAuto />} />
           <Route path="/brand" element={<Brand />} />
           <Route path="/nazioni" element={<Nazioni />} />
-          <Route path="/nazioni/:id" element={<AutoPerNazione />} />
+
+          <Route
+            path="/auto/:id"
+            element={
+              <ProtectedRoute>
+                <DettagliAuto />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/nazioni/:id"
+            element={
+              <ProtectedRoute>
+                <AutoPerNazione />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<h1>404 - Pagina non trovata</h1>} />
         </Routes>

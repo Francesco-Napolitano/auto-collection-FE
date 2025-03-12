@@ -1,48 +1,18 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import useFetch from '../hooks/useFetch'
 
 const DettagliAuto = () => {
   const { id } = useParams()
-  const [auto, setAuto] = useState(null)
-  const [img, setImg] = useState([])
+  const { data: auto, loading, error } = useFetch(`auto/${id}`)
+  const {
+    data: img,
+    loading: imgLoading,
+    error: imgError,
+  } = useFetch(`immagini/auto/${id}`)
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const token = sessionStorage.getItem('token')
-
-        const headers = {
-          Authorization: `Bearer ${token}`,
-        }
-
-        // eseguo due richieste in parallelo e una serve a riportare un auto specifica mentre l'altra ritorna le immagini di quell'auto. Dato che l'id che viene inserito dentro, viene passato come parametro nel backend e lo usa per riportare tutte le immagini con "autoId" uguale all'id dell'automobile
-        const [resAuto, resImg] = await Promise.all([
-          axios.get(`http://localhost:8080/auto/${id}`, { headers }),
-          axios.get(`http://localhost:8080/immagini/auto/${id}`, { headers }),
-        ])
-
-        console.log(resImg.data)
-        setAuto(resAuto.data)
-        setImg(resImg.data)
-      } catch (error) {
-        console.error('Errore nel caricamento:', error)
-
-        if (error.response) {
-          console.error('Risposta del server:', error.response.data)
-          console.error('Status Code:', error.response.status)
-        } else if (error.request) {
-          console.error('Nessuna risposta ricevuta dal server.')
-        } else {
-          console.error('Errore nella richiesta:', error.message)
-        }
-      }
-    }
-
-    fetchData()
-  }, [id])
-
-  if (!auto) return <p className="text-center text-gray-500">Caricamento...</p>
+  if (loading || imgLoading) return <p>Caricamento...</p>
+  if (error || imgError) return <p>Errore nel caricamento.</p>
+  if (!auto) return <p>Nessun dato trovato per questa auto.</p>
 
   return (
     <div className="container mx-auto">

@@ -1,54 +1,58 @@
-import React, { useContext, useState } from 'react'
-import AuthContext from '../context/AuthContext'
-import axios from 'axios'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import useAuth from '../hooks/useAuth'
 
 const Login = () => {
+  const { login } = useAuth() // Usa il metodo login di useAuth
+  const navigate = useNavigate()
   const [credentials, setCredentials] = useState({ username: '', password: '' })
-  //scrivendo così sto prendendo il login che viene scritto in value nel provider di AuthContext
-  const { login } = useContext(AuthContext)
+  const [error, setError] = useState('')
 
-  const handleChange = (ev) => {
-    setCredentials({ ...credentials, [ev.target.name]: ev.target.value })
+  const handleChange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = async (ev) => {
-    ev.preventDefault()
-    try {
-      const res = await axios.post(
-        'http://localhost:8080/api/auth/login',
-        credentials
-      )
-      //dato che in AuthContext ho inserito un parametro nella costante login devo inserire il token come parametro
-      login(res.data.token)
-      alert('Login effettuato con successo')
-    } catch (error) {
-      alert('Credenziali errate', error)
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setError('')
+
+    const result = await login(credentials) // Usa il login corretto
+    if (result.success) {
+      navigate('/') // Vai alla home dopo il login
+    } else {
+      setError(result.message)
     }
   }
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow">
+    <div className="max-w-md mx-auto bg-white p-6 shadow rounded">
       <h2 className="text-xl font-bold mb-4">Login</h2>
+      {error && <p className="text-red-500">{error}</p>}
+
       <form onSubmit={handleSubmit}>
         <input
-          type="text"
+          type="username"
           name="username"
-          placeholder="username"
+          placeholder="Username"
+          className="w-full p-2 border rounded mb-3"
+          value={credentials.username}
           onChange={handleChange}
-          className="w-full p-2 border rounded mb-2"
+          required
         />
         <input
           type="password"
           name="password"
           placeholder="Password"
+          className="w-full p-2 border rounded mb-3"
+          value={credentials.password}
           onChange={handleChange}
-          className="w-full p-2 border rounded mb-2"
+          required
         />
         <button
           type="submit"
           className="w-full bg-blue-500 text-black p-2 rounded"
         >
-          Login
+          Accedi
         </button>
       </form>
     </div>

@@ -1,34 +1,12 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import useFetch from '../hooks/useFetch'
 
 const AutoPerNazione = () => {
   const { id } = useParams()
-  const [nazione, setNazione] = useState({})
+  const { data: nazione, loading, error } = useFetch(`nazioni/${id}/automobili`)
 
-  useEffect(() => {
-    //useEffect per creare la funzione che restituisce le auto legate alla nazione, utilizza il metodo creato in AutoRepository
-    const fetchData = async () => {
-      try {
-        const token = sessionStorage.getItem('token')
-        if (!token) {
-          throw new Error('Token non trovato')
-        }
-        const resNazione = await axios.get(
-          `http://localhost:8080/nazioni/${id}/automobili`,
-          { headers: { Authorization: `Bearer ${token}` } }
-        )
-        console.log(resNazione.data)
-        setNazione(resNazione.data)
-      } catch (error) {
-        console.error('Errore nel caricamento:', error)
-      }
-    }
-    fetchData()
-  }, [id])
-
-  if (!nazione)
-    return <p className="text-center text-gray-500">Caricamento...</p>
+  if (loading) return <p>Caricamento...</p>
+  if (error) return <p>Errore nel caricamento.</p>
 
   return (
     <div className="container mx-auto">
