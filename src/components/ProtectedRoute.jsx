@@ -3,14 +3,12 @@ import AuthContext from '../context/AuthContext'
 import { Navigate } from 'react-router-dom'
 
 const ProtectedRoute = ({ children }) => {
-  // token is the value of the token stored in the AuthContext Provider
-  // if the user is logged in, the token is not null or undefined
-  // otherwise, the user is not logged in and the token is null or undefined
+  // Il token è il valore del token memorizzato nel Provider di AuthContext
   const { token } = useContext(AuthContext)
 
-  // if the user is logged in, return the children (the protected route)
-  // otherwise, redirect to the login page
-  return token ? children : <Navigate to="/api/auth/login" />
+  // se l'utente è loggato, restituisce i children (la rotta protetta)
+  // altrimenti, reindirizza alla pagina di login
+  return token ? children : <Navigate to="/login" />
 }
 
 export default ProtectedRoute
