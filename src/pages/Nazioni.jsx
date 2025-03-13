@@ -8,7 +8,7 @@ const Nazioni = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/nazioni')
+        const res = await axios.get('http://localhost:8080/nazioni', 'GET')
         console.log(res.data)
         setNazioni(res.data)
       } catch (error) {

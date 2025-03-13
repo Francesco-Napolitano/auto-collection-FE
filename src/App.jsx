@@ -5,9 +5,10 @@ import Brand from './pages/Brand'
 import Nazioni from './pages/Nazioni'
 import DettagliAuto from './components/DettagliAuto'
 import AutoPerNazione from './components/AutoPerNazione'
-import Login from './components/Login'
-import Logout from './components/Logout'
 import ProtectedRoute from './components/ProtectedRoute'
+import Register from './pages/Register'
+import Login from './pages/Login'
+import Logout from './pages/Logout'
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<h1>404 - Pagina non trovata</h1>} />
         </Routes>

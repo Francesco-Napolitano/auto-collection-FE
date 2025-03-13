@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get('http://localhost:8080/auto')
+        const res = await axios.get('http://localhost:8080/auto', 'GET')
         console.log(res.data)
         setAuto(res.data) // res.data è già il JSON ricevuto dalla API
       } catch (error) {

@@ -1,14 +1,24 @@
 import { useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
+import { useEffect } from 'react'
 
 const DettagliAuto = () => {
   const { id } = useParams()
-  const { data: auto, loading, error } = useFetch(`auto/${id}`)
+
+  // Fetch dei dettagli dell'auto
+  const { data: auto, loading, error } = useFetch(`auto/${id}`, 'GET')
+
+  // Fetch delle immagini dell'auto
   const {
-    data: img,
+    data: img = [],
     loading: imgLoading,
     error: imgError,
-  } = useFetch(`immagini/auto/${id}`)
+  } = useFetch(`immagini/auto/${id}`, 'GET')
+
+  useEffect(() => {
+    console.log('Dati Auto:', auto)
+    console.log('Immagini Auto:', img)
+  }, [auto, img])
 
   if (loading || imgLoading) return <p>Caricamento...</p>
   if (error || imgError) return <p>Errore nel caricamento.</p>
@@ -16,16 +26,20 @@ const DettagliAuto = () => {
 
   return (
     <div className="container mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-6">{auto.modello}</h1>
-      <p className="text-center text-gray-600">{auto.brand}</p>
+      <h1 className="text-3xl font-bold text-center mb-6">
+        {auto?.modello || 'Modello non disponibile'}
+      </h1>
+      <p className="text-center text-gray-600">
+        {auto?.brand || 'Brand non disponibile'}
+      </p>
 
-      {img.length > 0 ? (
+      {Array.isArray(img) && img.length > 0 ? (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
           {img.map((image) => (
             <img
               key={image.id}
               src={image.immagineUrl}
-              alt={auto.modello}
+              alt={auto?.modello || 'Auto'}
               className="w-full h-40 object-cover rounded-lg shadow"
             />
           ))}

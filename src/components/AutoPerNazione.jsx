@@ -1,10 +1,20 @@
 import { Link, useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
+import { useEffect } from 'react'
 
 const AutoPerNazione = () => {
   const { id } = useParams()
-  const { data: nazione, loading, error } = useFetch(`nazioni/${id}/automobili`)
+  const {
+    data: nazione,
+    loading,
+    error,
+  } = useFetch(`nazioni/${id}/automobili`, 'GET')
 
+  useEffect(() => {
+    if (nazione) console.log('Dati Auto:', nazione)
+  }, [nazione])
+
+  if (!nazione) return null
   if (loading) return <p>Caricamento...</p>
   if (error) return <p>Errore nel caricamento.</p>
 
