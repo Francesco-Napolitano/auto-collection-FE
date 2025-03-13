@@ -13,37 +13,35 @@ import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <>
-      <div className="min-h-screen bg-gray-100 p-5">
-        <Navbar />
-        <Logout />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/brand" element={<Brand />} />
-          <Route path="/nazioni" element={<Nazioni />} />
+    <div className="">
+      <Navbar />
+      <Logout />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/brand" element={<Brand />} />
+        <Route path="/nazioni" element={<Nazioni />} />
 
-          <Route
-            path="/auto/:id"
-            element={
-              <ProtectedRoute>
-                <DettagliAuto />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/nazioni/:id"
-            element={
-              <ProtectedRoute>
-                <AutoPerNazione />
-              </ProtectedRoute>
-            }
-          />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="*" element={<h1>404 - Pagina non trovata</h1>} />
-        </Routes>
-      </div>
-    </>
+        <Route
+          path="/auto/:id"
+          element={
+            <ProtectedRoute>
+              <DettagliAuto />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/nazioni/:id"
+          element={
+            <ProtectedRoute>
+              <AutoPerNazione />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<h1>404 - Pagina non trovata</h1>} />
+      </Routes>
+    </div>
   )
 }
 
