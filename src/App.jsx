@@ -9,11 +9,13 @@ import ProtectedRoute from './components/ProtectedRoute'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Logout from './pages/Logout'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <>
       <div className="min-h-screen bg-gray-100 p-5">
+        <Navbar />
         <Logout />
         <Routes>
           <Route path="/" element={<Home />} />
