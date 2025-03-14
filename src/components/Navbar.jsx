@@ -2,7 +2,7 @@ import logoWebsite from '../assets/logoauto.png'
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white border-gray-200 dark:bg-gray-900 px-3 xl:px-0">
+    <nav className="w-full bg-white border-gray-200 dark:bg-gray-900 px-3 xl:px-0 sticky top-0 ">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-center max-[464px]:pb-8 min-[464px]:justify-between mx-auto ">
         <a
           href="/"
@@ -64,7 +64,7 @@ const Navbar = () => {
             <input
               type="text"
               id="search-navbar"
-              className="stop block  w-40 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white h-10 focus:ring-2 focus:ring-[#22881b] "
+              className="stop block  w-40 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 h-10 focus:ring-2 focus:ring-[#22881b] "
               placeholder="Search..."
             />
           </div>
@@ -104,21 +104,24 @@ const Navbar = () => {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:color-website md:p-0 md:dark:hover:color-website dark:text-white dark:hover:color-website dark:hover:color-website md:dark:hover:color-website dark:border-gray-700"
+                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:color-website md:p-0 md:dark:hover:color-website dark:text-gray-200 dark:hover:color-website dark:hover:color-website md:dark:hover:color-website dark:border-gray-700"
                 aria-current="page"
               >
                 Auto
               </a>
             </li>
             <li>
-              <a href="#" aria-current="page">
+              <a
+                href="#"
+                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-200 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+              >
                 Preferiti
               </a>
             </li>
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-200 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Brand
               </a>
@@ -126,7 +129,7 @@ const Navbar = () => {
             <li>
               <a
                 href="#"
-                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-200 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Nazioni
               </a>

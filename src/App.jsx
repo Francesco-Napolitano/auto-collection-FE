@@ -63,11 +63,11 @@ function App() {
   return (
     <div className="">
       <Navbar />
-      <Logout />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/brand" element={<Brand />} />
         <Route path="/nazioni" element={<Nazioni />} />
+        <Route path="/logout" element={<Logout />} />
         <Route
           path="/auto/:id"
           element={

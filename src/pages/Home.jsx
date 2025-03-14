@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import videoSrc from '../assets/cars-women.mp4'
@@ -15,9 +15,19 @@ const Home = () => {
   if (!auto) return <p>Nessun dato trovato per questa auto.</p>
 
   return (
-    <div className="container  mx-auto">
-      <div className="mx-auto">
-        <video className="w-full h-140" autoPlay loop muted>
+    <div className="pt-10 mx-auto bg-white border-gray-200 dark:bg-gray-900">
+      <div className="mx-auto flex flex-col gap-10">
+        <div>
+          <h1 className="color-website pb-5">
+            Scopri le Auto più Iconiche di Sempre
+          </h1>
+          <p className="text-lg text-gray-900 rounded-sm md:p-0 dark:text-gray-200 ">
+            Un viaggio nel tempo tra le auto sportive che hanno segnato epoche e
+            scritto <br />
+            la storia dell’automobilismo!
+          </p>
+        </div>
+        <video className="w-full h-140" autoPlay muted>
           <source src={videoSrc} />
         </video>
       </div>
