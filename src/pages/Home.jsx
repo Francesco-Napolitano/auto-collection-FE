@@ -2,6 +2,9 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import videoSrc from '../assets/cars-women.mp4'
+import FerrariSvg from '../utils/FerrariSvg'
+import McLarenSvg from '../utils/McLarenSvg'
+import Porsche from '../assets/Logo_della_Porsche.svg.png'
 
 const Home = () => {
   const { data: auto, loading, error } = useFetch('/auto', 'GET')
@@ -16,9 +19,9 @@ const Home = () => {
 
   return (
     <div className="pt-10 mx-auto bg-white border-gray-200 dark:bg-gray-900">
-      <div className="mx-auto flex flex-col gap-10">
-        <div>
-          <h1 className="color-website pb-5">
+      <div className="mx-auto flex flex-col gap-10 pb-10">
+        <div className="flex flex-col items-center gap-5">
+          <h1 className="color-website">
             Scopri le Auto più Iconiche di Sempre
           </h1>
           <p className="text-lg text-gray-900 rounded-sm md:p-0 dark:text-gray-200 ">
@@ -26,10 +29,50 @@ const Home = () => {
             scritto <br />
             la storia dell’automobilismo!
           </p>
+          <div className="flex flex-col lg:flex-row items-center gap-10">
+            <div className="flex items-center">
+              <div className="border border-black dark:border-white">
+                <FerrariSvg width="25" height="full" />
+              </div>
+              <p className="pl-2 text-gray-900 dark:text-gray-200">Ferrari</p>
+            </div>
+            <div className="flex items-center">
+              <div>
+                <McLarenSvg width="50" height="full" />
+              </div>
+              <p className="pl-2 text-gray-900 dark:text-gray-200">McLaren</p>
+            </div>
+            <div className="flex items-center">
+              <div>
+                <img src={Porsche} alt="porsche logo" className="w-10" />
+              </div>
+              <p className="pl-2 text-gray-900 dark:text-gray-200">Porsche</p>
+            </div>
+          </div>
         </div>
-        <video className="w-full h-140" autoPlay muted>
-          <source src={videoSrc} />
+        <video className="hidden md:block w-full h-140 " autoPlay muted>
+          <source className="rounded" src={videoSrc} />
         </video>
+        <div className="bg-gray-50 dark:bg-gray-800 w-4/5 mx-auto p-10">
+          <form class="max-w-sm mx-auto">
+            <label
+              for="countries"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >
+              Select an option
+            </label>
+            <select
+              id="countries"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            >
+              <option selected>Choose a country</option>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+              <option value="FR">France</option>
+              <option value="DE">Germany</option>
+            </select>
+          </form>
+        </div>
       </div>
       <h1 className="text-3xl font-bold text-center mb-6">Lista Auto</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
