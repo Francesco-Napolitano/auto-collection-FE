@@ -5,7 +5,7 @@ import axios from 'axios'
 //quest è un react hook personalizzato e serve a creare un'istanza di axios con l'header Authorization settato con il token dell'utente loggato
 //il token viene preso dal context AuthContext
 const useAxios = () => {
-  //scrivendo così sto prendendo il token che viene scritto in value nel provider di AuthContext
+  //scrivendo così sto prendendo il token che viene scritto in value in AuthContext.Provider
   const { token } = useContext(AuthContext)
 
   const axiosInstance = axios.create({

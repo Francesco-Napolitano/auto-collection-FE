@@ -16,7 +16,7 @@ const Login = () => {
     e.preventDefault()
     setError('')
 
-    const result = await login(credentials) // Usa il login corretto
+    const result = await login(credentials) // Richiama la funzione login in AuthContext e inserisce come parametro le credenziali
     if (result.success) {
       navigate('/') // Vai alla home dopo il login
     } else {

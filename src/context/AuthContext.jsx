@@ -19,10 +19,12 @@ export const AuthProvider = ({ children }) => {
     }
   }, [token])
 
+  //funzione login che setta il token
   const login = (newToken) => {
     setToken(newToken)
   }
 
+  // funzione logout che setta il token a null
   const logout = () => {
     setToken(null)
   }

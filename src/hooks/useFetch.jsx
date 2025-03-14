@@ -10,7 +10,7 @@ const useFetch = (url, method = 'GET', body = null) => {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    if (method !== 'GET') return // Evita chiamate automatiche per POST, PUT, DELETE
+    if (method !== 'GET') return // Evita chiamate automatiche per POST, PUT, DELETE ed esce direttamente dalla funzione
     const fetchData = async () => {
       setLoading(true)
       setError(null)
@@ -39,6 +39,9 @@ const useFetch = (url, method = 'GET', body = null) => {
     setError(null)
 
     try {
+      // Quest' await invia una richiesta HTTP al server usando axiosInstance e specificando il metodo
+      // (POST,GET,PUT,DELETE) , l'URL e infine il body della richiesta (se presente, ed è utile per la crezione di un
+      //  nuovo utente)
       const response = await axiosInstance({
         method,
         url,

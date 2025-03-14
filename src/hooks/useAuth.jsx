@@ -11,7 +11,6 @@ const useAuth = () => {
     try {
       const response = await axiosInstance.post('/api/auth/login', credentials)
       const { token } = response.data
-
       login(token) // Usa la funzione login del context per salvare il token
 
       return { success: true }
