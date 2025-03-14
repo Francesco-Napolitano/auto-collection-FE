@@ -1,25 +1,26 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import useFetch from '../hooks/useFetch'
+import videoSrc from '../assets/cars-women.mp4'
 
 const Home = () => {
-  const [auto, setAuto] = useState([])
+  const { data: auto, loading, error } = useFetch('/auto', 'GET')
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.get('http://localhost:8080/auto', 'GET')
-        console.log(res.data)
-        setAuto(res.data) // res.data è già il JSON ricevuto dalla API
-      } catch (error) {
-        console.error('Errore nel caricamento delle auto:', error)
-      }
-    }
-    fetchData()
-  }, [])
+    if (auto) console.log('Tutte le Auto:', auto)
+  }, [auto])
+
+  if (loading) return <p>Caricamento...</p>
+  if (error) return <p>Errore nel caricamento.</p>
+  if (!auto) return <p>Nessun dato trovato per questa auto.</p>
 
   return (
-    <div className="container mx-auto">
+    <div className="container  mx-auto">
+      <div className="mx-auto">
+        <video className="w-full h-140" autoPlay loop muted>
+          <source src={videoSrc} />
+        </video>
+      </div>
       <h1 className="text-3xl font-bold text-center mb-6">Lista Auto</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {auto.length > 0 ? (

@@ -29,7 +29,6 @@ const useFetch = (url, method = 'GET', body = null) => {
         setLoading(false)
       }
     }
-    console.log('Fetching errore', url)
     fetchData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url, method, body])
