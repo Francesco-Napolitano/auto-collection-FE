@@ -3,6 +3,11 @@
 // Il token viene salvato in sessionStorage per evitare che venga perso quando si ricarica la pagina.
 import React, { createContext, useEffect, useState } from 'react'
 
+// Il contesto AuthContext serve a condividere informazioni sull'autenticazione tra i componenti della App.
+// In particolare, contiene un oggetto con tre valori:
+// - token: il token JWT dell'utente loggato, o null se non  c'è  alcun utente loggato
+// - login: una funzione che setta il token dell'utente loggato
+// - logout: una funzione che setta il token dell'utente loggato a null
 const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
@@ -11,10 +16,10 @@ export const AuthProvider = ({ children }) => {
   // Salva il token in sessionStorage quando cambia
   useEffect(() => {
     if (token) {
-      // Salva il token in sessionStorage, per evitare che venga perso quando si ricarica la pagina
+      // Se il token esiste salva il token in sessionStorage, e questo evita che si perda ad ogni riavvio della pagina
       sessionStorage.setItem('token', token)
     } else {
-      // Rimuove il token da sessionStorage
+      // Rimuove il token da sessionStorage se non esise
       sessionStorage.removeItem('token')
     }
   }, [token])
