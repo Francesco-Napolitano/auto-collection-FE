@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import AuthContext from '../context/AuthContext'
 
 const Logout = () => {
-  //scrivendo così sto prendendo il logout che viene scritto in value nel provider di AuthContext, sto dunque richiamando la funzione logout
+  //creando questa costante sto richiamando la funzione logout da AuthContext
   const { logout } = useContext(AuthContext)
 
   return (

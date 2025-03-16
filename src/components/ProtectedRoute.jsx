@@ -3,7 +3,7 @@ import AuthContext from '../context/AuthContext'
 import { Navigate } from 'react-router-dom'
 
 const ProtectedRoute = ({ children }) => {
-  // Il token è il valore del token memorizzato nel Provider di AuthContext
+  // Il token è il valore del token memorizzato nel Provider di AuthContext, può essere null oppure un token valido
   const { token } = useContext(AuthContext)
 
   // se l'utente è loggato, restituisce i children (la rotta protetta)

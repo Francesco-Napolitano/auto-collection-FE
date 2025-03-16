@@ -3,14 +3,14 @@ import AuthContext from '../context/AuthContext'
 import useAxios from '../utils/axiosInstance'
 
 const useFetch = (url, method = 'GET', body = null) => {
-  const { login } = useContext(AuthContext) // Per il login automatico dopo la registrazione
   const axiosInstance = useAxios()
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const { login } = useContext(AuthContext) // Per il login automatico dopo la registrazione
 
   useEffect(() => {
-    if (method !== 'GET') return // Evita chiamate automatiche per POST, PUT, DELETE ed esce direttamente dalla funzione
+    if (method !== 'GET') return // Evita chiamate automatiche per POST, PUT, DELETE ed esce direttamente dalla funzione useEffect
     const fetchData = async () => {
       setLoading(true)
       setError(null)
