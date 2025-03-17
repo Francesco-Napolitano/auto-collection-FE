@@ -95,7 +95,7 @@ const Home = () => {
             <select
               id="modello"
               disabled={!brandSelezionato}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b] disabled:opacity-50"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b] disabled:opacity-50 z-1 "
             >
               <option value="">Modello</option>
               {modelli.map((modello) => (
@@ -148,9 +148,49 @@ const Home = () => {
             </button>
           </form>
         </section>
-        <div class="grid grid-cols-12 gap-6 max-w-7xl mx-auto text-center mt-12"><div class="col-span-12 sm:col-span-4 lg:col-span-4"><h3 class="text-[45px] font-black mb-2"> <div>431<!-- -->k+</div></h3><h5 class="text-lg font-medium opacity-80">Components Viewed</h5></div><div class="col-span-12 sm:col-span-4 lg:col-span-4"><h3 class="text-[45px] font-black mb-2"> <div>1.8<!-- -->k+</div></h3><h5 class="text-lg font-medium opacity-80">Ready Components</h5></div><div class="col-span-12 sm:col-span-4 lg:col-span-4"><h3 class="text-[45px] font-black mb-2"> <div>5.7<!-- -->k+</div></h3><h5 class="text-lg font-medium opacity-80">Projects Created</h5></div></div>
+        <div id="stats" class="bg-white py-20 dark:bg-gray-900 ">
+          <h2 className="color-website mb-15 !text-[45px]">
+            Alcune Statistiche
+          </h2>
+          <div class="mx-auto max-w-7xl px-6 lg:px-8 ">
+            <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+              <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                <dt class="text-lg leading-7 text-gray-900 dark:text-gray-200">
+                  Brand
+                </dt>
+                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  <span class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-transactions)] before:content-[counter(num)] text-gray-900 dark:text-gray-200 ">
+                    {' '}
+                    <span class="sr-only ">8</span>{' '}
+                  </span>
+                </dd>
+              </div>
+              <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                <dt class="text-lg leading-7 text-gray-900 dark:text-gray-200">
+                  Modelli
+                </dt>
+                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  <span class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-assets)] before:content-[counter(num)] text-gray-900 dark:text-gray-200">
+                    {' '}
+                    <span class="sr-only ">7</span>
+                  </span>
+                </dd>
+              </div>
+              <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+                <dt class="text-lg leading-7 text-gray-900 dark:text-gray-200">
+                  Paesi
+                </dt>
+                <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                  <span class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-users)] before:content-[counter(num)] text-gray-900 dark:text-gray-200 before:left-[calc(0.4em * var(--n, 1))]">
+                    <span class="sr-only">7</span>
+                  </span>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <section></section>
       </div>
-
       <h1 className="text-3xl font-bold text-center mb-6">Lista Auto</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {auto.length > 0 ? (

@@ -2,8 +2,8 @@ import logoWebsite from '../assets/logoauto.png'
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white border-gray-200 dark:bg-gray-900 px-3 xl:px-0 fixed top-0 ">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-center max-[464px]:pb-8 min-[464px]:justify-between mx-auto ">
+    <nav className="w-full bg-white border-gray-200 dark:bg-gray-900 px-3 xl:px-0 fixed top-0 z-10">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-center max-[464px]:pb-8 min-[464px]:justify-between mx-auto">
         <a
           href="/"
           className="flex items-center justify-baseline space-x-3 rtl:space-x-reverse"

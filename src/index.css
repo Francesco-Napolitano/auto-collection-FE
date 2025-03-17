@@ -28,6 +28,38 @@
   --font-mono: 'ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas',
     'Liberation Mono', 'Courier New', 'monospace';
 }
+
+@property --num-transactions {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --num-assets {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --num-users {
+  syntax: '<integer>';
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes counter {
+  from {
+    --num-transactions: 0;
+    --num-assets: 0;
+    --num-users: 0;
+  }
+  to {
+    --num-transactions: 8;
+    --num-assets: 50;
+    --num-users: 7;
+  }
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
