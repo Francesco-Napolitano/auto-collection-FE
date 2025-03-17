@@ -19,6 +19,7 @@ const Home = () => {
   const { data: auto, loading, error } = useFetch('/auto', 'GET')
 
   const [brandSelezionato, setBrandSelezionato] = useState(null)
+  const [nazioneSelezionata, setNazioneSelezionata] = useState(null)
   const [modelli, setModelli] = useState([])
 
   const brandUnici = [...new Set(auto?.map((auto) => auto.nome))]
@@ -47,17 +48,17 @@ const Home = () => {
     <div className="pt-20 mx-auto bg-white border-gray-200 dark:bg-gray-900 ">
       <div className="mx-auto flex flex-col gap-10 pb-10">
         <section className="flex flex-col items-center gap-5">
-          <h1 className="color-website">
+          <h1 className="color-website max-[466px]:pt-20 px-3">
             Scopri le Auto più Iconiche di Sempre
           </h1>
-          <p className="text-lg text-gray-900 rounded-sm md:p-0 dark:text-gray-200 ">
+          <p className="text-lg text-gray-900 rounded-sm px-4 dark:text-gray-200 ">
             Un viaggio nel tempo tra le auto sportive che hanno segnato epoche e
             scritto <br />
             la storia dell’automobilismo!
           </p>
           <div className="flex flex-col lg:flex-row items-center gap-10">
             <div className="flex items-center">
-              <div className="border border-black dark:border-white">
+              <div className="border border-black ">
                 <FerrariSvg width="25" height="full" />
               </div>
               <p className="pl-2 text-gray-900 dark:text-gray-200">Ferrari</p>
@@ -137,8 +138,8 @@ const Home = () => {
             <label htmlFor="brand" className="sr-only"></label>
             <select
               id="brand"
-              value={brandSelezionato}
-              onChange={(e) => setBrandSelezionato(e.target.value)}
+              value={nazioneSelezionata}
+              onChange={(e) => setNazioneSelezionata(e.target.value)}
               className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
             >
               <option value="">Nazione di provenienza</option>
@@ -244,7 +245,7 @@ const Home = () => {
             </button>
           </div>
         </section>
-        <section className="flex flex-col items-center justify-center py-15 px-10">
+        <section className="flex flex-col items-center justify-center py-15 px-10 gap-5">
           <div>
             <h2 className="color-website !text-[45px] mb-5">
               Categorie principali
@@ -254,15 +255,15 @@ const Home = () => {
               trova la tua tra le migliori categorie.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:grid-cols-3 mt-17">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 2xl:grid-cols-3 mt-17">
             <div class="h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
               <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
-                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
                     Supercar Recenti
                   </h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">
                   Le ultime novità dal mondo delle auto sportive.
                 </p>
                 <a href="#">
@@ -288,17 +289,18 @@ const Home = () => {
                 style={{
                   backgroundImage: `url(${McLaren})`,
                   backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               ></div>
             </div>
-            <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <div class=" h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
               <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
-                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
                     Icone del Passato
                   </h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">
                   Le leggende che hanno fatto la storia dell’automobilismo.
                 </p>
                 <a href="#">
@@ -324,17 +326,18 @@ const Home = () => {
                 style={{
                   backgroundImage: `url(${Jaguar})`,
                   backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               ></div>
             </div>
-            <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <div class=" h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
               <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
-                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
                     Limited Editions
                   </h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">
                   Modelli esclusivi e a tiratura limitata.
                 </p>
                 <a href="#" class>
@@ -360,17 +363,18 @@ const Home = () => {
                 style={{
                   backgroundImage: `url(${Ferrari})`,
                   backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               ></div>
             </div>
-            <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <div class=" h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
               <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
-                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
                     Auto Perfette per i Consumi
                   </h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">
                   Sportive che uniscono potenza ed efficienza.
                 </p>
                 <a href="#">
@@ -392,22 +396,23 @@ const Home = () => {
                 </a>
               </div>
               <div
-                className="h-[65%] rounded-b-md"
+                className="h-[65%] rounded-b-md "
                 style={{
                   backgroundImage: `url(${McLarenArtura})`,
                   backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               ></div>
             </div>
 
-            <div class="h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <div class="h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 max-[423px]:mt-8">
               <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
-                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
                     Le Più Veloci
                   </h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">
                   Bolidi con prestazioni estreme e velocità da brivido.
                 </p>
                 <a href="#">
@@ -433,17 +438,18 @@ const Home = () => {
                 style={{
                   backgroundImage: `url(${Chiron})`,
                   backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               ></div>
             </div>
-            <div class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 ">
+            <div class="h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 ">
               <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
-                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
                     Auto Perfette per la Strada
                   </h5>
                 </a>
-                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <p class="mb-3 font-normal text-gray-900 dark:text-gray-400">
                   Sportive bilanciate tra comfort e prestazioni.
                 </p>
                 <a href="#">
@@ -469,9 +475,18 @@ const Home = () => {
                 style={{
                   backgroundImage: `url(${PorscheTurbo})`,
                   backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                 }}
               ></div>
             </div>
+          </div>
+          <div className="mt-10 lg:mt-5">
+            <button
+              type="button"
+              class="focus:outline-none text-gray-200 !bg-[#22881b] !font-bold rounded-lg text-sm px-5 py-2.5 !shadow-md"
+            >
+              Scopri tutte le categorie
+            </button>
           </div>
         </section>
       </div>
