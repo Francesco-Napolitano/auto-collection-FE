@@ -5,6 +5,8 @@ import videoSrc from '../assets/cars-women.mp4'
 import FerrariSvg from '../utils/FerrariSvg'
 import McLarenSvg from '../utils/McLarenSvg'
 import Porsche from '../assets/Logo_della_Porsche.svg.png'
+import Mercedes from '../assets/Mercedes-Logo.svg.png'
+import Bugatti from '../assets/Bugatti_Logo.png'
 import '../styles/homepage.css'
 
 const Home = () => {
@@ -189,7 +191,45 @@ const Home = () => {
             </dl>
           </div>
         </div>
-        <section></section>
+        <section className="flex flex-col items-center justify-center py-20 px-10 ">
+          <h2 className="color-website mb-15 !text-[45px]">
+            I brand più popolari
+          </h2>
+          <div className="grid grid-cols-2 lg:grid-cols-4 justify-center gap-10 ">
+            <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 py-10">
+              <a href="#">
+                <FerrariSvg width="full" height={300} />
+              </a>
+            </div>
+            <div class="  bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 py-10 flex items-center justify-center">
+              <a href="#">
+                <img
+                  src={Porsche}
+                  alt="porsche logo"
+                  className="mx-auto w-1/2 "
+                />
+              </a>
+            </div>
+            <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 py-10 flex items-center justify-center">
+              <a href="#">
+                <img
+                  src={Mercedes}
+                  alt="mercedes logo"
+                  className="w-1/2 mx-auto "
+                />
+              </a>
+            </div>
+            <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 py-10 flex items-center justify-center">
+              <a href="#">
+                <img
+                  src={Bugatti}
+                  alt="bugatti logo"
+                  className="w-5/6 mx-auto"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
       <h1 className="text-3xl font-bold text-center mb-6">Lista Auto</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
