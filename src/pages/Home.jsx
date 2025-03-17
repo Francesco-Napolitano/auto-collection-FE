@@ -1,13 +1,31 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import videoSrc from '../assets/cars-women.mp4'
 import FerrariSvg from '../utils/FerrariSvg'
 import McLarenSvg from '../utils/McLarenSvg'
 import Porsche from '../assets/Logo_della_Porsche.svg.png'
+import '../styles/homepage.css'
 
 const Home = () => {
   const { data: auto, loading, error } = useFetch('/auto', 'GET')
+
+  const [brandSelezionato, setBrandSelezionato] = useState(null)
+  const [modelli, setModelli] = useState([])
+
+  const brandUnici = [...new Set(auto?.map((auto) => auto.nome))]
+  const nazioniUniche = [...new Set(auto?.map((auto) => auto.nazione.name))]
+
+  useEffect(() => {
+    if (brandSelezionato) {
+      const modelliFiltrati = auto
+        ?.filter((auto) => auto.nome === brandSelezionato)
+        .map((auto) => auto.modello)
+      setModelli(modelliFiltrati || [])
+    } else {
+      setModelli([])
+    }
+  }, [brandSelezionato, auto])
 
   useEffect(() => {
     if (auto) console.log('Tutte le Auto:', auto)
@@ -18,9 +36,9 @@ const Home = () => {
   if (!auto) return <p>Nessun dato trovato per questa auto.</p>
 
   return (
-    <div className="pt-10 mx-auto bg-white border-gray-200 dark:bg-gray-900">
+    <div className="pt-20 mx-auto bg-white border-gray-200 dark:bg-gray-900 ">
       <div className="mx-auto flex flex-col gap-10 pb-10">
-        <div className="flex flex-col items-center gap-5">
+        <section className="flex flex-col items-center gap-5">
           <h1 className="color-website">
             Scopri le Auto più Iconiche di Sempre
           </h1>
@@ -49,31 +67,90 @@ const Home = () => {
               <p className="pl-2 text-gray-900 dark:text-gray-200">Porsche</p>
             </div>
           </div>
-        </div>
-        <video className="hidden md:block w-full h-140 " autoPlay muted>
+        </section>
+        <video className="hidden md:block w-full h-140 " loop autoPlay muted>
           <source className="rounded" src={videoSrc} />
         </video>
-        <div className="bg-gray-50 dark:bg-gray-800 w-4/5 mx-auto p-10">
-          <form class="max-w-sm mx-auto">
-            <label
-              for="countries"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >
-              Select an option
+        <section className="bg-gray-50 dark:bg-gray-800 w-4/5 mx-auto p-10 flex justify-around">
+          <form className="grid grid-cols-3 w-4/5 gap-3">
+            <label htmlFor="brand" className="sr-only">
+              Marca
             </label>
             <select
-              id="countries"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              id="brand"
+              value={brandSelezionato}
+              onChange={(e) => setBrandSelezionato(e.target.value)}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
             >
-              <option selected>Choose a country</option>
-              <option value="US">United States</option>
-              <option value="CA">Canada</option>
-              <option value="FR">France</option>
-              <option value="DE">Germany</option>
+              <option value="">Marca</option>
+              {brandUnici.map((brand) => (
+                <option key={brand} value={brand}>
+                  {brand}
+                </option>
+              ))}
             </select>
+            <label htmlFor="modello" className="sr-only">
+              Modello
+            </label>
+            <select
+              id="modello"
+              disabled={!brandSelezionato}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b] disabled:opacity-50"
+            >
+              <option value="">Modello</option>
+              {modelli.map((modello) => (
+                <option key={modello} value={modello}>
+                  {modello}
+                </option>
+              ))}
+            </select>
+            <label for="number-input" class="sr-only">
+              Select a number:
+            </label>
+            <input
+              type="number"
+              id="number-input"
+              aria-describedby="helper-text-explanation"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              placeholder="A partire da (€)"
+              min={0}
+            />
+            <label for="number-input" class="sr-only">
+              Select a number:
+            </label>
+            <input
+              type="number"
+              id="number-input"
+              aria-describedby="helper-text-explanation"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              placeholder="Anno da"
+              min={0}
+            />
+            <label htmlFor="brand" className="sr-only"></label>
+            <select
+              id="brand"
+              value={brandSelezionato}
+              onChange={(e) => setBrandSelezionato(e.target.value)}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+            >
+              <option value="">Nazione di provenienza</option>
+              {nazioniUniche.map((nazione) => (
+                <option key={nazione} value={nazione}>
+                  {nazione}
+                </option>
+              ))}
+            </select>
+            <button
+              type="submit"
+              className="text-gray-900 dark:text-gray-200 !font-bold  !bg-[#22881b] shadow-sm shadow-[#22881b]"
+            >
+              Search
+            </button>
           </form>
-        </div>
+        </section>
+        <div class="grid grid-cols-12 gap-6 max-w-7xl mx-auto text-center mt-12"><div class="col-span-12 sm:col-span-4 lg:col-span-4"><h3 class="text-[45px] font-black mb-2"> <div>431<!-- -->k+</div></h3><h5 class="text-lg font-medium opacity-80">Components Viewed</h5></div><div class="col-span-12 sm:col-span-4 lg:col-span-4"><h3 class="text-[45px] font-black mb-2"> <div>1.8<!-- -->k+</div></h3><h5 class="text-lg font-medium opacity-80">Ready Components</h5></div><div class="col-span-12 sm:col-span-4 lg:col-span-4"><h3 class="text-[45px] font-black mb-2"> <div>5.7<!-- -->k+</div></h3><h5 class="text-lg font-medium opacity-80">Projects Created</h5></div></div>
       </div>
+
       <h1 className="text-3xl font-bold text-center mb-6">Lista Auto</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {auto.length > 0 ? (

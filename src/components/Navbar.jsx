@@ -2,7 +2,7 @@ import logoWebsite from '../assets/logoauto.png'
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white border-gray-200 dark:bg-gray-900 px-3 xl:px-0 sticky top-0 ">
+    <nav className="w-full bg-white border-gray-200 dark:bg-gray-900 px-3 xl:px-0 fixed top-0 ">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-center max-[464px]:pb-8 min-[464px]:justify-between mx-auto ">
         <a
           href="/"
