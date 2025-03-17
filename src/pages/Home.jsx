@@ -7,6 +7,8 @@ import McLarenSvg from '../utils/McLarenSvg'
 import Porsche from '../assets/Logo_della_Porsche.svg.png'
 import Mercedes from '../assets/Mercedes-Logo.svg.png'
 import Bugatti from '../assets/Bugatti_Logo.png'
+import Ferrari from '../assets/Ferrari-250-GTO-at-Goodwood-3.webp'
+import Jaguar from '../assets/jaguar-xj220-1-1360x765.webp'
 import '../styles/homepage.css'
 
 const Home = () => {
@@ -250,7 +252,7 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-2 gap-5 lg:grid-cols-3 mt-17">
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-              <div class="p-5">
+              <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Supercar Recenti
@@ -259,23 +261,39 @@ const Home = () => {
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   Le ultime novità dal mondo delle auto sportive.
                 </p>
-                <a
-                  href="#"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Read more
+                <a href="#">
+                  <svg
+                    class="w-6 h-6 text-gray-900 dark:text-gray-200 hover:text-[#22881b]"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
                 </a>
               </div>
-              <a href="#">
-                <img
-                  class="rounded-t-lg"
-                  src="/docs/images/blog/image-1.jpg"
-                  alt=""
-                />
-              </a>
+              <div>
+                <a
+                  href="#"
+                  className="block  pt-10 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${Ferrari})`,
+                    backgroundSize: 'cover',
+                    height: '250px',
+                  }}
+                  alt="ferrari 250 GTO"
+                ></a>
+              </div>
             </div>
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-              <div class="p-5">
+              <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Icone del Passato
@@ -284,48 +302,80 @@ const Home = () => {
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   Le leggende che hanno fatto la storia dell’automobilismo.
                 </p>
-                <a
-                  href="#"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Read more
+                <a href="#">
+                  <svg
+                    class="w-6 h-6 text-gray-900 dark:text-gray-200 hover:text-[#22881b]"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
                 </a>
               </div>
-              <a href="#">
-                <img
-                  class="rounded-t-lg"
-                  src="/docs/images/blog/image-1.jpg"
-                  alt=""
-                />
-              </a>
+              <div>
+                <a
+                  href="#"
+                  className="block  pt-10 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${Jaguar})`,
+                    backgroundSize: 'cover',
+                    height: '220px',
+                  }}
+                  alt="ferrari 250 GTO"
+                ></a>
+              </div>
             </div>
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-              <div class="p-5">
+              <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Supercar Recenti
+                    Limited Editions
                   </h5>
                 </a>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  Le ultime novità dal mondo delle auto sportive.
+                  Modelli esclusivi e a tiratura limitata.
                 </p>
-                <a
-                  href="#"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Read more
+                <a href="#" class>
+                  <svg
+                    class="w-6 h-6 text-gray-900 dark:text-gray-200 hover:text-[#22881b]"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
                 </a>
               </div>
-              <a href="#">
-                <img
-                  class="rounded-t-lg"
-                  src="/docs/images/blog/image-1.jpg"
-                  alt=""
-                />
-              </a>
+              <div>
+                <a
+                  href="#"
+                  className="block  pt-10 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${Ferrari})`,
+                    backgroundSize: 'cover',
+                    height: '250px',
+                  }}
+                  alt="ferrari 250 GTO"
+                ></a>
+              </div>
             </div>
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-              <div class="p-5">
+              <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Auto Perfette per i Consumi
@@ -334,24 +384,40 @@ const Home = () => {
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   Sportive che uniscono potenza ed efficienza.
                 </p>
-                <a
-                  href="#"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Read more
+                <a href="#">
+                  <svg
+                    class="w-6 h-6 text-gray-900 dark:text-gray-200 hover:text-[#22881b]"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
                 </a>
               </div>
-              <a href="#">
-                <img
-                  class="rounded-t-lg"
-                  src="/docs/images/blog/image-1.jpg"
-                  alt=""
-                />
-              </a>
+              <div className="h-40">
+                <a
+                  href="#"
+                  className="block h-full  pt-10 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${Ferrari})`,
+                    backgroundSize: 'cover',
+                    height: '250px',
+                  }}
+                  alt="ferrari 250 GTO"
+                ></a>
+              </div>
             </div>
 
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-              <div class="p-5">
+            <div class="h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+              <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Le Più Veloci
@@ -360,23 +426,39 @@ const Home = () => {
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   Bolidi con prestazioni estreme e velocità da brivido.
                 </p>
-                <a
-                  href="#"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Read more
+                <a href="#">
+                  <svg
+                    class="w-6 h-6 text-gray-900 dark:text-gray-200 hover:text-[#22881b]"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
                 </a>
               </div>
-              <a href="#">
-                <img
-                  class="rounded-t-lg"
-                  src="/docs/images/blog/image-1.jpg"
-                  alt=""
-                />
-              </a>
+              <div className="h-40">
+                <a
+                  href="#"
+                  className="block h-full  pt-10 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${Ferrari})`,
+                    backgroundSize: 'cover',
+                    height: '250px',
+                  }}
+                  alt="ferrari 250 GTO"
+                ></a>
+              </div>
             </div>
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-              <div class="p-5">
+            <div class=" h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+              <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     Auto Perfette per la Strada
@@ -385,20 +467,36 @@ const Home = () => {
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
                   Sportive bilanciate tra comfort e prestazioni.
                 </p>
-                <a
-                  href="#"
-                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Read more
+                <a href="#">
+                  <svg
+                    class="w-6 h-6 text-gray-900 dark:text-gray-200 hover:text-[#22881b]"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
                 </a>
               </div>
-              <a href="#">
-                <img
-                  class="rounded-t-lg"
-                  src="/docs/images/blog/image-1.jpg"
-                  alt=""
-                />
-              </a>
+              <div>
+                <a
+                  href="#"
+                  className="block"
+                  style={{
+                    backgroundImage: `url(${Ferrari})`,
+                    backgroundSize: 'cover',
+                    height: '250px',
+                  }}
+                  alt="ferrari 250 GTO"
+                ></a>
+              </div>
             </div>
           </div>
         </section>
