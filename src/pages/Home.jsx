@@ -9,6 +9,10 @@ import Mercedes from '../assets/Mercedes-Logo.svg.png'
 import Bugatti from '../assets/Bugatti_Logo.png'
 import Ferrari from '../assets/Ferrari-250-GTO-at-Goodwood-3.webp'
 import Jaguar from '../assets/jaguar-xj220-1-1360x765.webp'
+import McLaren from '../assets/McLaren-P1_autosprint.ch_.jpg'
+import McLarenArtura from '../assets/2025_mclaren_artura_coupe_base_fq_oem_1_1600.avif'
+import Chiron from '../assets/2016030101_Bugatti_Chiron.jpg'
+import PorscheTurbo from '../assets/s20-1418-fine-jpg.webp'
 import '../styles/homepage.css'
 
 const Home = () => {
@@ -146,7 +150,7 @@ const Home = () => {
             </select>
             <button
               type="submit"
-              className="text-black dark:text-gray-200 !font-bold  !bg-[#22881b] shadow-sm shadow-[#22881b]"
+              className="text-gray-200 !font-bold  !bg-[#22881b] shadow-sm shadow-[#22881b]"
             >
               Search
             </button>
@@ -234,7 +238,7 @@ const Home = () => {
           <div className="mt-10 lg:mt-5">
             <button
               type="button"
-              class="focus:outline-none text-gray-900 dark:text-gray-200 !bg-[#22881b] !font-bold rounded-lg text-sm px-5 py-2.5 mt-7 !shadow-md"
+              class="focus:outline-none text-gray-200 !bg-[#22881b] !font-bold rounded-lg text-sm px-5 py-2.5 mt-7 !shadow-md"
             >
               Scopri tutti i marchi
             </button>
@@ -250,8 +254,8 @@ const Home = () => {
               trova la tua tra le migliori categorie.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-5 lg:grid-cols-3 mt-17">
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:grid-cols-3 mt-17">
+            <div class="h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
               <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -279,20 +283,15 @@ const Home = () => {
                   </svg>
                 </a>
               </div>
-              <div>
-                <a
-                  href="#"
-                  className="block  pt-10 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(${Ferrari})`,
-                    backgroundSize: 'cover',
-                    height: '250px',
-                  }}
-                  alt="ferrari 250 GTO"
-                ></a>
-              </div>
+              <div
+                className="h-[65%] rounded-b-md"
+                style={{
+                  backgroundImage: `url(${McLaren})`,
+                  backgroundSize: 'cover',
+                }}
+              ></div>
             </div>
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
               <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -320,20 +319,15 @@ const Home = () => {
                   </svg>
                 </a>
               </div>
-              <div>
-                <a
-                  href="#"
-                  className="block  pt-10 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(${Jaguar})`,
-                    backgroundSize: 'cover',
-                    height: '220px',
-                  }}
-                  alt="ferrari 250 GTO"
-                ></a>
-              </div>
+              <div
+                className="h-[65%] rounded-b-md"
+                style={{
+                  backgroundImage: `url(${Jaguar})`,
+                  backgroundSize: 'cover',
+                }}
+              ></div>
             </div>
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
               <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -361,20 +355,15 @@ const Home = () => {
                   </svg>
                 </a>
               </div>
-              <div>
-                <a
-                  href="#"
-                  className="block  pt-10 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(${Ferrari})`,
-                    backgroundSize: 'cover',
-                    height: '250px',
-                  }}
-                  alt="ferrari 250 GTO"
-                ></a>
-              </div>
+              <div
+                className="h-[65%] rounded-b-md"
+                style={{
+                  backgroundImage: `url(${Ferrari})`,
+                  backgroundSize: 'cover',
+                }}
+              ></div>
             </div>
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
               <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -402,18 +391,13 @@ const Home = () => {
                   </svg>
                 </a>
               </div>
-              <div className="h-40">
-                <a
-                  href="#"
-                  className="block h-full  pt-10 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(${Ferrari})`,
-                    backgroundSize: 'cover',
-                    height: '250px',
-                  }}
-                  alt="ferrari 250 GTO"
-                ></a>
-              </div>
+              <div
+                className="h-[65%] rounded-b-md"
+                style={{
+                  backgroundImage: `url(${McLarenArtura})`,
+                  backgroundSize: 'cover',
+                }}
+              ></div>
             </div>
 
             <div class="h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
@@ -444,20 +428,15 @@ const Home = () => {
                   </svg>
                 </a>
               </div>
-              <div className="h-40">
-                <a
-                  href="#"
-                  className="block h-full  pt-10 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(${Ferrari})`,
-                    backgroundSize: 'cover',
-                    height: '250px',
-                  }}
-                  alt="ferrari 250 GTO"
-                ></a>
-              </div>
+              <div
+                className="h-[65%] rounded-b-md"
+                style={{
+                  backgroundImage: `url(${Chiron})`,
+                  backgroundSize: 'cover',
+                }}
+              ></div>
             </div>
-            <div class=" h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+            <div class="bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 ">
               <div class="p-5 flex flex-col items-center justify-center">
                 <a href="#">
                   <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -485,18 +464,13 @@ const Home = () => {
                   </svg>
                 </a>
               </div>
-              <div>
-                <a
-                  href="#"
-                  className="block"
-                  style={{
-                    backgroundImage: `url(${Ferrari})`,
-                    backgroundSize: 'cover',
-                    height: '250px',
-                  }}
-                  alt="ferrari 250 GTO"
-                ></a>
-              </div>
+              <div
+                className="h-[65%] rounded-b-md"
+                style={{
+                  backgroundImage: `url(${PorscheTurbo})`,
+                  backgroundSize: 'cover',
+                }}
+              ></div>
             </div>
           </div>
         </section>
