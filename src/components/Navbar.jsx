@@ -11,11 +11,10 @@ const Navbar = () => {
           <img src={logoWebsite} className="w-35  h-20" alt="Flowbite Logo" />
         </a>
         <div className="flex md:order-2">
-          {/* Pulsante Toggle */}
           <button
             id="theme-toggle"
             type="button"
-            className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-3xl p-2 px-3 "
+            className=" !bg-transparent dark:hover:bg-gray-700 rounded-3xl p-2 px-3 border border-gray-300 dark:border-gray-600"
           >
             <svg
               id="theme-toggle-dark-icon"
@@ -64,7 +63,7 @@ const Navbar = () => {
             <input
               type="text"
               id="search-navbar"
-              className="stop block  w-40 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 h-10 focus:ring-2 focus:ring-[#22881b] "
+              className="stop block  w-40 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-transparent  dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 h-10 focus:ring-2 focus:ring-[#22881b] "
               placeholder="Search..."
             />
           </div>
@@ -83,7 +82,7 @@ const Navbar = () => {
           <div className="relative mt-3 md:hidden">
             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
               <svg
-                className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                className="w-4 h-4"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

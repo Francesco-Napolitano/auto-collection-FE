@@ -73,8 +73,8 @@ const Home = () => {
         <video className="hidden md:block w-full h-140 " loop autoPlay muted>
           <source className="rounded" src={videoSrc} />
         </video>
-        <section className="bg-gray-50 dark:bg-gray-800 w-4/5 mx-auto p-10 flex justify-around">
-          <form className="grid grid-cols-3 w-4/5 gap-3">
+        <section className="bg-white border border-gray-200 rounded-lg shadow-xs dark:bg-gray-800 dark:border-gray-700 w-4/5 mx-auto py-10 md:p-10 flex justify-around">
+          <form className="grid grid-cols-2 lg:grid-cols-3 w-4/5 gap-3">
             <label htmlFor="brand" className="sr-only">
               Marca
             </label>
@@ -133,7 +133,7 @@ const Home = () => {
               id="brand"
               value={brandSelezionato}
               onChange={(e) => setBrandSelezionato(e.target.value)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
             >
               <option value="">Nazione di provenienza</option>
               {nazioniUniche.map((nazione) => (
@@ -144,13 +144,13 @@ const Home = () => {
             </select>
             <button
               type="submit"
-              className="text-gray-900 dark:text-gray-200 !font-bold  !bg-[#22881b] shadow-sm shadow-[#22881b]"
+              className="text-black dark:text-gray-200 !font-bold  !bg-[#22881b] shadow-sm shadow-[#22881b]"
             >
               Search
             </button>
           </form>
         </section>
-        <div id="stats" class="bg-white py-20 dark:bg-gray-900 ">
+        <div id="stats" class="bg-white py-10 dark:bg-gray-900 ">
           <h2 className="color-website mb-15 !text-[45px]">
             Alcune Statistiche
           </h2>
@@ -191,11 +191,11 @@ const Home = () => {
             </dl>
           </div>
         </div>
-        <section className="flex flex-col items-center justify-center py-20 px-10 ">
+        <section className="flex flex-col items-center justify-center py-15 px-10 ">
           <h2 className="color-website mb-15 !text-[45px]">
             I brand più popolari
           </h2>
-          <div className="grid grid-cols-2 lg:grid-cols-4 justify-center gap-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center gap-10 ">
             <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 py-10">
               <a href="#">
                 <FerrariSvg width="full" height={300} />
@@ -210,7 +210,7 @@ const Home = () => {
                 />
               </a>
             </div>
-            <div class=" bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 py-10 flex items-center justify-center">
+            <div class="max-lg:h-90 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 py-10 flex items-center justify-center">
               <a href="#">
                 <img
                   src={Mercedes}
@@ -228,6 +228,14 @@ const Home = () => {
                 />
               </a>
             </div>
+          </div>
+          <div className="mt-10 lg:mt-5">
+            <button
+              type="button"
+              class="focus:outline-none text-gray-900 dark:text-gray-200 !bg-[#22881b] !font-bold rounded-lg text-sm px-5 py-2.5 mt-7 !shadow-md"
+            >
+              Scopri tutti i marchi
+            </button>
           </div>
         </section>
       </div>
