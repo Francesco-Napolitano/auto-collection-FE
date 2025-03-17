@@ -238,6 +238,170 @@ const Home = () => {
             </button>
           </div>
         </section>
+        <section className="flex flex-col items-center justify-center py-15 px-10">
+          <div>
+            <h2 className="color-website !text-[45px] mb-5">
+              Categorie principali
+            </h2>
+            <p className="text-lg text-gray-900 dark:text-gray-200">
+              Selezioni curate per veri intenditori: ogni auto ha una storia,
+              trova la tua tra le migliori categorie.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-5 lg:grid-cols-3 mt-17">
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+              <div class="p-5">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Supercar Recenti
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Le ultime novità dal mondo delle auto sportive.
+                </p>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Read more
+                </a>
+              </div>
+              <a href="#">
+                <img
+                  class="rounded-t-lg"
+                  src="/docs/images/blog/image-1.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+              <div class="p-5">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Icone del Passato
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Le leggende che hanno fatto la storia dell’automobilismo.
+                </p>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Read more
+                </a>
+              </div>
+              <a href="#">
+                <img
+                  class="rounded-t-lg"
+                  src="/docs/images/blog/image-1.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+              <div class="p-5">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Supercar Recenti
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Le ultime novità dal mondo delle auto sportive.
+                </p>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Read more
+                </a>
+              </div>
+              <a href="#">
+                <img
+                  class="rounded-t-lg"
+                  src="/docs/images/blog/image-1.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+              <div class="p-5">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Auto Perfette per i Consumi
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Sportive che uniscono potenza ed efficienza.
+                </p>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Read more
+                </a>
+              </div>
+              <a href="#">
+                <img
+                  class="rounded-t-lg"
+                  src="/docs/images/blog/image-1.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+              <div class="p-5">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Le Più Veloci
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Bolidi con prestazioni estreme e velocità da brivido.
+                </p>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Read more
+                </a>
+              </div>
+              <a href="#">
+                <img
+                  class="rounded-t-lg"
+                  src="/docs/images/blog/image-1.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+              <div class="p-5">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    Auto Perfette per la Strada
+                  </h5>
+                </a>
+                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                  Sportive bilanciate tra comfort e prestazioni.
+                </p>
+                <a
+                  href="#"
+                  class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Read more
+                </a>
+              </div>
+              <a href="#">
+                <img
+                  class="rounded-t-lg"
+                  src="/docs/images/blog/image-1.jpg"
+                  alt=""
+                />
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
       <h1 className="text-3xl font-bold text-center mb-6">Lista Auto</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
