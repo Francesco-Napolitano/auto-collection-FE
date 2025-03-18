@@ -14,6 +14,7 @@ import McLarenArtura from '../assets/2025_mclaren_artura_coupe_base_fq_oem_1_160
 import Chiron from '../assets/2016030101_Bugatti_Chiron.jpg'
 import PorscheTurbo from '../assets/s20-1418-fine-jpg.webp'
 import '../styles/homepage.css'
+import TimelineHomepage from '../components/TimelineHomepage'
 
 const Home = () => {
   const { data: auto, loading, error } = useFetch('/auto', 'GET')
@@ -490,6 +491,12 @@ const Home = () => {
           </div>
         </section>
       </div>
+      <section className="flex flex-col items-center">
+        <h2 className="color-website !text-[45px] font-bold ">
+          Come l'automobile ha <br /> cambiato il mondo
+        </h2>
+        <TimelineHomepage />
+      </section>
       <h1 className="text-3xl font-bold text-center mb-6">Lista Auto</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {auto.length > 0 ? (
