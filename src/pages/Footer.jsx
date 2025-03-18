@@ -44,11 +44,11 @@ const Footer = () => {
           </a>
           . Tutti i diritti riservati.
         </span>
-        <p>
+        <p className="text-xs">
           Immagini fornite da
           <a
             href="https://it.wikipedia.org/wiki/Pagina_principale"
-            className="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+            className="text-xs text-gray-500 sm:text-center dark:text-gray-400"
           >
             {' '}
             Wikipedia
@@ -58,7 +58,7 @@ const Footer = () => {
             href="https://motortrendtv.it/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+            className="text-xs text-gray-500 sm:text-center dark:text-gray-400"
           >
             {' '}
             MotorTrend
@@ -68,7 +68,7 @@ const Footer = () => {
             href="https://www.veloce.it/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+            className="text-xs text-gray-500 sm:text-center dark:text-gray-400"
           >
             {' '}
             veloce
@@ -78,7 +78,7 @@ const Footer = () => {
             href="https://autosprint.corrieredellosport.it/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+            className="text-xs text-gray-500 sm:text-center dark:text-gray-400"
           >
             {' '}
             Autosprint
@@ -88,7 +88,7 @@ const Footer = () => {
             href="https://autodesignmagazine.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+            className="text-xs text-gray-500 sm:text-center dark:text-gray-400"
           >
             {' '}
             Auto&Design

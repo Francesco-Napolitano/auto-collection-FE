@@ -18,7 +18,7 @@ const CategoriePrincipaliHomepage = () => {
         </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 2xl:grid-cols-3 mt-17">
-        <div class="h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <div class="h-100 bg-white transition duration-300 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
           <div class="p-5 flex flex-col items-center justify-center">
             <a href="#">
               <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
@@ -55,7 +55,7 @@ const CategoriePrincipaliHomepage = () => {
             }}
           ></div>
         </div>
-        <div class=" h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <div class=" h-100 bg-white transition duration-300 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
           <div class="p-5 flex flex-col items-center justify-center">
             <a href="#">
               <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
@@ -92,7 +92,7 @@ const CategoriePrincipaliHomepage = () => {
             }}
           ></div>
         </div>
-        <div class=" h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <div class=" h-100 bg-white transition duration-300 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
           <div class="p-5 flex flex-col items-center justify-center">
             <a href="#">
               <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
@@ -129,7 +129,7 @@ const CategoriePrincipaliHomepage = () => {
             }}
           ></div>
         </div>
-        <div class=" h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <div class=" h-100 bg-white transition duration-300 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
           <div class="p-5 flex flex-col items-center justify-center">
             <a href="#">
               <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
@@ -167,7 +167,7 @@ const CategoriePrincipaliHomepage = () => {
           ></div>
         </div>
 
-        <div class="h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 max-[423px]:mt-8">
+        <div class="h-100 bg-white transition duration-300 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 max-[423px]:mt-8">
           <div class="p-5 flex flex-col items-center justify-center">
             <a href="#">
               <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
@@ -204,7 +204,7 @@ const CategoriePrincipaliHomepage = () => {
             }}
           ></div>
         </div>
-        <div class="h-100 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 ">
+        <div class="h-100 bg-white transition duration-300 border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 ">
           <div class="p-5 flex flex-col items-center justify-center">
             <a href="#">
               <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200">
@@ -242,7 +242,7 @@ const CategoriePrincipaliHomepage = () => {
           ></div>
         </div>
       </div>
-      <div className="mt-10 lg:mt-5">
+      <div className="mt-10 lg:mt-5 mb-20">
         <button
           type="button"
           class="focus:outline-none text-gray-200 !bg-[#22881b] !font-bold rounded-lg text-sm px-5 py-2.5 !shadow-md"

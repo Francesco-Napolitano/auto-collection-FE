@@ -74,8 +74,8 @@ const Home = () => {
       <video className="hidden md:block w-full h-140 my-13" loop autoPlay muted>
         <source className="rounded" src={videoSrc} />
       </video>
-      <section className="bg-white border border-gray-200 rounded-lg shadow-xs dark:bg-gray-800 dark:border-gray-700 w-4/5 mx-auto py-10 md:p-10 flex justify-around">
-        <form className="grid grid-cols-2 lg:grid-cols-3 w-4/5 gap-3">
+      <section className="bg-white border border-gray-200 rounded-lg shadow-xs transition duration-300 dark:bg-gray-800 dark:border-gray-700 w-4/5 mx-auto py-10 md:p-10 flex justify-around">
+        <form className="grid grid-cols-2 lg:grid-cols-3 w-4/5 gap-3 ">
           <label htmlFor="brand" className="sr-only">
             Marca
           </label>

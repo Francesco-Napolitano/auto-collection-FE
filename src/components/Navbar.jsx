@@ -1,20 +1,21 @@
+import { Link } from 'react-router-dom'
 import logoWebsite from '../assets/logoauto.png'
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white border-gray-200 dark:bg-gray-900 px-3 xl:px-0 fixed top-0 z-10 overflow-hidden">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-center max-[464px]:pb-8 min-[464px]:justify-between mx-auto">
+    <nav className="w-full bg-white border-gray-200 dark:bg-gray-900 px-3 xl:px-0 fixed top-0 z-10 overflow-hidden mb-2">
+      <div className=" max-w-screen-xl flex flex-wrap items-center justify-center max-[464px]:pb-8 min-[464px]:justify-between mx-auto ">
         <a
           href="/"
           className="flex items-center justify-baseline space-x-3 rtl:space-x-reverse"
         >
           <img src={logoWebsite} className="w-35  h-20" alt="Flowbite Logo" />
         </a>
-        <div className="flex md:order-2">
+        <div className="flex md:order-2 ">
           <button
             id="theme-toggle"
             type="button"
-            className=" !bg-transparent dark:hover:bg-gray-700 rounded-3xl p-2 px-3 border border-gray-300 dark:border-gray-600"
+            className=" !bg-transparent dark:hover:bg-gray-700 rounded-3xl p-2 px-3 border border-gray-300 dark:border-gray-600 transition duration-500"
           >
             <svg
               id="theme-toggle-dark-icon"
@@ -63,7 +64,7 @@ const Navbar = () => {
             <input
               type="text"
               id="search-navbar"
-              className="stop block  w-40 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-transparent  dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 h-10 focus:ring-2 focus:ring-[#22881b] "
+              className="stop block  w-40 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-transparent  dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 h-10 focus:ring-2 focus:ring-[#22881b] transition duration-500"
               placeholder="Search..."
             />
           </div>
@@ -99,7 +100,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
             <li>
               <a
                 href="#"
@@ -122,7 +123,7 @@ const Navbar = () => {
                 href="#"
                 className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-200 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
-                Brand
+                <Link to="/brand">Brand</Link>
               </a>
             </li>
             <li>
