@@ -30,13 +30,13 @@ const Timeline = () => {
   ]
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 mt-15">
-      <div className="col-span-12 lg:col-span-5">
+    <div className="grid grid-cols-1 xl:grid-cols-2 mt-15 gap-55 pb-35">
+      <div className="w-80 sm:w-95 h-100">
         <ul>
           {timelineItems.map((item) => (
             <li
               key={item.id}
-              className={`relative cursor-pointer opacity-50 transition-opacity duration-300 flex flex-col items-start w-170 ${
+              className={`relative cursor-pointer opacity-50 transition-opacity duration-300 flex flex-col items-start mb-15 ${
                 activeImage === item.image ? 'opacity-100' : ''
               }`}
               onMouseEnter={() => setActiveImage(item.image)}
@@ -45,10 +45,10 @@ const Timeline = () => {
               <span className="hidden sm:flex justify-center items-center absolute w-[60px] h-[60px] -left-[117px] top-0 bg-black rounded-full text-[20px] text-white font-display">
                 {item.id}
               </span>
-              <h3 className="display-xs-medium md:display-s-medium font-display text-gray-500 dark:text-gray-80 mt-4">
+              <h3 className="display-xs-medium md:display-s-medium font-display text-3xl text-start font-bold text-gray-900 dark:text-gray-200 my-4">
                 {item.title}
               </h3>
-              <p className="text-sm-regular text-gray-300 dark:text-gray-100  pr-10 text-start">
+              <p className="text-sm text-gray-900 dark:text-gray-200 text-start">
                 {item.description}
               </p>
             </li>
@@ -57,19 +57,22 @@ const Timeline = () => {
       </div>
 
       {/* Immagine Timeline */}
-      <div className="col-span-12 lg:col-span-5 lg:col-start-8 flex items-center relative mt-8 lg:mt-0">
-        <div className="relative w-80 overflow-hidden rounded-lg shadow-3xl">
-          {activeImage ? (
+      <div className="flex items-center justify-center">
+        <div className="relative w-120 h-60   ">
+          {activeImage === null ? (
             <img
-              src={activeImage}
+              src={timelineItems[0].image}
               alt="Immagine Timeline"
-              className="w-full transition-transform duration-300"
+              className="w-full transition-transform duration-300 rounded-md shadow-2xl"
               style={{ transform: 'scale(1.05)' }}
             />
           ) : (
-            <p className="text-center text-gray-400">
-              Passa il mouse su un evento
-            </p>
+            <img
+              src={activeImage}
+              alt="Immagine Timeline"
+              className="w-full transition-transform duration-300 rounded-md shadow-2xl"
+              style={{ transform: 'scale(1.05)' }}
+            />
           )}
         </div>
       </div>

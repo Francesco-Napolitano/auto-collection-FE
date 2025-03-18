@@ -491,9 +491,9 @@ const Home = () => {
           </div>
         </section>
       </div>
-      <section className="flex flex-col items-center">
+      <section className="flex flex-col items-center px-5">
         <h2 className="color-website !text-[45px] font-bold ">
-          Come l'automobile ha <br /> cambiato il mondo
+          Timeline dell'Automobile
         </h2>
         <TimelineHomepage />
       </section>
