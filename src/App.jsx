@@ -11,6 +11,8 @@ import Login from './pages/Login'
 import Logout from './pages/Logout'
 import Navbar from './components/Navbar'
 import { useEffect } from 'react'
+import Footer from './pages/Footer'
+import AboutPageFooter from './components/AboutPageFooter'
 
 function App() {
   useEffect(() => {
@@ -86,8 +88,10 @@ function App() {
         />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/common/about" element={<AboutPageFooter />} />
         <Route path="*" element={<h1>404 - Pagina non trovata</h1>} />
       </Routes>
+      <Footer />
     </div>
   )
 }
