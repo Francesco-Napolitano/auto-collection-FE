@@ -190,10 +190,8 @@ const Home = () => {
           </dl>
         </div>
       </div>
-
       <BrandPopolariHomepage />
       <CategoriePrincipaliHomepage />
-
       <TimelineHomepage />
       <h1 className="text-3xl font-bold text-center mb-6">Lista Auto</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
