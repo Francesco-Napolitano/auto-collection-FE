@@ -70,9 +70,9 @@ const Navbar = () => {
           </div>
           <button
             type="button"
-            class="text-green-500 bg-blue-700 ring-2 hover:bg-blue-800 font-medium rounded-lg text-sm px-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700  ml-3"
+            class="text-[#22881b] bg-blue-700 ring-2 hover:bg-blue-800 font-medium rounded-lg text-sm px-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700  ml-3"
           >
-            Accedi
+            <Link to="/login">Accedi</Link>
           </button>
         </div>
 
@@ -107,7 +107,7 @@ const Navbar = () => {
                 className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:color-website md:p-0 md:dark:hover:color-website dark:text-gray-200 dark:hover:color-website dark:hover:color-website md:dark:hover:color-website dark:border-gray-700"
                 aria-current="page"
               >
-                Auto
+                <Link to="/auto">Auto</Link>
               </a>
             </li>
             <li>

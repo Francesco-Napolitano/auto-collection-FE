@@ -1,12 +1,12 @@
-import useEffect from 'react'
 import { Link } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
+import { useEffect } from 'react'
 
 const Nazioni = () => {
   const { data: nazione, loading, error } = useFetch('/nazioni', 'GET')
 
   useEffect(() => {
-    if (nazione) console.log('Tutte le Auto:', nazione)
+    if (nazione) console.log('Dati Nazioni:', nazione)
   }, [nazione])
 
   if (loading) return <p>Caricamento...</p>
@@ -16,7 +16,7 @@ const Nazioni = () => {
   return (
     <section className="pt-30 mx-auto bg-white border-gray-200 dark:bg-gray-900">
       <div className="container flex flex-col items-center justify-center gap-10 px-6 py-8 mx-auto">
-        <h1 className="color-website self-start">Nazioni</h1>
+        <h1 className="color-website ">Nazioni</h1>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
           {nazione.length > 0 ? (
             nazione
@@ -27,7 +27,7 @@ const Nazioni = () => {
                   className="cursor-pointer flex flex-col items-center gap-3 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-5 justify-center transition duration-300 hover:bg-gradient-to-tl hover:from-gray-200 dark:hover:from-gray-700"
                 >
                   <img
-                    src={nazioni.logoUrl}
+                    src={nazioni.imageNation}
                     alt={nazioni.name}
                     className="w-35 h-20 object-contain"
                   />

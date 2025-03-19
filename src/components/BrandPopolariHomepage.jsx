@@ -2,6 +2,7 @@ import Porsche from '../assets/Logo_della_Porsche.svg.png'
 import Mercedes from '../assets/Mercedes-Logo.svg.png'
 import Bugatti from '../assets/Bugatti_Logo.png'
 import FerrariSvg from '../utils/FerrariSvg'
+import { Link } from 'react-router-dom'
 
 const BrandPopolariHomepage = () => {
   return (
@@ -34,12 +35,14 @@ const BrandPopolariHomepage = () => {
         </div>
       </div>
       <div className="mt-10 lg:mt-5">
-        <button
-          type="button"
-          class="focus:outline-none text-gray-200 !bg-[#22881b] !font-bold rounded-lg text-sm px-5 py-2.5 mt-7 !shadow-md"
-        >
-          Esplora tutti i marchi
-        </button>
+        <Link className="hover" to="/brand">
+          <button
+            type="button"
+            class="focus:outline-none text-gray-200 !bg-[#22881b] !font-bold rounded-lg text-sm px-5 py-2.5 mt-7 !shadow-md"
+          >
+            Esplora tutti i marchi
+          </button>
+        </Link>
       </div>
     </section>
   )

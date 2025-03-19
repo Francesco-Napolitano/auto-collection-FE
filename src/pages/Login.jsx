@@ -25,7 +25,7 @@ const Login = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 shadow rounded">
+    <div className="max-w-md mx-auto mt-30 bg-white p-6 shadow rounded">
       <h2 className="text-xl font-bold mb-4">Login</h2>
       {error && <p className="text-red-500">{error}</p>}
 

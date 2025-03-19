@@ -15,7 +15,7 @@ const Brand = () => {
   return (
     <section className="pt-30 mx-auto bg-white border-gray-200 dark:bg-gray-900">
       <div className="container flex flex-col items-center justify-center gap-10 px-6 py-8 mx-auto">
-        <h1 className="color-website self-start">Brand</h1>
+        <h1 className="color-website ">Brand</h1>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
           {brand.length > 0 ? (
             brand
