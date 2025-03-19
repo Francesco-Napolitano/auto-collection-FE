@@ -46,7 +46,7 @@ const Home = () => {
     )
 
   return (
-    <div className="pt-25 bg-white border-gray-200 dark:bg-gray-900 ">
+    <div className="pt-35 md:pt-25 bg-white border-gray-200 dark:bg-gray-900 ">
       <section className="flex flex-col items-center gap-5">
         <h1 className="color-website max-[466px]:pt-20 px-3">
           Scopri le Auto più Iconiche di Sempre
