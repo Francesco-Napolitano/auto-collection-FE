@@ -35,9 +35,15 @@ const Home = () => {
     if (auto) console.log('Tutte le Auto:', auto)
   }, [auto])
 
-  if (loading) return <p>Caricamento...</p>
-  if (error) return <p>Errore nel caricamento.</p>
-  if (!auto) return <p>Nessun dato trovato per questa auto.</p>
+  if (loading && error) return <p>Caricamento</p>
+  if (!auto)
+    return (
+      <div class="flex items-center w-full justify-center mx-auto h-100 rounded-3xl dark:bg-gray-800 ">
+        <div className="px-5 py-2 text-lg font-semibold text-white bg-[#22881B] rounded-lg animate-pulse">
+          Caricamento...
+        </div>
+      </div>
+    )
 
   return (
     <div className="pt-25 bg-white border-gray-200 dark:bg-gray-900 ">

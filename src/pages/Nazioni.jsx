@@ -9,10 +9,15 @@ const Nazioni = () => {
     if (nazione) console.log('Dati Nazioni:', nazione)
   }, [nazione])
 
-  if (loading) return <p>Caricamento...</p>
-  if (error) return <p>Errore nel caricamento.</p>
-  if (!nazione) return <p>Nessun dato trovato per questa nazione.</p>
-
+  if (loading && error) return <p>Caricamento</p>
+  if (!nazione)
+    return (
+      <div class="flex items-center w-full justify-center mx-auto h-100 rounded-3xl dark:bg-gray-800 ">
+        <div className="px-5 py-2 text-lg font-semibold text-white bg-[#22881B] rounded-lg animate-pulse">
+          Caricamento...
+        </div>
+      </div>
+    )
   return (
     <section className="pt-30 mx-auto bg-white border-gray-200 dark:bg-gray-900">
       <div className="container flex flex-col items-center justify-center gap-10 px-6 py-8 mx-auto">

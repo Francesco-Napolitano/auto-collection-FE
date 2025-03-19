@@ -15,7 +15,7 @@ import Footer from './components/Footer'
 import AboutPageFooter from './components/AboutPageFooter'
 import Automobili from './pages/Automobili'
 
-function App() {
+const App = () => {
   useEffect(() => {
     var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon')
     var themeToggleLightIcon = document.getElementById(

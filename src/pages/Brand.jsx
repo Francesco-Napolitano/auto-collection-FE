@@ -8,9 +8,15 @@ const Brand = () => {
     if (brand) console.log('Tutte le Auto:', brand)
   }, [brand])
 
-  if (loading) return <p>Caricamento...</p>
-  if (error) return <p>Errore nel caricamento.</p>
-  if (!brand) return <p>Nessun dato trovato per questa brand.</p>
+  if (loading && error) return <p>Caricamento</p>
+  if (!brand)
+    return (
+      <div class="flex items-center w-full justify-center mx-auto h-100 rounded-3xl dark:bg-gray-800 ">
+        <div className="px-5 py-2 text-lg font-semibold text-white bg-[#22881B] rounded-lg animate-pulse">
+          Caricamento...
+        </div>
+      </div>
+    )
 
   return (
     <section className="pt-30 mx-auto bg-white border-gray-200 dark:bg-gray-900">

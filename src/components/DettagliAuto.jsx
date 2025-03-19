@@ -20,9 +20,23 @@ const DettagliAuto = () => {
     console.log('Immagini Auto:', img)
   }, [auto, img])
 
-  if (loading || imgLoading) return <p>Caricamento...</p>
-  if (error || imgError) return <p>Errore nel caricamento.</p>
-  if (!auto) return <p>Nessun dato trovato per questa auto.</p>
+  if (loading && error && !auto)
+    return (
+      <div class="flex items-center justify-center w-56 h-56 rounded-3xl dark:bg-gray-800 ">
+        <div className="px-5 py-2 text-lg font-semibold text-white bg-[#22881B] rounded-lg animate-pulse">
+          Caricamento...
+        </div>
+      </div>
+    )
+
+  if (imgLoading && imgError && !img)
+    return (
+      <div class="flex items-center justify-center w-56 h-56 rounded-3xl dark:bg-gray-800 ">
+        <div className="px-5 py-2 text-lg font-semibold text-white bg-[#22881B] rounded-lg animate-pulse">
+          Caricamento...
+        </div>
+      </div>
+    )
 
   return (
     <div className="container mx-auto">
