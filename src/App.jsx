@@ -63,7 +63,7 @@ function App() {
   }, [])
 
   return (
-    <div className="">
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -92,7 +92,7 @@ function App() {
         <Route path="*" element={<h1>404 - Pagina non trovata</h1>} />
       </Routes>
       <Footer />
-    </div>
+    </>
   )
 }
 

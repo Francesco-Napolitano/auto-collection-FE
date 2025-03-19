@@ -23,7 +23,7 @@ const Brand = () => {
               .map((brand) => (
                 <div
                   key={brand.id}
-                  className="flex flex-col items-center gap-3 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-5 justify-center transition duration-300 hover:bg-gradient-to-tl hover:from-gray-200 "
+                  className="cursor-pointer flex flex-col items-center gap-3 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-5 justify-center transition duration-300 hover:bg-gradient-to-tl hover:from-gray-200 dark:hover:from-gray-700"
                 >
                   <img
                     src={brand.logoUrl}

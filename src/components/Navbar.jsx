@@ -3,7 +3,7 @@ import logoWebsite from '../assets/logoauto.png'
 
 const Navbar = () => {
   return (
-    <nav className="w-full bg-white border-gray-200 dark:bg-gray-900 px-3 xl:px-0 fixed top-0 z-10 overflow-hidden mb-2">
+    <nav className="w-full bg-white border-gray-200 dark:bg-gray-900 fixed top-0 z-10 overflow-y-hidden mb-2">
       <div className=" max-w-screen-xl flex flex-wrap items-center justify-center max-[464px]:pb-8 min-[464px]:justify-between mx-auto ">
         <a
           href="/"
@@ -131,7 +131,7 @@ const Navbar = () => {
                 href="#"
                 className="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-gray-200 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
-                Nazioni
+                <Link to="/nazioni">Nazioni</Link>
               </a>
             </li>
           </ul>

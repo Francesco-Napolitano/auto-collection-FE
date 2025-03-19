@@ -1,42 +1,47 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import useEffect from 'react'
 import { Link } from 'react-router-dom'
+import useFetch from '../hooks/useFetch'
 
 const Nazioni = () => {
-  const [nazioni, setNazioni] = useState([])
+  const { data: nazione, loading, error } = useFetch('/nazioni', 'GET')
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.get('http://localhost:8080/nazioni', 'GET')
-        console.log(res.data)
-        setNazioni(res.data)
-      } catch (error) {
-        console.error('Errore nel caricamento delle nazioni:', error)
-      }
-    }
-    fetchData()
-  }, [])
+    if (nazione) console.log('Tutte le Auto:', nazione)
+  }, [nazione])
+
+  if (loading) return <p>Caricamento...</p>
+  if (error) return <p>Errore nel caricamento.</p>
+  if (!nazione) return <p>Nessun dato trovato per questa nazione.</p>
 
   return (
-    <div className="container mx-auto">
-      <h1>Nazioni</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {nazioni.length > 0 ? (
-          nazioni.map((nazione) => (
-            <div key={nazione.id} className="bg-white shadow-lg rounded-lg p-4">
-              <h2 className="text-xl font-semibold mb-2">{nazione.name}</h2>
-              <Link to={`/nazioni/${nazione.id}`}>
-                <img src={nazione.imageNation} alt={nazione.name} />
-              </Link>
-            </div>
-          ))
-        ) : (
-          <p className="text-center text-gray-500">Nessuna nazione trovata.</p>
-        )}
+    <section className="pt-30 mx-auto bg-white border-gray-200 dark:bg-gray-900">
+      <div className="container flex flex-col items-center justify-center gap-10 px-6 py-8 mx-auto">
+        <h1 className="color-website self-start">Nazioni</h1>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+          {nazione.length > 0 ? (
+            nazione
+              .sort((a, b) => a.name.localeCompare(b.name)) // Ordina alfabeticamente
+              .map((nazioni) => (
+                <div
+                  key={nazioni.id}
+                  className="cursor-pointer flex flex-col items-center gap-3 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-5 justify-center transition duration-300 hover:bg-gradient-to-tl hover:from-gray-200 dark:hover:from-gray-700"
+                >
+                  <img
+                    src={nazioni.logoUrl}
+                    alt={nazioni.name}
+                    className="w-35 h-20 object-contain"
+                  />
+                  <p className="text-lg font-medium text-gray-900 dark:text-gray-200">
+                    {nazioni.name}
+                  </p>
+                </div>
+              ))
+          ) : (
+            <p className="text-gray-500">Nessun brand disponibile</p>
+          )}
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
-
 export default Nazioni
