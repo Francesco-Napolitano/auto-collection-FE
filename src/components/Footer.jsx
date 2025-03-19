@@ -3,7 +3,7 @@ import logoWeb from '../assets/logoauto.png'
 
 const Footer = () => {
   return (
-    <footer class="shadow-sm dark:bg-gray-900 overflow-hidden">
+    <footer class="shadow-sm dark:bg-gray-900 overflow-hidden px-5 ">
       <div class="max-w-screen-xl mx-auto md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
           <Link to="/">

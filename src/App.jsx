@@ -11,7 +11,7 @@ import Login from './pages/Login'
 import Logout from './pages/Logout'
 import Navbar from './components/Navbar'
 import { useEffect } from 'react'
-import Footer from './pages/Footer'
+import Footer from './components/Footer'
 import AboutPageFooter from './components/AboutPageFooter'
 import Automobili from './pages/Automobili'
 

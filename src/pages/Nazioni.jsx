@@ -24,13 +24,15 @@ const Nazioni = () => {
               .map((nazioni) => (
                 <div
                   key={nazioni.id}
-                  className="cursor-pointer flex flex-col items-center gap-3 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-5 justify-center transition duration-300 hover:bg-gradient-to-tl hover:from-gray-200 dark:hover:from-gray-700"
+                  className="cursor-pointer flex flex-col items-center gap-3 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 pb-3 justify-center transition duration-300 hover:bg-gradient-to-tl hover:from-gray-200 dark:hover:from-gray-700"
                 >
-                  <img
-                    src={nazioni.imageNation}
-                    alt={nazioni.name}
-                    className="w-35 h-20 object-contain"
-                  />
+                  <div className="h-full rounded-lg px-2 pt-2 pb-1 bg-gray-100 dark:bg-gray-900">
+                    <img
+                      src={nazioni.imageNation}
+                      alt={nazioni.name}
+                      className="w-38 h-25 object-contain"
+                    />
+                  </div>
                   <p className="text-lg font-medium text-gray-900 dark:text-gray-200">
                     {nazioni.name}
                   </p>
