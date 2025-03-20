@@ -40,7 +40,17 @@ const Automobili = () => {
         <div className="grid grid-cols-1 gap-x-5  gap-y-15 lg:grid-cols-3 md:grid-cols-2 2xl:grid-cols-4">
           {auto.length > 0 ? (
             auto.map((automobile) => (
-              <Link to={`/auto/${automobile.id}`}>
+              <Link
+                to={`/auto/${automobile.id}`}
+                onClick={(e) => {
+                  if (
+                    e.target.tagName === 'svg' ||
+                    e.target.parentElement.tagName === 'svg'
+                  ) {
+                    e.preventDefault()
+                  }
+                }}
+              >
                 <div
                   className="flex flex-col bg-white border border-gray-200 justify-center rounded-lg shadow-sm cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:hover:from-gray-700 duration-300 hover:bg-gradient-to-tl hover:from-gray-200 items-center px-3 py-5 transition"
                   key={automobile.id}
@@ -70,7 +80,9 @@ const Automobili = () => {
                         stroke-width="1"
                         stroke="currentColor"
                         class="size-6"
-                        onClick={favouriteColor}
+                        onClick={(e) => {
+                          favouriteColor(e)
+                        }}
                       >
                         <path
                           stroke-linecap="round"

@@ -87,8 +87,8 @@ const DettagliAuto = () => {
             </span>
           </p>
         </section>
-        <section className="flex flex-col md:flex-row md:justify-between gap-3">
-          <div>
+        <section className="flex flex-col md:flex-row md:justify-between gap-3 w-full">
+          <div className="w-full">
             <h2 className="!text-[22px] dark:text-gray-200 text-start mb-2 color-website">
               Fotogallery :
             </h2>
@@ -97,7 +97,7 @@ const DettagliAuto = () => {
                 <img
                   src={auto.immagini[0].immagineUrl}
                   alt={auto.modello}
-                  className="rounded-t-md"
+                  className="rounded-t-md w-full"
                 />
               </div>
               <div className="grid grid-cols-3  gap-0.5 ">
@@ -119,8 +119,8 @@ const DettagliAuto = () => {
               </div>
             </div>
           </div>
-          <aside className="flex flex-col basis-[70%] ">
-            <form class="max-w-sm flex flex-col items-center">
+          <aside className="flex flex-col basis-[47%] items-center">
+            <form class="w-1/2 flex flex-col items-center">
               <label
                 for="countries"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white "
@@ -144,7 +144,7 @@ const DettagliAuto = () => {
             <h2 className="!text-[26px] color-website dark:text-gray-200 text-start mb-2">
               Dimensioni e Caratteristiche
             </h2>
-            <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+            <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-2" />
             <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 py-5 text-gray-900 dark:text-gray-200">
               <div className="flex gap-1 items-baseline justify-center">
                 <p className="text-lg">Potenza:</p>
@@ -180,11 +180,26 @@ const DettagliAuto = () => {
             <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
             <p className="text-gray-900 dark:text-gray-200 text-start">
               <span className="font-bold">
-                {auto.descrizione.split('.').slice(0, 2).join('.\n\n')}.
+                {auto.descrizione.split('.').slice(0, 2).join('.')}.
               </span>
-              {auto.descrizione.split('.').slice(2).join('.\n\n')}
+              <br />
+              <br />
+              {auto.descrizione
+                .split('.')
+                .slice(2)
+                .filter((sentence) => sentence.trim() !== '')
+                .map((sentence, index) => (
+                  <span key={index}>
+                    {sentence}.
+                    {index % 2 === 1 && (
+                      <>
+                        <br />
+                        <br />
+                      </>
+                    )}
+                  </span>
+                ))}
             </p>
-            <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
           </div>
         </section>
       </div>

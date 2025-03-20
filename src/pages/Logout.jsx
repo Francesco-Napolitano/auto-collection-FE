@@ -6,7 +6,7 @@ const Logout = () => {
   const { logout } = useContext(AuthContext)
 
   return (
-    <div>
+    <div className="pt-30">
       <button
         onClick={() => {
           logout()
