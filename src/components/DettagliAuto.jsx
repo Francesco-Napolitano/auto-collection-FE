@@ -16,7 +16,7 @@ const DettagliAuto = () => {
   if (!auto)
     return (
       <div class="flex h-100 justify-center rounded-3xl w-full dark:bg-gray-800 items-center mx-auto">
-        <div className="bg-[#22881B] rounded-lg text-lg text-white animate-pulse font-semibold px-5 py-2">
+        <div className=" rounded-lg text-lg text-white animate-pulse font-semibold px-5 py-2">
           Caricamento...
         </div>
       </div>
@@ -24,9 +24,9 @@ const DettagliAuto = () => {
 
   return (
     <div className="w-full bg-white dark:bg-gray-900 pt-30 px-20">
-      <div className="flex flex-col items-start  p-6 gap-10  mx-30 bg-white border-gray-200 dark:bg-gray-800 rounded-lg shadow-md dark:border-gray-700 duration-300 transition">
+      <div className="flex flex-col items-start  p-6 gap-10  mx-30 bg-white border-gray-200 dark:bg-gray-800 rounded-lg shadow-xl dark:border-gray-700 duration-300 transition">
         <section>
-          <h1 className="self-start color-website !text-[30px] pb-3">
+          <h1 className="self-start !text-[35px] pb-3 text-gray-900 dark:text-gray-200">
             {auto.nome} {auto.modello}{' '}
           </h1>
           <p className=" text-sm text-gray-900 dark:text-gray-200 gap-3 flex">
@@ -87,41 +87,32 @@ const DettagliAuto = () => {
             </span>
           </p>
         </section>
-
-        <section>
-          <div>
-            <h2 className="!text-[22px] dark:text-gray-200 text-start mb-2">
-              Dimensioni e Caratteristiche
-            </h2>
-          </div>
-        </section>
-
         <section className="flex flex-col md:flex-row md:justify-between gap-3">
           <div>
-            <h2 className="!text-[22px] dark:text-gray-200 text-start mb-2">
-              Fotogallery: {auto.nome} {auto.modello}
+            <h2 className="!text-[22px] dark:text-gray-200 text-start mb-2 color-website">
+              Fotogallery :
             </h2>
             <div className="grid grid-cols-1 gap-0.5 ">
-              <div className="w-5/6 ">
+              <div>
                 <img
                   src={auto.immagini[0].immagineUrl}
                   alt={auto.modello}
                   className="rounded-t-md"
                 />
               </div>
-              <div className="grid grid-cols-3 w-5/6 gap-0.5 ">
+              <div className="grid grid-cols-3  gap-0.5 ">
                 <img
-                  className="w-full rounded-bl-md"
-                  src={auto.immagini[1].immagineUrl}
-                  alt={auto.modello}
-                />
-                <img
-                  className="w-full"
+                  className=" rounded-bl-md"
                   src="https://placecats.com/300/200"
                   alt={auto.modello}
                 />
                 <img
-                  className="w-full rounded-br-md"
+                  className=""
+                  src="https://placecats.com/300/200"
+                  alt={auto.modello}
+                />
+                <img
+                  className=" rounded-br-md"
                   src="https://placecats.com/300/200"
                   alt={auto.modello}
                 />
@@ -147,6 +138,54 @@ const DettagliAuto = () => {
               </select>
             </form>
           </aside>
+        </section>
+        <section>
+          <div className="flex flex-col ">
+            <h2 className="!text-[26px] color-website dark:text-gray-200 text-start mb-2">
+              Dimensioni e Caratteristiche
+            </h2>
+            <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+            <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 py-5 text-gray-900 dark:text-gray-200">
+              <div className="flex gap-1 items-baseline justify-center">
+                <p className="text-lg">Potenza:</p>
+                <p className="font-bold">
+                  {' '}
+                  {auto.potenza} CV (
+                  {Math.round(auto.potenza * 0.735 * 100) / 100} kW)
+                </p>
+              </div>
+              <div className="flex gap-1 items-baseline justify-center">
+                <p className="text-lg">Coppia:</p>
+                <p className="font-semibold"> {auto.coppia} Nm </p>
+              </div>
+              <div className="flex gap-1 items-baseline justify-center">
+                <p className="text-lg">Velocità Massima:</p>
+                <p className="font-semibold"> {auto.velocitaMax} km/h </p>
+              </div>
+              <div className="flex gap-1 items-baseline justify-center">
+                <p className="text-lg">Motore:</p>
+                <p className="font-semibold">
+                  {' '}
+                  {auto.strutturaMotore} {auto.motore.toLowerCase()}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div className="flex flex-col ">
+            <h2 className="!text-[26px] color-website dark:text-gray-200 text-start mb-2">
+              Descrizione
+            </h2>
+            <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+            <p className="text-gray-900 dark:text-gray-200 text-start">
+              <span className="font-bold">
+                {auto.descrizione.split('.').slice(0, 2).join('.\n\n')}.
+              </span>
+              {auto.descrizione.split('.').slice(2).join('.\n\n')}
+            </p>
+            <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+          </div>
         </section>
       </div>
     </div>
