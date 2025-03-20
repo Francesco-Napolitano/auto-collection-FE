@@ -8,31 +8,15 @@ const DettagliAuto = () => {
   // Fetch dei dettagli dell'auto
   const { data: auto, loading, error } = useFetch(`auto/${id}`, 'GET')
 
-  // Fetch delle immagini dell'auto
-  const {
-    data: img = [],
-    loading: imgLoading,
-    error: imgError,
-  } = useFetch(`immagini/auto/${id}`, 'GET')
-
   useEffect(() => {
     console.log('Dati Auto:', auto)
-    console.log('Immagini Auto:', img)
-  }, [auto, img])
+  }, [auto])
 
-  if (loading && error && !auto)
+  if (loading && error) return <p>Caricamento</p>
+  if (!auto)
     return (
-      <div class="flex items-center justify-center w-56 h-56 rounded-3xl dark:bg-gray-800 ">
-        <div className="px-5 py-2 text-lg font-semibold text-white bg-[#22881B] rounded-lg animate-pulse">
-          Caricamento...
-        </div>
-      </div>
-    )
-
-  if (imgLoading && imgError && !img)
-    return (
-      <div class="flex items-center justify-center w-56 h-56 rounded-3xl dark:bg-gray-800 ">
-        <div className="px-5 py-2 text-lg font-semibold text-white bg-[#22881B] rounded-lg animate-pulse">
+      <div class="flex h-100 justify-center rounded-3xl w-full dark:bg-gray-800 items-center mx-auto">
+        <div className="bg-[#22881B] rounded-lg text-lg text-white animate-pulse font-semibold px-5 py-2">
           Caricamento...
         </div>
       </div>
@@ -40,23 +24,20 @@ const DettagliAuto = () => {
 
   return (
     <div className="container mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-6">
+      <h1 className="text-3xl text-center font-bold mb-6">
         {auto?.modello || 'Modello non disponibile'}
       </h1>
       <p className="text-center text-gray-600">
         {auto?.brand || 'Brand non disponibile'}
       </p>
 
-      {Array.isArray(img) && img.length > 0 ? (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-          {img.map((image) => (
-            <img
-              key={image.id}
-              src={image.immagineUrl}
-              alt={auto?.modello || 'Auto'}
-              className="w-full h-40 object-cover rounded-lg shadow"
-            />
-          ))}
+      {auto.length > 0 ? (
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 mt-6">
+          <img
+            key={auto.id}
+            alt={auto?.modello || 'Auto'}
+            className="h-40 rounded-lg shadow w-full object-cover"
+          />
         </div>
       ) : (
         <p className="text-center text-gray-500 mt-4">

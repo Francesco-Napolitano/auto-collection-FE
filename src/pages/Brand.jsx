@@ -1,42 +1,51 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import useFetch from '../hooks/useFetch'
 
 const Brand = () => {
   const { data: brand, loading, error } = useFetch('/brand', 'GET')
 
+  const [loadedImages, setLoadedImages] = useState({})
+
   useEffect(() => {
     if (brand) console.log('Tutte le Auto:', brand)
   }, [brand])
 
+  const handleImageLoad = (id) => {
+    setLoadedImages((prev) => ({ ...prev, [id]: true }))
+  }
+
   if (loading && error) return <p>Caricamento</p>
   if (!brand)
     return (
-      <div class="flex items-center w-full justify-center mx-auto h-100 rounded-3xl dark:bg-gray-800 ">
-        <div className="px-5 py-2 text-lg font-semibold text-white bg-[#22881B] rounded-lg animate-pulse">
+      <div class="flex h-100 justify-center rounded-3xl w-full dark:bg-gray-800 items-center mx-auto">
+        <div className="bg-[#22881B] rounded-lg text-lg text-white animate-pulse font-semibold px-5 py-2">
           Caricamento...
         </div>
       </div>
     )
 
   return (
-    <section className="pt-30 mx-auto bg-white border-gray-200 dark:bg-gray-900">
-      <div className="container flex flex-col items-center justify-center gap-10 px-6 py-8 mx-auto">
-        <h1 className="color-website ">Brand</h1>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
+    <section className="bg-white border-gray-200 dark:bg-gray-900 mx-auto pt-30">
+      <div className="container flex flex-col justify-center gap-10 items-center mx-auto px-6 py-8">
+        <h1 className="color-website">Brand</h1>
+        <div className="grid grid-cols-2 gap-10 lg:grid-cols-4">
           {brand.length > 0 ? (
             brand
               .sort((a, b) => a.name.localeCompare(b.name)) // Ordina alfabeticamente
               .map((brand) => (
                 <div
                   key={brand.id}
-                  className="cursor-pointer flex flex-col items-center gap-3 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-5 justify-center transition duration-300 hover:bg-gradient-to-tl hover:from-gray-200 dark:hover:from-gray-700"
+                  className="flex flex-col bg-white border border-gray-200 justify-center p-5 rounded-lg shadow-sm cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:hover:from-gray-700 duration-300 gap-3 hover:bg-gradient-to-tl hover:from-gray-200 items-center transition"
                 >
                   <img
                     src={brand.logoUrl}
                     alt={brand.name}
-                    className="w-35 h-20 object-contain"
+                    className={`h-20 w-35 object-contain ${
+                      loadedImages[brand.id] ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    onLoad={() => handleImageLoad(brand.id)}
                   />
-                  <p className="text-lg font-medium text-gray-900 dark:text-gray-200">
+                  <p className="text-gray-900 text-lg dark:text-gray-200 font-medium">
                     {brand.name}
                   </p>
                 </div>

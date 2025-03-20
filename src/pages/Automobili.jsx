@@ -1,10 +1,12 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import useFetch from '../hooks/useFetch'
 import { Link } from 'react-router-dom'
 
 const Automobili = () => {
   const { data: auto, loading, error } = useFetch('/auto', 'GET')
   //richiama tutte le automobili del database
+
+  const [loadedImages, setLoadedImages] = useState({})
 
   //onClick function che colora il cuore
   const favouriteColor = (ev) => {
@@ -15,41 +17,49 @@ const Automobili = () => {
     auto ? console.log('Automobili sezione:', auto) : 'Nessun auto'
   })
 
+  //funzione che si occupa del caricamento delle immagini delle auto
+  const handleImageLoad = (id) => {
+    setLoadedImages((prev) => ({ ...prev, [id]: true }))
+  }
+
   if (loading && error) return <p>Caricamento</p>
   if (!auto)
     return (
-      <div class="flex items-center w-full justify-center mx-auto h-100 rounded-3xl dark:bg-gray-800 ">
-        <div className="px-5 py-2 text-lg font-semibold text-white bg-[#22881B] rounded-lg animate-pulse">
+      <div class="flex h-100 justify-center rounded-3xl w-full dark:bg-gray-800 items-center mx-auto">
+        <div className="bg-[#22881B] rounded-lg text-lg text-white animate-pulse font-semibold px-5 py-2">
           Caricamento...
         </div>
       </div>
     )
   return (
-    <section className="pt-40 md:pt-25 mx-auto bg-white border-gray-200 dark:bg-gray-900">
-      <div className="container flex flex-col items-center justify-center gap-10 px-6 py-8 mx-auto">
+    <section className="bg-white border-gray-200 dark:bg-gray-900 md:pt-25 mx-auto pt-40">
+      <div className="container flex flex-col justify-center gap-10 items-center mx-auto px-6 py-8">
         <h1 className="color-website self-start">
           Esplora le Auto più Iconiche di Sempre
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-10 gap-y-15">
+        <div className="grid grid-cols-1 gap-x-10 gap-y-15 lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-4">
           {auto.length > 0 ? (
             auto.map((automobile) => (
-              <Link to="/auto/:id">
+              <Link to={`/auto/${automobile.id}`}>
                 <div
-                  className="cursor-pointer flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 p-5 justify-center transition duration-300 hover:bg-gradient-to-tl hover:from-gray-200 dark:hover:from-gray-700"
+                  className="flex flex-col bg-white border border-gray-200 justify-center rounded-lg shadow-sm cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:hover:from-gray-700 duration-300 hover:bg-gradient-to-tl hover:from-gray-200 items-center px-3 py-5 transition"
                   key={automobile.id}
                 >
                   <img
-                    className="w-80 h-60 md:h-50 rounded-t-lg mb-2"
+                    className={`h-70 rounded-t-lg w-80 mb-2 md:h-55 transition-opacity duration-500 ${
+                      loadedImages[automobile.id] ? 'opacity-100' : 'opacity-0'
+                    }`}
                     src={automobile.immagini[0].immagineUrl}
                     alt={automobile.modello}
+                    onLoad={() => handleImageLoad(automobile.id)}
                   />
-                  <div className="flex gap-2 flex-col  w-full text-start">
+                  <div className="flex flex-col text-start w-full gap-2">
                     <div className="flex justify-between py-1">
                       <div>
-                        <p className="text-start text-sm uppercase font-mono text-gray-800 dark:text-gray-400 font-stretch-150%">
+                        <p className="text-gray-800 text-sm text-start dark:text-gray-400 font-mono font-stretch-150% uppercase">
                           {automobile.nome}
                         </p>
-                        <p className="font-bold mb-3 text-gray-900 dark:text-gray-200">
+                        <p className="text-gray-900 dark:text-gray-200 font-bold mb-3">
                           {automobile.modello}
                         </p>
                       </div>
@@ -59,7 +69,7 @@ const Automobili = () => {
                         viewBox="0 0 24 24"
                         stroke-width="1"
                         stroke="currentColor"
-                        class="size-6 "
+                        class="size-6"
                         onClick={favouriteColor}
                       >
                         <path
@@ -70,10 +80,10 @@ const Automobili = () => {
                       </svg>
                     </div>
 
-                    <div className="flex items-center justify-between ">
+                    <div className="flex justify-between items-center">
                       <span className="flex text-gray-900 dark:text-gray-200 items-center">
                         <svg
-                          class="w-4 h-4 text-gray-800 dark:text-gray-200 mr-1"
+                          class="h-4 text-gray-800 w-4 dark:text-gray-200 mr-1"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -86,14 +96,14 @@ const Automobili = () => {
                         </svg>
                         {automobile.anno}
                       </span>
-                      <span className=" flex text-gray-900 items-center dark:text-gray-200">
+                      <span className="flex text-gray-900 dark:text-gray-200 items-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke-width="1.5"
                           stroke="currentColor"
-                          class="w-5 h-5 mr-1"
+                          class="h-5 w-5 mr-1"
                         >
                           <path
                             stroke-linecap="round"
@@ -103,9 +113,9 @@ const Automobili = () => {
                         </svg>
                         {automobile.potenza} CV
                       </span>
-                      <span className="flex items-center text-gray-900 dark:text-gray-200">
+                      <span className="flex text-gray-900 dark:text-gray-200 items-center">
                         <svg
-                          class="h-5 w-5 text-gray-00 dark:text-gray-200 mr-1"
+                          class="h-5 text-gray-00 w-5 dark:text-gray-200 mr-1"
                           viewBox="0 0 24 24"
                           stroke-width="2"
                           stroke="currentColor"

@@ -3,29 +3,29 @@ import logoWeb from '../assets/logoauto.png'
 
 const Footer = () => {
   return (
-    <footer class="shadow-sm dark:bg-gray-900 overflow-hidden px-5 pt-10">
-      <div class="max-w-screen-xl mx-auto md:py-8">
+    <footer class="shadow-sm dark:bg-gray-900 overflow-hidden pt-10 px-5">
+      <div class="max-w-screen-xl md:py-8 mx-auto">
         <div class="sm:flex sm:items-center sm:justify-between">
           <Link to="/">
-            <a class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+            <a class="flex items-center mb-4 rtl:space-x-reverse sm:mb-0 space-x-3">
               <img
                 src={logoWeb}
-                className="mt-1 h-10"
+                className="h-10 mt-1"
                 alt="AutoIconiche logo"
               />
-              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              <span class="text-2xl dark:text-white font-semibold self-center whitespace-nowrap">
                 AutoIconiche
               </span>
             </a>
           </Link>
-          <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+          <ul class="flex flex-wrap text-gray-500 text-sm dark:text-gray-400 font-medium items-center mb-6 sm:mb-0">
             <li>
-              <a class="hover:underline me-4 md:me-6">
+              <a class="hover:underline md:me-6 me-4">
                 <Link to="/common/about">About</Link>
               </a>
             </li>
             <li>
-              <a href="#" class="hover:underline me-4 md:me-6">
+              <a href="#" class="hover:underline md:me-6 me-4">
                 Licensing
               </a>
             </li>
@@ -36,8 +36,8 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <hr class="border-gray-200 dark:border-gray-700 lg:my-8 my-6 sm:mx-auto" />
+        <span class="text-gray-500 text-sm block dark:text-gray-400 sm:text-center">
           © 2025{' '}
           <a href="#" class="hover:underline">
             AutoIconiche™
@@ -48,7 +48,7 @@ const Footer = () => {
           Immagini fornite da
           <a
             href="https://it.wikipedia.org/wiki/Pagina_principale"
-            className="text-xs text-gray-500 sm:text-center dark:text-gray-400"
+            className="text-gray-500 text-xs dark:text-gray-400 sm:text-center"
           >
             {' '}
             Wikipedia
@@ -58,7 +58,7 @@ const Footer = () => {
             href="https://motortrendtv.it/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-gray-500 sm:text-center dark:text-gray-400"
+            className="text-gray-500 text-xs dark:text-gray-400 sm:text-center"
           >
             {' '}
             MotorTrend
@@ -68,7 +68,7 @@ const Footer = () => {
             href="https://www.veloce.it/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-gray-500 sm:text-center dark:text-gray-400"
+            className="text-gray-500 text-xs dark:text-gray-400 sm:text-center"
           >
             {' '}
             veloce
@@ -78,17 +78,27 @@ const Footer = () => {
             href="https://autosprint.corrieredellosport.it/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-gray-500 sm:text-center dark:text-gray-400"
+            className="text-gray-500 text-xs dark:text-gray-400 sm:text-center"
           >
             {' '}
             Autosprint
           </a>
           ,
           <a
+            href="https://it.motor1.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 text-xs dark:text-gray-400 sm:text-center"
+          >
+            {' '}
+            Motor1
+          </a>
+          ,
+          <a
             href="https://autodesignmagazine.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-gray-500 sm:text-center dark:text-gray-400"
+            className="text-gray-500 text-xs dark:text-gray-400 sm:text-center"
           >
             {' '}
             Auto&Design
