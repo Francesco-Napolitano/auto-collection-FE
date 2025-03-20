@@ -14,6 +14,7 @@ import { useEffect } from 'react'
 import Footer from './components/Footer'
 import AboutPageFooter from './components/AboutPageFooter'
 import Automobili from './pages/Automobili'
+import Ricerca from './components/Ricerca'
 
 const App = () => {
   useEffect(() => {
@@ -71,6 +72,7 @@ const App = () => {
         <Route path="/brand" element={<Brand />} />
         <Route path="/nazioni" element={<Nazioni />} />
         <Route path="/auto" element={<Automobili />} />
+        <Route path="/ricerca" element={<Ricerca />} />
         <Route path="/logout" element={<Logout />} />
         <Route
           path="/auto/:id"

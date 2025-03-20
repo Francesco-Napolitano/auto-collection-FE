@@ -13,12 +13,37 @@ import BrandPopolariHomepage from '../components/BrandPopolariHomepage'
 const Home = () => {
   const { data: auto, loading, error } = useFetch('/auto', 'GET')
 
-  const [brandSelezionato, setBrandSelezionato] = useState(null)
-  const [nazioneSelezionata, setNazioneSelezionata] = useState(null)
-  const [modelli, setModelli] = useState([])
+  const [brandSelezionato, setBrandSelezionato] = useState('')
+  const [modelli, setModelli] = useState('')
+  const [prezzoMin, setPrezzoMin] = useState('')
+  const [annoMin, setAnnoMin] = useState('')
+  const [nazioneSelezionata, setNazioneSelezionata] = useState('')
+
+  // funzione che trasforma i nomi dei  brand in numero da passare come id
+  const brandMap = {
+    if(auto) {
+      auto.forEach((auto) => {
+        brandMap[auto.nome] = auto.brand.id
+      })
+    },
+  }
+
+  // funzione che trasforma i nomi delle nazioni in numero da passare come id
 
   const brandUnici = [...new Set(auto?.map((auto) => auto.nome))]
-  const nazioniUniche = [...new Set(auto?.map((auto) => auto.nazione.name))]
+  const nazioniUniche = [...new Set(auto?.map((auto) => auto.nazione.id))]
+  // Funzione per creare l'URL con i parametri validi
+  const buildQueryParams = () => {
+    const params = new URLSearchParams()
+
+    if (modelli.length > 0) params.append('modello', modelli.join(','))
+    if (prezzoMin) params.append('prezzo', Number(prezzoMin))
+    if (annoMin) params.append('anno', Number(annoMin))
+    if (brandSelezionato) params.append('brandID', brandMap[brandSelezionato])
+    if (nazioneSelezionata) params.append('nazioneId', nazioneSelezionata)
+
+    return params.toString() // Restituisce la query string
+  }
 
   useEffect(() => {
     if (brandSelezionato) {
@@ -35,7 +60,8 @@ const Home = () => {
     if (auto) console.log('Tutte le Auto:', auto)
   }, [auto])
 
-  if (loading && error) return <p>Caricamento</p>
+  if (loading) return <p>Caricamento</p>
+  if (error) return <p>Errore nel caricamento.</p>
   if (!auto)
     return (
       <div class="flex items-center w-full justify-center mx-auto h-100 rounded-3xl dark:bg-gray-800 ">
@@ -123,6 +149,8 @@ const Home = () => {
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
             placeholder="A partire da (€)"
             min={0}
+            value={prezzoMin}
+            onChange={(e) => setPrezzoMin(e.target.value)}
           />
           <label for="number-input" class="sr-only">
             Select a number:
@@ -133,11 +161,13 @@ const Home = () => {
             aria-describedby="helper-text-explanation"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
             placeholder="Anno da"
-            min={0}
+            min={1886}
+            value={annoMin}
+            onChange={(e) => setAnnoMin(e.target.value)}
           />
-          <label htmlFor="brand" className="sr-only"></label>
+          <label htmlFor="nazione" className="sr-only"></label>
           <select
-            id="brand"
+            id="nazione"
             value={nazioneSelezionata}
             onChange={(e) => setNazioneSelezionata(e.target.value)}
             className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
@@ -149,12 +179,14 @@ const Home = () => {
               </option>
             ))}
           </select>
-          <button
-            type="submit"
-            className="text-gray-200 !font-bold  !bg-[#22881b] shadow-sm shadow-[#22881b]"
-          >
-            Search
-          </button>
+          <Link to={`/ricerca?${buildQueryParams()}`}>
+            <button
+              type="submit"
+              className="text-gray-200 w-full !font-bold !bg-[#22881b] h-full shadow-sm shadow-[#22881b]"
+            >
+              Search
+            </button>
+          </Link>
         </form>
       </section>
       <div id="stats" class="bg-white py-10 dark:bg-gray-900 ">
