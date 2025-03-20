@@ -79,7 +79,7 @@ const Automobili = () => {
                         viewBox="0 0 24 24"
                         stroke-width="1"
                         stroke="currentColor"
-                        class="size-6"
+                        class="size-6 text-gray-900 dark:text-gray-200"
                         onClick={(e) => {
                           favouriteColor(e)
                         }}

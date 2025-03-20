@@ -9,7 +9,7 @@ const Ricerca = () => {
     data: auto,
     loading,
     error,
-  } = useFetch(`/auto?${searchParams.toString()}`, 'GET')
+  } = useFetch(`/auto/filtri?${searchParams.toString()}`, 'GET')
 
   useEffect(() => {
     console.log('Auto filtrate: ', auto, searchParams)

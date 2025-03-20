@@ -20,18 +20,23 @@ const Home = () => {
   const [nazioneSelezionata, setNazioneSelezionata] = useState('')
 
   // funzione che trasforma i nomi dei  brand in numero da passare come id
-  const brandMap = {
-    if(auto) {
-      auto.forEach((auto) => {
-        brandMap[auto.nome] = auto.brand.id
-      })
-    },
+  const brandMap = {}
+  if (auto) {
+    auto.forEach((auto) => {
+      brandMap[auto.nome] = auto.brand.id
+    })
   }
 
   // funzione che trasforma i nomi delle nazioni in numero da passare come id
+  const nazioneMap = {}
+  if (auto) {
+    auto.forEach((auto) => {
+      nazioneMap[auto.nazione.name] = auto.nazione.id
+    })
+  }
 
   const brandUnici = [...new Set(auto?.map((auto) => auto.nome))]
-  const nazioniUniche = [...new Set(auto?.map((auto) => auto.nazione.id))]
+  const nazioniUniche = [...new Set(auto?.map((auto) => auto.nazione.name))]
   // Funzione per creare l'URL con i parametri validi
   const buildQueryParams = () => {
     const params = new URLSearchParams()
@@ -40,7 +45,8 @@ const Home = () => {
     if (prezzoMin) params.append('prezzo', Number(prezzoMin))
     if (annoMin) params.append('anno', Number(annoMin))
     if (brandSelezionato) params.append('brandID', brandMap[brandSelezionato])
-    if (nazioneSelezionata) params.append('nazioneId', nazioneSelezionata)
+    if (nazioneSelezionata)
+      params.append('nazioneId', nazioneMap[nazioneSelezionata])
 
     return params.toString() // Restituisce la query string
   }
