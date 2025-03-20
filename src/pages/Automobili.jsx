@@ -37,7 +37,7 @@ const Automobili = () => {
         <h1 className="color-website self-start">
           Esplora le Auto più Iconiche di Sempre
         </h1>
-        <div className="grid grid-cols-1 gap-x-10 gap-y-15 lg:grid-cols-3 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-x-5  gap-y-15 lg:grid-cols-3 md:grid-cols-2 2xl:grid-cols-4">
           {auto.length > 0 ? (
             auto.map((automobile) => (
               <Link to={`/auto/${automobile.id}`}>
