@@ -81,19 +81,26 @@ const Automobili = () => {
                     </div>
 
                     <div className="flex justify-between items-center">
-                      <span className="flex text-gray-900 dark:text-gray-200 items-center">
+                      <span className="flex text-gray-900 dark:text-gray-200 items-center g">
                         <svg
-                          class="h-4 text-gray-800 w-4 dark:text-gray-200 mr-1"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-5 w-5 mb-0.5 mr-1"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.2"
+                          stroke="currentColor"
                           fill="none"
-                          viewBox="0 0 20 20"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
                         >
-                          <path
-                            fill="currentColor"
-                            d="M6 1a1 1 0 0 0-2 0h2ZM4 4a1 1 0 0 0 2 0H4Zm7-3a1 1 0 1 0-2 0h2ZM9 4a1 1 0 1 0 2 0H9Zm7-3a1 1 0 1 0-2 0h2Zm-2 3a1 1 0 1 0 2 0h-2ZM1 6a1 1 0 0 0 0 2V6Zm18 2a1 1 0 1 0 0-2v2ZM5 11v-1H4v1h1Zm0 .01H4v1h1v-1Zm.01 0v1h1v-1h-1Zm0-.01h1v-1h-1v1ZM10 11v-1H9v1h1Zm0 .01H9v1h1v-1Zm.01 0v1h1v-1h-1Zm0-.01h1v-1h-1v1ZM10 15v-1H9v1h1Zm0 .01H9v1h1v-1Zm.01 0v1h1v-1h-1Zm0-.01h1v-1h-1v1ZM15 15v-1h-1v1h1Zm0 .01h-1v1h1v-1Zm.01 0v1h1v-1h-1Zm0-.01h1v-1h-1v1ZM15 11v-1h-1v1h1Zm0 .01h-1v1h1v-1Zm.01 0v1h1v-1h-1Zm0-.01h1v-1h-1v1ZM5 15v-1H4v1h1Zm0 .01H4v1h1v-1Zm.01 0v1h1v-1h-1Zm0-.01h1v-1h-1v1ZM2 4h16V2H2v2Zm16 0h2a2 2 0 0 0-2-2v2Zm0 0v14h2V4h-2Zm0 14v2a2 2 0 0 0 2-2h-2Zm0 0H2v2h16v-2ZM2 18H0a2 2 0 0 0 2 2v-2Zm0 0V4H0v14h2ZM2 4V2a2 2 0 0 0-2 2h2Zm2-3v3h2V1H4Zm5 0v3h2V1H9Zm5 0v3h2V1h-2ZM1 8h18V6H1v2Zm3 3v.01h2V11H4Zm1 1.01h.01v-2H5v2Zm1.01-1V11h-2v.01h2Zm-1-1.01H5v2h.01v-2ZM9 11v.01h2V11H9Zm1 1.01h.01v-2H10v2Zm1.01-1V11h-2v.01h2Zm-1-1.01H10v2h.01v-2ZM9 15v.01h2V15H9Zm1 1.01h.01v-2H10v2Zm1.01-1V15h-2v.01h2Zm-1-1.01H10v2h.01v-2ZM14 15v.01h2V15h-2Zm1 1.01h.01v-2H15v2Zm1.01-1V15h-2v.01h2Zm-1-1.01H15v2h.01v-2ZM14 11v.01h2V11h-2Zm1 1.01h.01v-2H15v2Zm1.01-1V11h-2v.01h2Zm-1-1.01H15v2h.01v-2ZM4 15v.01h2V15H4Zm1 1.01h.01v-2H5v2Zm1.01-1V15h-2v.01h2Zm-1-1.01H5v2h.01v-2Z"
-                          ></path>
-                        </svg>
+                          {' '}
+                          <path stroke="none" d="M0 0h24v24H0z" />{' '}
+                          <rect x="4" y="5" width="16" height="16" rx="2" />{' '}
+                          <line x1="16" y1="3" x2="16" y2="7" />{' '}
+                          <line x1="8" y1="3" x2="8" y2="7" />{' '}
+                          <line x1="4" y1="11" x2="20" y2="11" />{' '}
+                          <rect x="8" y="15" width="2" height="2" />
+                        </svg>{' '}
                         {automobile.anno}
                       </span>
                       <span className="flex text-gray-900 dark:text-gray-200 items-center">
@@ -101,7 +108,7 @@ const Automobili = () => {
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
                           viewBox="0 0 24 24"
-                          stroke-width="1.5"
+                          stroke-width="1.2"
                           stroke="currentColor"
                           class="h-5 w-5 mr-1"
                         >
@@ -117,7 +124,7 @@ const Automobili = () => {
                         <svg
                           class="h-5 text-gray-00 w-5 dark:text-gray-200 mr-1"
                           viewBox="0 0 24 24"
-                          stroke-width="2"
+                          stroke-width="1.2"
                           stroke="currentColor"
                           fill="none"
                           stroke-linecap="round"

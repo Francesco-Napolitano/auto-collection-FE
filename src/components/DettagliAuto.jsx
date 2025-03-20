@@ -9,7 +9,7 @@ const DettagliAuto = () => {
   const { data: auto, loading, error } = useFetch(`auto/${id}`, 'GET')
 
   useEffect(() => {
-    console.log('Dati Auto:', auto)
+    console.log('Dati Auto Specifica:', auto)
   }, [auto])
 
   if (loading && error) return <p>Caricamento</p>
@@ -23,27 +23,74 @@ const DettagliAuto = () => {
     )
 
   return (
-    <div className="container mx-auto">
-      <h1 className="text-3xl text-center font-bold mb-6">
-        {auto?.modello || 'Modello non disponibile'}
-      </h1>
-      <p className="text-center text-gray-600">
-        {auto?.brand || 'Brand non disponibile'}
-      </p>
-
-      {auto.length > 0 ? (
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 mt-6">
-          <img
-            key={auto.id}
-            alt={auto?.modello || 'Auto'}
-            className="h-40 rounded-lg shadow w-full object-cover"
-          />
-        </div>
-      ) : (
-        <p className="text-center text-gray-500 mt-4">
-          Nessuna immagine disponibile.
+    <div className="w-full bg-white dark:bg-gray-900 pt-30">
+      <section className="flex flex-col justify-center p-5 gap-4  mx-30 bg-white border-gray-200 dark:bg-gray-800 rounded-lg shadow-md dark:border-gray-700 duration-300 transition">
+        <h1 className="self-start color-website !text-[30px]">
+          {auto.nome} {auto.modello}{' '}
+        </h1>
+        <p className=" text-sm text-gray-900 dark:text-gray-200 gap-3 flex">
+          <span className="text-gray-900 dark:text-gray-200 flex items-center gap-1 ">
+            <svg
+              class="h-5 w-5 "
+              viewBox="0 0 24 24"
+              stroke-width="1.2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              {' '}
+              <path stroke="none" d="M0 0h24v24H0z" />{' '}
+              <path d="M12 3l5 5a7 7 0 1 1 -10 0l5 -5" />
+            </svg>
+            {auto.alimentazione}
+          </span>
+          <span className="text-gray-900 dark:text-gray-200 flex items-center gap-1">
+            <svg
+              class="h-5 w-5 "
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.2"
+                d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
+              />
+            </svg>
+            {auto.motore}
+          </span>
+          <span className="text-gray-900 dark:text-gray-200 flex items-center gap-1">
+            <svg
+              class="h-5 text-gray-00 w-5 dark:text-gray-200 mr-1"
+              viewBox="0 0 24 24"
+              stroke-width="1.2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              {' '}
+              <path stroke="none" d="M0 0h24v24H0z" />{' '}
+              <circle cx="7" cy="17" r="2" /> <circle cx="17" cy="17" r="2" />{' '}
+              <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5" />
+            </svg>{' '}
+            {auto.carrozzeria}
+          </span>
         </p>
-      )}
+        <div>
+          <h2>
+            Fotogallery: {auto.nome} {auto.modello}
+          </h2>
+        </div>
+      </section>
     </div>
   )
 }
