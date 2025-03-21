@@ -1,7 +1,26 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logoWebsite from '../assets/logoauto.png'
+import { useState } from 'react'
 
 const Navbar = () => {
+  const [modelli, setModelli] = useState('')
+  const navigate = useNavigate() // Hook per la navigazione
+
+  const buildQueryParams = () => {
+    const params = new URLSearchParams()
+
+    if (modelli) {
+      const modelloCapitalizzato =
+        modelli.charAt(0).toUpperCase() + modelli.slice(1).toLowerCase()
+      params.append('modello', modelloCapitalizzato)
+    }
+    return params.toString() // Restituisce la query string
+  }
+
+  const handleSearch = (e) => {
+    e.preventDefault()
+    navigate(`/ricerca?${buildQueryParams()}`)
+  }
   return (
     <nav className="w-full bg-white border-gray-200 dark:bg-gray-900 fixed top-0 z-10 overflow-y-hidden mb-2">
       <div className=" max-w-screen-xl flex flex-wrap items-center justify-center max-[464px]:pb-8 min-[464px]:justify-between mx-auto px-2">
@@ -60,13 +79,16 @@ const Navbar = () => {
               </svg>
               <span className="sr-only">Search icon</span>
             </div>
-
-            <input
-              type="text"
-              id="search-navbar"
-              className="stop block  w-40 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-transparent  dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 h-10 focus:ring-2 focus:ring-[#22881b] transition duration-500"
-              placeholder="Search..."
-            />
+            <form onSubmit={handleSearch}>
+              <input
+                type="text"
+                id="search-navbar"
+                className="stop block  w-40 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-transparent  dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 h-10 focus:ring-2 focus:ring-[#22881b] transition duration-500"
+                placeholder="Search..."
+                onChange={(e) => setModelli(e.target.value)}
+                value={modelli}
+              />
+            </form>
           </div>
           <button
             type="button"

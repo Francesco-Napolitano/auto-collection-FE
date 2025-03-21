@@ -42,8 +42,8 @@ const Home = () => {
     const params = new URLSearchParams()
 
     if (modelli.length > 0) params.append('modello', modelli.join(','))
-    if (prezzoMin) params.append('prezzo', Number(prezzoMin))
-    if (annoMin) params.append('anno', Number(annoMin))
+    if (prezzoMin) params.append('prezzoMin', Number(prezzoMin))
+    if (annoMin) params.append('annoMin', Number(annoMin))
     if (brandSelezionato) params.append('brandID', brandMap[brandSelezionato])
     if (nazioneSelezionata)
       params.append('nazioneId', nazioneMap[nazioneSelezionata])
