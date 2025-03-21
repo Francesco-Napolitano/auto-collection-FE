@@ -142,7 +142,7 @@ const DettagliAuto = () => {
         <section>
           <div className="flex flex-col ">
             <h2 className="!text-[26px] color-website dark:text-gray-200 text-start mb-2">
-              Dimensioni e Caratteristiche
+              Principali Caratteristiche
             </h2>
             <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-2" />
             <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 py-5 text-gray-900 dark:text-gray-200">
