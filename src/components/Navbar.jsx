@@ -1,10 +1,13 @@
 import { Link, useNavigate } from 'react-router-dom'
 import logoWebsite from '../assets/logoauto.png'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import AuthContext from '../context/AuthContext'
 
 const Navbar = () => {
   const [modelli, setModelli] = useState('')
   const navigate = useNavigate() // Hook per la navigazione
+
+  const { token } = useContext(AuthContext)
 
   const buildQueryParams = () => {
     const params = new URLSearchParams()
@@ -83,19 +86,34 @@ const Navbar = () => {
               <input
                 type="text"
                 id="search-navbar"
-                className="stop block  w-40 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-transparent  dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 h-10 focus:ring-2 focus:ring-[#22881b] transition duration-500"
+                className="stop block mr-2 w-40 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-transparent  dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 h-10 focus:ring-2 focus:ring-[#22881b] transition duration-500"
                 placeholder="Search..."
                 onChange={(e) => setModelli(e.target.value)}
                 value={modelli}
               />
             </form>
           </div>
-          <button
-            type="button"
-            class="text-[#22881b] bg-blue-700 ring-2 hover:bg-blue-800 font-medium rounded-lg text-sm px-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700  ml-3"
-          >
-            <Link to="/login">Accedi</Link>
-          </button>
+          {token ? (
+            <Link to="/logout">
+              <button class="group flex items-center justify-start w-11 h-11 !bg-[#22881b] rounded-full cursor-pointer relative overflow-hidden transition-all duration-200 shadow-lg  hover:w-32 hover:rounded-lg active:translate-x-1 active:translate-y-1">
+                <div class="flex items-center justify-center w-full transition-all duration-300 group-hover:justify-start group-hover:px-3">
+                  <svg class="w-4 h-4" viewBox="0 0 512 512" fill="white">
+                    <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
+                  </svg>
+                </div>
+                <div class="absolute right-5 transform translate-x-full !hover:text-gray-200 opacity-0 text-gray-200 text-lg font-semibold transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+                  Logout
+                </div>
+              </button>
+            </Link>
+          ) : (
+            <button
+              type="button"
+              class="text-[#22881b] bg-blue-700 ring-2 hover:bg-blue-800 font-medium rounded-lg text-sm px-3 text-center dark:bg-blue-600 dark:hover:bg-blue-700  ml-3"
+            >
+              <Link to="/login">Login</Link>
+            </button>
+          )}
         </div>
         <ul className="flex grow justify-center   font-medium  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
           <li>
