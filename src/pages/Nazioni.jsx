@@ -9,7 +9,8 @@ const Nazioni = () => {
     if (nazione) console.log('Dati Nazioni:', nazione)
   }, [nazione])
 
-  if (loading && error) return <p>Caricamento</p>
+  if (loading) return <p>Caricamento</p>
+  if (error) return <p>Errore nel caricamento.</p>
   if (!nazione)
     return (
       <div class="flex items-center w-full justify-center mx-auto h-100 rounded-3xl dark:bg-gray-800 ">

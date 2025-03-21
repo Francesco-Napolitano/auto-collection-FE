@@ -22,7 +22,8 @@ const Automobili = () => {
     setLoadedImages((prev) => ({ ...prev, [id]: true }))
   }
 
-  if (loading && error) return <p>Caricamento</p>
+  if (loading) return <p>Caricamento</p>
+  if (error) return <p>Errore nel caricamento.</p>
   if (!auto)
     return (
       <div class="flex h-100 justify-center rounded-3xl w-full dark:bg-gray-800 items-center mx-auto">
