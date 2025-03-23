@@ -63,7 +63,7 @@ const Login = () => {
                   <input
                     id="password"
                     name="password"
-                    class="border p-3 shadow-md dark:bg-indigo-700 dark:text-gray-200 dark:border-gray-700 border-gray-200 rounded-lg w-full  transition transform hover:scale-105 duration-300"
+                    class="border p-3 shadow-md dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 border-gray-200 rounded-lg w-full  transition transform hover:scale-105 duration-300"
                     type="password"
                     placeholder="Password"
                     required
@@ -80,13 +80,13 @@ const Login = () => {
               </form>
               <div class="flex flex-col mt-4 text-sm text-center dark:text-gray-200">
                 <p>
-                  Don't have an account?{' '}
+                  Non hai un account?{' '}
                   <Link to="/register">
                     <a
                       href="#"
                       class="text-blue-400 transition hover:underline"
                     >
-                      Sign Up
+                      Registrati
                     </a>
                   </Link>
                 </p>

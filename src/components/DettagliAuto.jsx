@@ -26,7 +26,7 @@ const DettagliAuto = () => {
     <div className="w-full bg-white dark:bg-gray-900 pt-30 px-20">
       <div className="flex flex-col items-start  p-6 gap-10  mx-30 bg-white border-gray-200 dark:bg-gray-800 rounded-lg shadow-xl dark:border-gray-700 duration-300 transition">
         <section>
-          <h1 className="self-start !text-[35px] pb-3 text-gray-900 dark:text-gray-200">
+          <h1 className="text-start !text-[35px] pb-3 text-gray-900 dark:text-gray-200">
             {auto.nome} {auto.modello}{' '}
           </h1>
           <p className=" text-sm text-gray-900 dark:text-gray-200 gap-3 flex">
