@@ -26,7 +26,7 @@ const Brand = () => {
     )
 
   return (
-    <section className="bg-white border-gray-200 dark:bg-gray-900 mx-auto pt-30">
+    <section className="h-screen bg-white border-gray-200 dark:bg-gray-900 mx-auto pt-30">
       <div className="container flex flex-col justify-center gap-10 items-center mx-auto px-6 py-8">
         <h1 className="color-website">Brand</h1>
         <div className="grid grid-cols-2 gap-10 lg:grid-cols-4">

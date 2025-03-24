@@ -16,6 +16,7 @@ const Logout = () => {
           onClick={() => {
             logout()
             alert('Logout effettuato con successo')
+            window.location.href = '/'
           }}
         >
           Disconnetti
