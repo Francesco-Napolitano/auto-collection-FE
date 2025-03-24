@@ -46,7 +46,7 @@ const Ricerca = () => {
     )
 
   return (
-    <div className=" px-50 bg-white border-gray-200 dark:bg-gray-900 pt-30">
+    <div className=" px-50 bg-white border-gray-200 dark:bg-gray-900 py-38">
       <h1 className="!text-2xl text-start py-3 dark:text-gray-200">
         {auto.length} risultati della ricerca
       </h1>

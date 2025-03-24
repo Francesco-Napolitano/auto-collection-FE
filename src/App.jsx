@@ -15,6 +15,7 @@ import Footer from './components/Footer'
 import AboutPageFooter from './components/AboutPageFooter'
 import Automobili from './pages/Automobili'
 import Ricerca from './components/Ricerca'
+import Creazione from './pages/Creazione'
 
 const App = () => {
   useEffect(() => {
@@ -87,6 +88,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <AutoPerNazione />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/creazione/auto"
+          element={
+            <ProtectedRoute>
+              <Creazione />
             </ProtectedRoute>
           }
         />

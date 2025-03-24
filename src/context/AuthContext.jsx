@@ -1,6 +1,7 @@
 // La classe AuthContext serve per gestire l’autenticazione.
 // In particolare, salva il token in sessionStorage e fornisce due metodi per effettuare il login e il logout.
 // Il token viene salvato in sessionStorage per evitare che venga perso quando si ricarica la pagina.
+import { jwtDecode } from 'jwt-decode'
 import React, { createContext, useEffect, useState } from 'react'
 
 // Il contesto AuthContext serve a condividere informazioni sull'autenticazione tra i componenti della App.
@@ -11,16 +12,27 @@ import React, { createContext, useEffect, useState } from 'react'
 const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
+  //Creo lo stato per il token di autenticazione
   const [token, setToken] = useState(sessionStorage.getItem('token') || null)
+
+  //Creo lo stato per gestire i ruoli dell'utente loggato
+  const [roles, setRoles] = useState([])
 
   // Salva il token in sessionStorage quando cambia
   useEffect(() => {
     if (token) {
       // Se il token esiste salva il token in sessionStorage, e questo evita che si perda ad ogni riavvio della pagina
       sessionStorage.setItem('token', token)
+
+      // Decodifica il token ed è in grado di riconoscere il ruolo dell'utente: ADMIN oppure USER
+      const decoded = jwtDecode(token)
+      if (decoded && decoded.roles) {
+        setRoles(decoded.roles)
+      }
     } else {
       // Rimuove il token da sessionStorage se non esise
       sessionStorage.removeItem('token')
+      setRoles([])
     }
   }, [token])
 
@@ -35,7 +47,7 @@ export const AuthProvider = ({ children }) => {
   }
 
   return (
-    <AuthContext.Provider value={{ token, login, logout }}>
+    <AuthContext.Provider value={{ token, roles, login, logout }}>
       {children}
     </AuthContext.Provider>
   )
