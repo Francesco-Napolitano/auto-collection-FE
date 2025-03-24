@@ -1,10 +1,32 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import useFetch from '../hooks/useFetch'
 import { Link } from 'react-router-dom'
+import AuthContext from '../context/AuthContext'
 
 const Automobili = () => {
-  const { data: auto, loading, error } = useFetch('/auto', 'GET')
   //richiama tutte le automobili del database
+  const { data: auto, loading, error, sendRequest } = useFetch('/auto', 'GET')
+
+  const { token, roles } = useContext(AuthContext)
+
+  const [deleteCar, setDeleteCar] = useState(false)
+
+  const handleDelete = async (id) => {
+    if (!window.confirm('Sei sicuro di voler eliminare questa auto?')) return
+
+    setDeleteCar(true)
+
+    const result = await sendRequest(null, `/auto/${id}`) // Chiamata DELETE con useFetch
+
+    if (result) {
+      alert('Auto eliminata con successo!')
+      window.location.reload() // Ricarica la pagina per aggiornare la lista
+    } else {
+      alert("Errore durante l'eliminazione")
+    }
+
+    setDeleteCar(false)
+  }
 
   const [loadedImages, setLoadedImages] = useState({})
 
@@ -153,6 +175,15 @@ const Automobili = () => {
                       </span>
                     </div>
                   </div>
+                  {token && roles.includes('ROLE_ADMIN') && (
+                    <button
+                      className="ml-4 px-3 mt-4 py-2 !bg-red-600 text-white rounded hover:bg-red-700"
+                      onClick={() => handleDelete(automobile.id)}
+                      disabled={deleteCar}
+                    >
+                      {deleteCar ? 'Eliminazione...' : '🗑️ Elimina'}
+                    </button>
+                  )}
                 </div>
               </Link>
             ))
