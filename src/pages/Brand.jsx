@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import useFetch from '../hooks/useFetch'
+import { Link } from 'react-router-dom'
 
 const Brand = () => {
   const { data: brand, loading, error } = useFetch('/brand', 'GET')
@@ -34,22 +35,24 @@ const Brand = () => {
             brand
               .sort((a, b) => a.name.localeCompare(b.name)) // Ordina alfabeticamente
               .map((brand) => (
-                <div
-                  key={brand.id}
-                  className="flex flex-col bg-white border border-gray-200 justify-center p-5 rounded-lg shadow-sm cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:hover:from-gray-700 duration-300 gap-3 hover:bg-gradient-to-tl hover:from-gray-200 items-center transition"
-                >
-                  <img
-                    src={brand.logoUrl}
-                    alt={brand.name}
-                    className={`h-20 w-35 object-contain ${
-                      loadedImages[brand.id] ? 'opacity-100' : 'opacity-0'
-                    }`}
-                    onLoad={() => handleImageLoad(brand.id)}
-                  />
-                  <p className="text-gray-900 text-lg dark:text-gray-200 font-medium">
-                    {brand.name}
-                  </p>
-                </div>
+                <Link to={`/brand/${brand.id}`}>
+                  <div
+                    key={brand.id}
+                    className="flex flex-col bg-white border border-gray-200 justify-center p-5 rounded-lg shadow-sm cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:hover:from-gray-700 duration-300 gap-3 hover:bg-gradient-to-tl hover:from-gray-200 items-center transition"
+                  >
+                    <img
+                      src={brand.logoUrl}
+                      alt={brand.name}
+                      className={`h-20 w-35 object-contain ${
+                        loadedImages[brand.id] ? 'opacity-100' : 'opacity-0'
+                      }`}
+                      onLoad={() => handleImageLoad(brand.id)}
+                    />
+                    <p className="text-gray-900 text-lg dark:text-gray-200 font-medium">
+                      {brand.name}
+                    </p>
+                  </div>
+                </Link>
               ))
           ) : (
             <p className="text-gray-500">Nessun brand disponibile</p>

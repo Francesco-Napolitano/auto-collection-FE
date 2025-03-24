@@ -176,13 +176,22 @@ const Automobili = () => {
                     </div>
                   </div>
                   {token && roles.includes('ROLE_ADMIN') && (
-                    <button
-                      className="ml-4 px-3 mt-4 py-2 !bg-red-600 text-white rounded hover:bg-red-700"
-                      onClick={() => handleDelete(automobile.id)}
-                      disabled={deleteCar}
-                    >
-                      {deleteCar ? 'Eliminazione...' : '🗑️ Elimina'}
-                    </button>
+                    <div>
+                      <button
+                        className="ml-4 px-3 mt-4 py-2 !bg-green-600 text-white rounded hover:bg-red-700"
+                        onClick={() => handleDelete(automobile.id)}
+                        disabled={deleteCar}
+                      >
+                        {deleteCar ? 'Modifica' : '✏️Modifica'}
+                      </button>
+                      <button
+                        className="ml-4 px-3 mt-4 py-2 !bg-red-600 text-white rounded hover:bg-red-700"
+                        onClick={() => handleDelete(automobile.id)}
+                        disabled={deleteCar}
+                      >
+                        {deleteCar ? 'Eliminazione...' : '🗑️ Elimina'}
+                      </button>
+                    </div>
                   )}
                 </div>
               </Link>

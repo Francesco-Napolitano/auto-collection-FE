@@ -2,17 +2,13 @@ import { Link, useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import { useEffect, useState } from 'react'
 
-const AutoPerNazione = () => {
+const AutoPerBrand = () => {
   const { id } = useParams()
-  const {
-    data: nazione,
-    loading,
-    error,
-  } = useFetch(`nazioni/${id}/automobili`, 'GET')
+  const { data: brand, loading, error } = useFetch(`brand/${id}/auto`, 'GET')
 
   useEffect(() => {
-    if (nazione) console.log('Dati Auto:', nazione)
-  }, [nazione])
+    if (brand) console.log('Dati Auto:', brand)
+  }, [brand])
 
   const [loadedImages, setLoadedImages] = useState({})
   //funzione che si occupa del caricamento delle immagini delle auto
@@ -25,17 +21,17 @@ const AutoPerNazione = () => {
     ev.currentTarget.classList.toggle('fill-red-500')
   }
 
-  if (!nazione) return null
+  if (!brand) return null
   if (loading) return <p>Caricamento...</p>
   if (error) return <p>Errore nel caricamento.</p>
 
   return (
     <section className="h-screen bg-white border-gray-200 dark:bg-gray-900 md:pt-25 mx-auto pt-40">
-      <div className="container flex flex-col justify-center gap-10 items-center mx-auto px-6 py-8">
-        <h1 className="color-website ">{nazione[0]?.nazione.name}</h1>
+      <div className="container flex flex-col justify-center gap-10 items-center mx-auto px-6 ">
+        <h1 className="color-website ">{brand[0]?.brand.name}</h1>
         <div className="grid grid-cols-1 gap-x-5  gap-y-15 lg:grid-cols-3 md:grid-cols-2 2xl:grid-cols-4">
-          {nazione.length > 0 ? (
-            nazione.map((automobile) => (
+          {brand.length > 0 ? (
+            brand.map((automobile) => (
               <Link
                 to={`/auto/${automobile.id}`}
                 onClick={(e) => {
@@ -160,4 +156,4 @@ const AutoPerNazione = () => {
   )
 }
 
-export default AutoPerNazione
+export default AutoPerBrand

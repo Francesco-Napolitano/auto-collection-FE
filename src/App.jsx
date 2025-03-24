@@ -16,6 +16,7 @@ import AboutPageFooter from './components/AboutPageFooter'
 import Automobili from './pages/Automobili'
 import Ricerca from './components/Ricerca'
 import Creazione from './pages/Creazione'
+import AutoPerBrand from './components/AutoPerBrand'
 
 const App = () => {
   useEffect(() => {
@@ -88,6 +89,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <AutoPerNazione />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/brand/:id"
+          element={
+            <ProtectedRoute>
+              <AutoPerBrand />
             </ProtectedRoute>
           }
         />
