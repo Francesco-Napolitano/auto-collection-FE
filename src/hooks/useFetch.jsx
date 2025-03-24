@@ -45,6 +45,10 @@ const useFetch = (url, method = 'GET', body = null) => {
         method,
         url,
         data: customBody || body,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
       })
 
       if (

@@ -17,6 +17,7 @@ import Automobili from './pages/Automobili'
 import Ricerca from './components/Ricerca'
 import Creazione from './pages/Creazione'
 import AutoPerBrand from './components/AutoPerBrand'
+import Modifiche from './pages/Modifiche'
 
 const App = () => {
   useEffect(() => {
@@ -105,6 +106,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <Creazione />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/modifiche/auto/:id"
+          element={
+            <ProtectedRoute>
+              <Modifiche />
             </ProtectedRoute>
           }
         />

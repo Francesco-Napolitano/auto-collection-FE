@@ -95,6 +95,16 @@ const Footer = () => {
           </a>
           ,
           <a
+            href="https://www.goodwood.com/grr/road/news/supercar-world-cup-the-best-supercars-from-each-country/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 text-xs dark:text-gray-400 sm:text-center"
+          >
+            {' '}
+            Goodwood
+          </a>
+          ,
+          <a
             href="https://autodesignmagazine.com/"
             target="_blank"
             rel="noopener noreferrer"

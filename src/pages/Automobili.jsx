@@ -68,7 +68,8 @@ const Automobili = () => {
                 onClick={(e) => {
                   if (
                     e.target.tagName === 'svg' ||
-                    e.target.parentElement.tagName === 'svg'
+                    e.target.parentElement.tagName === 'svg' ||
+                    e.target.tagName === 'button'
                   ) {
                     e.preventDefault()
                   }
@@ -177,13 +178,11 @@ const Automobili = () => {
                   </div>
                   {token && roles.includes('ROLE_ADMIN') && (
                     <div>
-                      <button
-                        className="ml-4 px-3 mt-4 py-2 !bg-green-600 text-white rounded hover:bg-red-700"
-                        onClick={() => handleDelete(automobile.id)}
-                        disabled={deleteCar}
-                      >
-                        {deleteCar ? 'Modifica' : '✏️Modifica'}
-                      </button>
+                      <Link to={`/modifiche/auto/${automobile.id}`}>
+                        <button className="ml-4 px-3 mt-4 py-2 !bg-green-600 text-white rounded hover:bg-red-700">
+                          ✏️Modifica
+                        </button>
+                      </Link>
                       <button
                         className="ml-4 px-3 mt-4 py-2 !bg-red-600 text-white rounded hover:bg-red-700"
                         onClick={() => handleDelete(automobile.id)}
