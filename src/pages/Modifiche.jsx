@@ -83,10 +83,15 @@ const Modifiche = () => {
       ...formData,
       brand: {
         id: Number(formData.brandId),
+        logoUrl: autoDaModificare?.brand.logoUrl || '',
+        name: autoDaModificare?.brand.name || '',
       }, // Serve a inviare i dati di brand dentro la fetch di automobili e permettere così la modifica dell'auto
       nazione: {
         id: Number(formData.nazioneId),
+        imageNation: autoDaModificare?.nazione.imageNation || '',
+        name: autoDaModificare?.nazione.name || '',
       }, // Serve a inviare i dati di nazione dentro la fetch di automobili e permettere così la modifica dell'auto
+      immagini: autoDaModificare?.immagini || [],
     }
 
     delete formattedData.brandId
@@ -115,14 +120,14 @@ const Modifiche = () => {
       <form onSubmit={handleSubmit} className="text-start text-lg py-5 ">
         {Object.keys(formData).map((key) => (
           <div key={key} className="py-2 text-gray-900 dark:text-gray-200">
-            <label htmlFor={key}>{key.toUpperCase()}:</label>
+            <label htmlFor={key}>{key}:</label>
             <input
               type="text"
               name={key}
               placeholder={key.charAt(0).toUpperCase() + key.slice(1)}
               value={formData[key]}
               onChange={handleChange}
-              className="w-full p-2 border rounded mb-2"
+              className="w-full p-2 border rounded mb-2 text-gray-900"
               required
             />
           </div>
