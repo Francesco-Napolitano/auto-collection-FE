@@ -4,6 +4,7 @@ import useFetch from '../hooks/useFetch' // ipotetico hook per POST
 const Creazione = () => {
   const [formData, setFormData] = useState({
     nome: '',
+    id: '',
     modello: '',
     anno: '',
     motore: '',
@@ -23,9 +24,12 @@ const Creazione = () => {
     posizioneMotore: '',
     carrozzeria: '',
     unitaVendute: '',
+    brandId: '',
+    nazioneId: '',
+    immaginiIds: '',
   })
 
-  const { sendRequest, loading, error } = useFetch('/auto', 'POST') // endpoint e metodo
+  const { sendRequest, loading, error } = useFetch('/auto', 'POST')
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -33,9 +37,46 @@ const Creazione = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const success = await sendRequest(formData)
+    const formattedData = {
+      ...formData,
+      anno: parseInt(formData.anno) || '',
+      id: parseInt(formData.id) || '',
+      potenza: parseInt(formData.potenza) || '',
+      coppia: parseInt(formData.coppia) || '',
+      velocitaMax: parseInt(formData.velocitaMax) || '',
+      prezzo: parseFloat(formData.prezzo) || '',
+      length: parseFloat(formData.length) || '',
+      width: parseFloat(formData.width) || '',
+      height: parseFloat(formData.height) || '',
+      peso: parseFloat(formData.peso) || '',
+      cilindrata: parseInt(formData.cilindrata) || '',
+      unitaVendute: parseInt(formData.unitaVendute) || '',
+      brand: {
+        id: Number(formData.brandId),
+        logoUrl: '', // Inserisci un valore vuoto o predefinito
+        name: '',
+      },
+      nazione: {
+        id: '',
+        imageNation: '',
+        name: '',
+      },
+      immagini: {
+        id: '',
+        immagineUrl: '',
+      }, // Assicurati che sia un array
+    }
+
+    delete formattedData.brandId
+    delete formattedData.nazioneId
+
+    console.log('Dati inviati', JSON.stringify(formattedData, null, 2))
+
+    const success = await sendRequest(formattedData)
     if (success) {
       alert('Auto aggiunta con successo!')
+    } else {
+      alert("Errore durante la creazione dell'auto")
     }
   }
 
@@ -45,7 +86,7 @@ const Creazione = () => {
       <form onSubmit={handleSubmit} className="text-start text-lg py-5 ">
         {Object.keys(formData).map((key) => (
           <div key={key} className="py-2 text-gray-900 dark:text-gray-200">
-            <label htmlFor={key}>{key.toUpperCase()}:</label>
+            <label htmlFor={key}>{key}:</label>
             <input
               type="text"
               name={key}
@@ -53,7 +94,6 @@ const Creazione = () => {
               value={formData[key]}
               onChange={handleChange}
               className="w-full p-2 border rounded mb-2"
-              required
             />
           </div>
         ))}
