@@ -111,9 +111,9 @@ const Login = () => {
                     alt="LinkedIn"
                   />
                 </button>
-                <a
+                <button
+                  onClick={() => oauthLogin('github')}
                   class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg"
-                  href="http://localhost:8080/oauth2/authorization/github"
                 >
                   <img
                     class="w-6 h-6 dark:invert"
@@ -121,7 +121,7 @@ const Login = () => {
                     src="https://ucarecdn.com/be5b0ffd-85e8-4639-83a6-5162dfa15a16/"
                     alt="GitHub"
                   />
-                </a>
+                </button>
                 <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
                   <img
                     class="w-6 h-6"
