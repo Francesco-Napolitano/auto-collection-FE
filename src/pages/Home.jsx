@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import videoSrc from '../assets/cars-women.mp4'
@@ -9,9 +9,11 @@ import '../styles/homepage.css'
 import TimelineHomepage from '../components/TimelineHomepage'
 import CategoriePrincipaliHomepage from '../components/CategoriePrincipaliHomepage'
 import BrandPopolariHomepage from '../components/BrandPopolariHomepage'
+import AuthContext from '../context/AuthContext'
 
 const Home = () => {
   const { data: auto, loading, error } = useFetch('/auto', 'GET')
+  const { login } = useContext(AuthContext)
 
   const [brandSelezionato, setBrandSelezionato] = useState('')
   const [modelli, setModelli] = useState('')
@@ -65,6 +67,18 @@ const Home = () => {
   useEffect(() => {
     if (auto) console.log('Tutte le Auto:', auto)
   }, [auto])
+
+  useEffect(() => {
+    // Controlla se c'è un token nell'URL
+    const urlParams = new URLSearchParams(window.location.search)
+    const token = urlParams.get('token')
+
+    if (token) {
+      login(token)
+      // Rimuovi il parametro token dall'URL
+      window.history.replaceState({}, document.title, '/')
+    }
+  }, [login])
 
   if (loading) return <p>Caricamento</p>
   if (error) return <p>Errore nel caricamento.</p>

@@ -24,10 +24,14 @@ export const AuthProvider = ({ children }) => {
       // Se il token esiste salva il token in sessionStorage, e questo evita che si perda ad ogni riavvio della pagina
       sessionStorage.setItem('token', token)
 
-      // Decodifica il token ed è in grado di riconoscere il ruolo dell'utente: ADMIN oppure USER
-      const decoded = jwtDecode(token)
-      if (decoded && decoded.roles) {
-        setRoles(decoded.roles)
+      try {
+        const decoded = jwtDecode(token)
+        if (decoded?.roles) {
+          setRoles(decoded.roles)
+        }
+      } catch (error) {
+        console.error('Errore nella decodifica del token:', error)
+        setRoles([])
       }
     } else {
       // Rimuove il token da sessionStorage se non esise

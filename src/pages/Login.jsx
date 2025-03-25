@@ -1,9 +1,9 @@
-import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import useAuth from '../hooks/useAuth'
+import { useState } from 'react'
 
 const Login = () => {
-  const { login } = useAuth() // Usa il metodo login di useAuth
+  const { login, oauthLogin } = useAuth() // Usa il metodo login di useAuth
   const navigate = useNavigate()
   const [credentials, setCredentials] = useState({ username: '', password: '' })
   const [error, setError] = useState('')
@@ -92,7 +92,10 @@ const Login = () => {
                 </p>
               </div>
               <div id="third-party-auth" class="flex justify-center gap-4 mt-5">
-                <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
+                <button
+                  onClick={() => oauthLogin('google')}
+                  class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg"
+                >
                   <img
                     class="w-6 h-6"
                     loading="lazy"
@@ -108,14 +111,17 @@ const Login = () => {
                     alt="LinkedIn"
                   />
                 </button>
-                <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
+                <a
+                  class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg"
+                  href="http://localhost:8080/oauth2/authorization/github"
+                >
                   <img
                     class="w-6 h-6 dark:invert"
                     loading="lazy"
                     src="https://ucarecdn.com/be5b0ffd-85e8-4639-83a6-5162dfa15a16/"
                     alt="GitHub"
                   />
-                </button>
+                </a>
                 <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
                   <img
                     class="w-6 h-6"

@@ -10,7 +10,7 @@ const useFetch = (url, method = 'GET', body = null) => {
   const { login } = useContext(AuthContext) // Per il login automatico dopo la registrazione
 
   useEffect(() => {
-    if (method !== 'GET') return // Evita chiamate automatiche per POST, PUT, DELETE ed esce direttamente dalla funzione useEffect
+    if (method !== 'GET' || !url) return // Evita chiamate automatiche per POST, PUT, DELETE ed esce direttamente dalla funzione useEffect
     const fetchData = async () => {
       setLoading(true)
       setError(null)
