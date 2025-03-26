@@ -1,9 +1,9 @@
-import Ferrari from '../assets/Ferrari-250-GTO-at-Goodwood-3.webp'
-import Jaguar from '../assets/jaguar-xj220-1-1360x765.webp'
-import McLaren from '../assets/McLaren-P1_autosprint.ch_.jpg'
-import McLarenArtura from '../assets/2025_mclaren_artura_coupe_base_fq_oem_1_1600.avif'
-import Chiron from '../assets/2016030101_Bugatti_Chiron.jpg'
-import PorscheTurbo from '../assets/s20-1418-fine-jpg.webp'
+import Ferrari from '../assets/fordgt40.jpg'
+import Jaguar from '../assets/astondb5.jpg'
+import McLaren from '../assets/mclarenp1.jpg'
+import McLarenArtura from '../assets/artura.jpg'
+import Chiron from '../assets/bugattichiron.jpg'
+import PorscheTurbo from '../assets/porsche.jpg'
 import '../styles/homepage.css'
 
 const CategoriePrincipaliHomepage = () => {
