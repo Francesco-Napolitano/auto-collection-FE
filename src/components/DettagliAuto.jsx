@@ -95,25 +95,25 @@ const DettagliAuto = () => {
             <div className="grid grid-cols-1 gap-0.5 ">
               <div>
                 <img
-                  src={auto.immagini[0].immagineUrl}
+                  src={auto.immagini[1].immagineUrl}
                   alt={auto.modello}
                   className="rounded-t-md w-full"
                 />
               </div>
               <div className="grid grid-cols-3  gap-0.5 ">
                 <img
-                  className=" rounded-bl-md"
-                  src="https://placecats.com/300/200"
+                  className=" rounded-bl-md w-full h-46"
+                  src={auto.immagini[2].immagineUrl}
                   alt={auto.modello}
                 />
                 <img
-                  className=""
-                  src="https://placecats.com/300/200"
+                  className="rounded-bl-md w-full h-46"
+                  src={auto.immagini[0].immagineUrl}
                   alt={auto.modello}
                 />
                 <img
-                  className=" rounded-br-md"
-                  src="https://placecats.com/300/200"
+                  className=" rounded-br-md w-full h-46"
+                  src={auto.immagini[3].immagineUrl}
                   alt={auto.modello}
                 />
               </div>

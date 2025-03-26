@@ -51,7 +51,7 @@ const AutoPerBrand = () => {
                     className={`h-50  rounded-t-lg w-80 mb-2 md:h-55 transition-opacity duration-500 ${
                       loadedImages[automobile.id] ? 'opacity-100' : 'opacity-0'
                     }`}
-                    src={automobile.immagini[0].immagineUrl}
+                    src={automobile.immagini[2].immagineUrl}
                     alt={automobile.modello}
                     onLoad={() => handleImageLoad(automobile.id)}
                   />
