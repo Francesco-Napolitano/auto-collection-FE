@@ -202,6 +202,118 @@ const DettagliAuto = () => {
             </p>
           </div>
         </section>
+        <section className="w-full text-start">
+          <div className="flex flex-col">
+            <h2 className="!text-[26px] color-website dark:text-gray-200 text-start mb-2">
+              Specifiche dell'auto
+            </h2>
+            <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+            <div>
+              <h3 className="font-extrabold dark:text-gray-200 text-lg mt-5">
+                Motore:{' '}
+                <span className="color-website font-normal">
+                  {(auto.cilindrata / 1000).toFixed(1)}L {auto.strutturaMotore}{' '}
+                  ({auto.potenza} CV)
+                </span>
+              </h3>
+              <hr className="border-t-3 border-black  my-3" />
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/3 font-semibold">Cilindri:</p>
+                <p>
+                  {auto.strutturaMotore} {auto.motore.toLowerCase()}
+                </p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/3 font-semibold">Dimensione Motore:</p>
+                <p>{auto.cilindrata} cm3</p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/3 font-semibold">Potenza:</p>
+                <p>{auto.potenza} CV</p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/3 font-semibold">Coppia:</p>
+                <p>{auto.coppia} Nm</p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/3 font-semibold">Alimentazione:</p>
+                <p>{auto.alimentazione} </p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/3 font-semibold">Trazione:</p>
+                <p>{auto.trazione} </p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+            </div>
+            <div>
+              <h3 className="font-extrabold dark:text-gray-200 text-lg mt-5">
+                Performance:
+              </h3>
+              <hr className="border-t-3 border-black  my-3" />
+
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/3 font-semibold">Velocità massima:</p>
+                <p>{auto.velocitaMax} km/h</p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+            </div>
+
+            <div>
+              <h3 className="font-extrabold dark:text-gray-200 text-lg mt-5">
+                Dimensioni:
+              </h3>
+              <hr className="border-t-3 border-black  my-3" />
+
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/3 font-semibold">Lunghezza:</p>
+                <p>{auto.length} mm </p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/3 font-semibold">Larghezza:</p>
+                <p>{auto.width} mm</p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/3 font-semibold">Potenza:</p>
+                <p>{auto.height} mm</p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+
+              <div>
+                <h3 className="font-extrabold dark:text-gray-200 text-lg mt-5">
+                  Altre informazioni:
+                </h3>
+                <hr className="border-t-3 border-black  my-3" />
+              </div>
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/3 font-semibold">Unità Vendute:</p>
+                <p>{auto.unitaVendute} </p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/3 font-semibold">Prezzo all'uscita:</p>
+                <p>
+                  {' '}
+                  {new Intl.NumberFormat('it-IT', {
+                    style: 'decimal',
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  }).format(auto.prezzo)}{' '}
+                  €
+                </p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   )
