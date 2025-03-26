@@ -26,7 +26,7 @@ const AutoPerBrand = () => {
   if (error) return <p>Errore nel caricamento.</p>
 
   return (
-    <section className="h-screen bg-white border-gray-200 dark:bg-gray-900 md:pt-25 mx-auto pt-40">
+    <section className="h-screen bg-white border-gray-200 dark:bg-gray-900 md:pt-25 mx-auto pt-40 max-sm:mt-10 max-lg:mb-80">
       <div className="container flex flex-col justify-center gap-10 items-center mx-auto px-6 ">
         <h1 className="color-website ">{brand[0]?.brand.name}</h1>
         <div className="grid grid-cols-1 gap-x-5  gap-y-15 lg:grid-cols-3 md:grid-cols-2 2xl:grid-cols-4">
@@ -44,11 +44,11 @@ const AutoPerBrand = () => {
                 }}
               >
                 <div
-                  className="flex flex-col bg-white border border-gray-200 justify-center rounded-lg shadow-sm cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:hover:from-gray-700 duration-300 hover:bg-gradient-to-tl hover:from-gray-200 items-center px-3 py-5 transition"
+                  className="container flex flex-col bg-white border border-gray-200 justify-center rounded-lg shadow-sm cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:hover:from-gray-700 duration-300 hover:bg-gradient-to-tl hover:from-gray-200 items-center px-3 py-5 transition"
                   key={automobile.id}
                 >
                   <img
-                    className={`h-70 rounded-t-lg w-80 mb-2 md:h-55 transition-opacity duration-500 ${
+                    className={`h-50  rounded-t-lg w-80 mb-2 md:h-55 transition-opacity duration-500 ${
                       loadedImages[automobile.id] ? 'opacity-100' : 'opacity-0'
                     }`}
                     src={automobile.immagini[0].immagineUrl}

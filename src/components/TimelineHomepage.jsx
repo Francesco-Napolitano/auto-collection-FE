@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import '../styles/homepage.css'
 
 const Timeline = () => {
   const [activeImage, setActiveImage] = useState(null)
@@ -30,12 +31,12 @@ const Timeline = () => {
   ]
 
   return (
-    <section className="flex flex-col items-center px-5">
+    <section className="flex flex-col items-center px-5 second-background-home">
       <h2 className="color-website !text-[45px] font-bold ">
         Timeline dell'Automobile
       </h2>
 
-      <div className="grid grid-cols-1 xl:grid-cols-2 my-15 gap-55 pb-35">
+      <div className="grid grid-cols-1 xl:grid-cols-2 my-15 gap-55 pb-35 ">
         <div className="w-80 sm:w-95 h-100">
           <div>
             <ul>

@@ -27,7 +27,7 @@ const Brand = () => {
     )
 
   return (
-    <section className="h-screen bg-white border-gray-200 dark:bg-gray-900 mx-auto pt-30">
+    <section className="h-screen max-sm:mt-17 max-lg:mb-80 bg-white border-gray-200 dark:bg-gray-900 mx-auto pt-30">
       <div className="container flex flex-col justify-center gap-10 items-center mx-auto px-6 py-8">
         <h1 className="color-website">Brand</h1>
         <div className="grid grid-cols-2 gap-10 lg:grid-cols-4">
@@ -38,7 +38,7 @@ const Brand = () => {
                 <Link to={`/brand/${brand.id}`}>
                   <div
                     key={brand.id}
-                    className="flex flex-col bg-white border border-gray-200 justify-center p-5 rounded-lg shadow-sm cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:hover:from-gray-700 duration-300 gap-3 hover:bg-gradient-to-tl hover:from-gray-200 items-center transition"
+                    className="flex flex-col h-40 bg-white border border-gray-200 justify-center p-5 rounded-lg shadow-sm cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:hover:from-gray-700 duration-300 gap-3 hover:bg-gradient-to-tl hover:from-gray-200 items-center transition"
                   >
                     <img
                       src={brand.logoUrl}

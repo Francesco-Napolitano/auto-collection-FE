@@ -33,7 +33,7 @@ const AutoPerNazione = () => {
   if (error) return <p>Errore nel caricamento.</p>
 
   return (
-    <section className="h-screen bg-white border-gray-200 dark:bg-gray-900 md:pt-25 mx-auto pt-40">
+    <section className="h-screen bg-white border-gray-200 dark:bg-gray-900 md:pt-25 mx-auto pt-40 max-sm:mt-10 max-lg:mb-80">
       {token ? (
         <div className="container flex flex-col justify-center gap-10 items-center mx-auto px-6 py-8">
           <h1 className="color-website ">{nazione[0]?.nazione.name}</h1>
@@ -56,7 +56,7 @@ const AutoPerNazione = () => {
                     key={automobile.id}
                   >
                     <img
-                      className={`h-70 rounded-t-lg w-80 mb-2 md:h-55 transition-opacity duration-500 ${
+                      className={`h-50 rounded-t-lg w-80 mb-2 md:h-55 transition-opacity duration-500 ${
                         loadedImages[automobile.id]
                           ? 'opacity-100'
                           : 'opacity-0'

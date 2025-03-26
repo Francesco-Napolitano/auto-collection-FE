@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import useFetch from '../hooks/useFetch'
 import { Link, useNavigate } from 'react-router-dom'
+import useAuth from '../hooks/useAuth'
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const Register = () => {
     email: '',
     password: '',
   })
+  const { oauthLogin } = useAuth() // Usa il metodo login di useAuth
   const { sendRequest, loading, error } = useFetch('/api/auth/register', 'POST')
   const navigate = useNavigate()
 
@@ -26,10 +28,10 @@ const Register = () => {
   if (loading) return <p>Caricamento...</p>
 
   return (
-    <div className="pt-30 bg-white dark:bg-gray-900 p-6">
+    <div className="pt-60 md:pt-35  bg-white dark:bg-gray-900 p-6">
       {error && <p className="text-red-500">{error}</p>}
       <div class="flex justify-center items-center h-full w-full">
-        <div class="grid gap-8">
+        <div class="grid gap-8 w-100">
           <section class="bg-gradient-to-r from-[#2a9d8f] to-[#22881b] rounded-3xl">
             <div class="border-8 border-transparent rounded-xl bg-white dark:bg-gray-900 shadow-xl p-8 m-2">
               <h1 class="text-5xl font-bold text-center cursor-default dark:text-gray-200 text-gray-900">
@@ -111,7 +113,10 @@ const Register = () => {
                 </p>
               </div>
               <div id="third-party-auth" class="flex justify-center gap-4 mt-5">
-                <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
+                <button
+                  onClick={() => oauthLogin('google')}
+                  class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg"
+                >
                   <img
                     class="w-6 h-6"
                     loading="lazy"
@@ -127,6 +132,7 @@ const Register = () => {
                     alt="LinkedIn"
                   />
                 </button>
+
                 <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
                   <img
                     class="w-6 h-6 dark:invert"
@@ -139,24 +145,8 @@ const Register = () => {
                   <img
                     class="w-6 h-6"
                     loading="lazy"
-                    src="https://ucarecdn.com/6f56c0f1-c9c0-4d72-b44d-51a79ff38ea9/"
-                    alt="Facebook"
-                  />
-                </button>
-                <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
-                  <img
-                    class="w-6 h-6"
-                    loading="lazy"
                     src="https://ucarecdn.com/82d7ca0a-c380-44c4-ba24-658723e2ab07/"
                     alt="Twitter"
-                  />
-                </button>
-                <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
-                  <img
-                    class="w-6 h-6"
-                    loading="lazy"
-                    src="https://ucarecdn.com/3277d952-8e21-4aad-a2b7-d484dad531fb/"
-                    alt="Apple"
                   />
                 </button>
               </div>

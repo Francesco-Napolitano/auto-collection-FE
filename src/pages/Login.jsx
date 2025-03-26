@@ -25,10 +25,10 @@ const Login = () => {
   }
 
   return (
-    <div className="pt-30 bg-white dark:bg-gray-900 p-6">
+    <div className="pt-60 md:pt-35 bg-white dark:bg-gray-900 p-6">
       {error && <p className="text-red-500">{error}</p>}
       <div class="flex justify-center items-center h-full w-full">
-        <div class="grid gap-8">
+        <div class="grid gap-8 w-100">
           <section class="bg-gradient-to-r from-[#2a9d8f] to-[#22881b] rounded-3xl">
             <div class="border-8 border-transparent rounded-xl bg-white dark:bg-gray-900 shadow-xl p-8 m-2">
               <h1 class="text-5xl font-bold text-center cursor-default dark:text-gray-200 text-gray-900">
@@ -126,24 +126,8 @@ const Login = () => {
                   <img
                     class="w-6 h-6"
                     loading="lazy"
-                    src="https://ucarecdn.com/6f56c0f1-c9c0-4d72-b44d-51a79ff38ea9/"
-                    alt="Facebook"
-                  />
-                </button>
-                <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
-                  <img
-                    class="w-6 h-6"
-                    loading="lazy"
                     src="https://ucarecdn.com/82d7ca0a-c380-44c4-ba24-658723e2ab07/"
                     alt="Twitter"
-                  />
-                </button>
-                <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
-                  <img
-                    class="w-6 h-6"
-                    loading="lazy"
-                    src="https://ucarecdn.com/3277d952-8e21-4aad-a2b7-d484dad531fb/"
-                    alt="Apple"
                   />
                 </button>
               </div>

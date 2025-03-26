@@ -4,10 +4,11 @@ import McLaren from '../assets/McLaren-P1_autosprint.ch_.jpg'
 import McLarenArtura from '../assets/2025_mclaren_artura_coupe_base_fq_oem_1_1600.avif'
 import Chiron from '../assets/2016030101_Bugatti_Chiron.jpg'
 import PorscheTurbo from '../assets/s20-1418-fine-jpg.webp'
+import '../styles/homepage.css'
 
 const CategoriePrincipaliHomepage = () => {
   return (
-    <section className="flex flex-col items-center justify-center py-15 px-10 gap-5">
+    <section className="flex flex-col items-center justify-center py-15 px-10 gap-5 ">
       <div>
         <h2 className="color-website !text-[45px] mb-5">
           Categorie principali

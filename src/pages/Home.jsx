@@ -93,7 +93,7 @@ const Home = () => {
 
   return (
     <div className="pt-35 md:pt-25 bg-white border-gray-200 dark:bg-gray-900 ">
-      <section className="flex flex-col items-center gap-5">
+      <section className="flex flex-col items-center gap-5 ">
         <h1 className="color-website max-[466px]:pt-20 px-3">
           Scopri le Auto più Iconiche di Sempre
         </h1>
@@ -123,92 +123,100 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <video className="hidden md:block w-full h-140 my-13" loop autoPlay muted>
-        <source className="rounded" src={videoSrc} />
-      </video>
-      <section className="bg-white border border-gray-200 rounded-lg shadow-xs transition duration-300 dark:bg-gray-800 dark:border-gray-700 w-4/5 mx-auto py-10 md:p-10 flex justify-around">
-        <form className="grid grid-cols-2 lg:grid-cols-3 w-4/5 gap-3 ">
-          <label htmlFor="brand" className="sr-only">
-            Marca
-          </label>
-          <select
-            id="brand"
-            value={brandSelezionato}
-            onChange={(e) => setBrandSelezionato(e.target.value)}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
-          >
-            <option value="">Marca</option>
-            {brandUnici.map((brand) => (
-              <option key={brand} value={brand}>
-                {brand}
-              </option>
-            ))}
-          </select>
-          <label htmlFor="modello" className="sr-only">
-            Modello
-          </label>
-          <select
-            id="modello"
-            disabled={!brandSelezionato}
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b] disabled:opacity-50 z-1 "
-          >
-            <option value="">Modello</option>
-            {modelli.map((modello) => (
-              <option key={modello} value={modello}>
-                {modello}
-              </option>
-            ))}
-          </select>
-          <label for="number-input" class="sr-only">
-            Select a number:
-          </label>
-          <input
-            type="number"
-            id="number-input"
-            aria-describedby="helper-text-explanation"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
-            placeholder="A partire da (€)"
-            min={0}
-            value={prezzoMin}
-            onChange={(e) => setPrezzoMin(e.target.value)}
-          />
-          <label for="number-input" class="sr-only">
-            Select a number:
-          </label>
-          <input
-            type="number"
-            id="number-input"
-            aria-describedby="helper-text-explanation"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
-            placeholder="Anno da"
-            min={1886}
-            value={annoMin}
-            onChange={(e) => setAnnoMin(e.target.value)}
-          />
-          <label htmlFor="nazione" className="sr-only"></label>
-          <select
-            id="nazione"
-            value={nazioneSelezionata}
-            onChange={(e) => setNazioneSelezionata(e.target.value)}
-            className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
-          >
-            <option value="">Nazione di provenienza</option>
-            {nazioniUniche.map((nazione) => (
-              <option key={nazione} value={nazione}>
-                {nazione}
-              </option>
-            ))}
-          </select>
-          <Link to={`/ricerca?${buildQueryParams()}`}>
-            <button
-              type="submit"
-              className="text-gray-200 w-full !font-bold !bg-[#22881b] h-full shadow-sm shadow-[#22881b]"
+      <div className="  ">
+        <video
+          className="hidden md:block w-full h-140 my-13 "
+          loop
+          autoPlay
+          muted
+        >
+          <source className="rounded" src={videoSrc} />
+        </video>
+        <section className="bg-white border border-gray-200 rounded-lg shadow-xs transition duration-300 dark:bg-gray-800 dark:border-gray-700 w-4/5 mx-auto py-10 md:p-10 flex justify-around">
+          <form className="grid grid-cols-2 lg:grid-cols-3 w-4/5 gap-3 ">
+            <label htmlFor="brand" className="sr-only">
+              Marca
+            </label>
+            <select
+              id="brand"
+              value={brandSelezionato}
+              onChange={(e) => setBrandSelezionato(e.target.value)}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
             >
-              Search
-            </button>
-          </Link>
-        </form>
-      </section>
+              <option value="">Marca</option>
+              {brandUnici.map((brand) => (
+                <option key={brand} value={brand}>
+                  {brand}
+                </option>
+              ))}
+            </select>
+            <label htmlFor="modello" className="sr-only">
+              Modello
+            </label>
+            <select
+              id="modello"
+              disabled={!brandSelezionato}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b] disabled:opacity-50 z-1 "
+            >
+              <option value="">Modello</option>
+              {modelli.map((modello) => (
+                <option key={modello} value={modello}>
+                  {modello}
+                </option>
+              ))}
+            </select>
+            <label for="number-input" class="sr-only">
+              Select a number:
+            </label>
+            <input
+              type="number"
+              id="number-input"
+              aria-describedby="helper-text-explanation"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              placeholder="A partire da (€)"
+              min={0}
+              value={prezzoMin}
+              onChange={(e) => setPrezzoMin(e.target.value)}
+            />
+            <label for="number-input" class="sr-only">
+              Select a number:
+            </label>
+            <input
+              type="number"
+              id="number-input"
+              aria-describedby="helper-text-explanation"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              placeholder="Anno da"
+              min={1886}
+              value={annoMin}
+              onChange={(e) => setAnnoMin(e.target.value)}
+            />
+            <label htmlFor="nazione" className="sr-only"></label>
+            <select
+              id="nazione"
+              value={nazioneSelezionata}
+              onChange={(e) => setNazioneSelezionata(e.target.value)}
+              className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+            >
+              <option value="">Nazione di provenienza</option>
+              {nazioniUniche.map((nazione) => (
+                <option key={nazione} value={nazione}>
+                  {nazione}
+                </option>
+              ))}
+            </select>
+            <Link to={`/ricerca?${buildQueryParams()}`}>
+              <button
+                type="submit"
+                className="text-gray-200 w-full !font-bold !bg-[#22881b] h-full shadow-sm shadow-[#22881b]"
+              >
+                Search
+              </button>
+            </Link>
+          </form>
+        </section>
+      </div>
+
       <div id="stats" class="bg-white py-10 dark:bg-gray-900 ">
         <h2 className="color-website mb-15 !text-[45px]">Alcune Statistiche</h2>
         <div class="mx-auto max-w-7xl px-6 lg:px-8 ">

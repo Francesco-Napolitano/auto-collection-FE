@@ -3,3 +3,15 @@
   initial-value: 0;
   inherits: false;
 }
+.background-home {
+  background: #ffffff;
+  background: linear-gradient(
+    156deg,
+    rgba(255, 255, 255, 0.31807317653623945) 7%,
+    #71eaf239 24%,
+    rgba(255, 255, 255, 0.9231151933429622) 37%,
+    rgba(255, 255, 255, 0.8446838207939426) 60%,
+    #229c1c38 80%,
+    rgba(255, 255, 255, 1) 94%
+  );
+}

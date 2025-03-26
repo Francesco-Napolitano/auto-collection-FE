@@ -31,6 +31,15 @@
   }
 }
 
+.background-components {
+  background: rgb(113, 234, 242);
+  background: radial-gradient(
+    circle,
+    rgba(113, 234, 242, 1) 18%,
+    rgba(17, 24, 39, 1) 38%
+  );
+}
+
 .card {
   padding: 2em;
 }
