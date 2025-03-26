@@ -61,7 +61,7 @@ const AutoPerNazione = () => {
                           ? 'opacity-100'
                           : 'opacity-0'
                       }`}
-                      src={automobile.immagini[0].immagineUrl}
+                      src={automobile.immagini[2].immagineUrl}
                       alt={automobile.modello}
                       onLoad={() => handleImageLoad(automobile.id)}
                     />

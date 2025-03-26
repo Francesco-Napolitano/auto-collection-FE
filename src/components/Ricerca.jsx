@@ -98,7 +98,7 @@ const Ricerca = () => {
                       {a.nome} {a.modello}
                     </h3>
                     <div className="w-70 pt-3">
-                      <img src={a.immagini[0].immagineUrl} alt={auto.modello} />
+                      <img src={a.immagini[2].immagineUrl} alt={auto.modello} />
                     </div>
                   </div>
                 </Link>

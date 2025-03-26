@@ -23,8 +23,8 @@ const DettagliAuto = () => {
     )
 
   return (
-    <div className="w-full bg-white dark:bg-gray-900 pt-30 px-20 ">
-      <div className="flex flex-col items-start  p-6 gap-10  mx-30 bg-white border-gray-200 dark:bg-gray-800 rounded-lg shadow-xl dark:border-gray-700 duration-300 transition">
+    <div className="w-full bg-white dark:bg-gray-900 pt-30 xl:px-20 ">
+      <div className="flex flex-col items-start  p-6 gap-10  md:mx-30 bg-white border-gray-200 dark:bg-gray-800 rounded-lg shadow-xl dark:border-gray-700 duration-300 transition">
         <section>
           <h1 className="text-start !text-[35px] pb-3 text-gray-900 dark:text-gray-200">
             {auto.nome} {auto.modello}{' '}
@@ -88,7 +88,7 @@ const DettagliAuto = () => {
           </p>
         </section>
         <section className="flex flex-col md:flex-row md:justify-between gap-3 w-full">
-          <div className="w-full">
+          <div className="w-full ">
             <h2 className="!text-[22px] dark:text-gray-200 text-start mb-2 color-website">
               Fotogallery :
             </h2>
@@ -97,29 +97,35 @@ const DettagliAuto = () => {
                 <img
                   src={auto.immagini[1].immagineUrl}
                   alt={auto.modello}
-                  className="rounded-t-md w-full"
+                  className="rounded-t-md w-full hover:scale-102 duration-300 transition"
                 />
               </div>
-              <div className="grid grid-cols-3  gap-0.5 ">
-                <img
-                  className=" rounded-bl-md w-full h-46"
-                  src={auto.immagini[2].immagineUrl}
-                  alt={auto.modello}
-                />
-                <img
-                  className="rounded-bl-md w-full h-46"
-                  src={auto.immagini[0].immagineUrl}
-                  alt={auto.modello}
-                />
-                <img
-                  className=" rounded-br-md w-full h-46"
-                  src={auto.immagini[3].immagineUrl}
-                  alt={auto.modello}
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-0.5 ">
+                <div>
+                  <img
+                    className=" rounded-bl-md w-full h-full hover:scale-120 duration-200 transition "
+                    src={auto.immagini[2].immagineUrl}
+                    alt={auto.modello}
+                  />
+                </div>
+                <div>
+                  <img
+                    className="rounded-bl-md w-full h-full hover:scale-120 duration-200 transition"
+                    src={auto.immagini[0].immagineUrl}
+                    alt={auto.modello}
+                  />
+                </div>
+                <div>
+                  <img
+                    className=" rounded-br-md w-full h-full hover:scale-120 duration-200 transition"
+                    src={auto.immagini[3].immagineUrl}
+                    alt={auto.modello}
+                  />
+                </div>
               </div>
             </div>
           </div>
-          <aside className="flex flex-col basis-[47%] items-center">
+          <aside className="flex flex-col basis-[46%] items-center">
             <form class="w-1/2 flex flex-col items-center">
               <label
                 for="countries"
@@ -132,9 +138,9 @@ const DettagliAuto = () => {
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-5/6 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
                 <option selected>Scegli una marca</option>
-                <option value="CA">Canada</option>
-                <option value="FR">France</option>
-                <option value="DE">Germany</option>
+                <option value="CA">Ferrari</option>
+                <option value="FR">Porsche</option>
+                <option value="DE">Aston Martin</option>
               </select>
             </form>
           </aside>
@@ -218,36 +224,40 @@ const DettagliAuto = () => {
               </h3>
               <hr className="border-t-3 border-black  my-3" />
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/3 font-semibold">Cilindri:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Cilindri:</p>
                 <p>
                   {auto.strutturaMotore} {auto.motore.toLowerCase()}
                 </p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/3 font-semibold">Dimensione Motore:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">
+                  Dimensione Motore:
+                </p>
                 <p>{auto.cilindrata} cm3</p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/3 font-semibold">Potenza:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Potenza:</p>
                 <p>{auto.potenza} CV</p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
 
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/3 font-semibold">Coppia:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Coppia:</p>
                 <p>{auto.coppia} Nm</p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
 
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/3 font-semibold">Alimentazione:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">
+                  Alimentazione:
+                </p>
                 <p>{auto.alimentazione} </p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/3 font-semibold">Trazione:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Trazione:</p>
                 <p>{auto.trazione} </p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
@@ -259,7 +269,9 @@ const DettagliAuto = () => {
               <hr className="border-t-3 border-black  my-3" />
 
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/3 font-semibold">Velocità massima:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">
+                  Velocità massima:
+                </p>
                 <p>{auto.velocitaMax} km/h</p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
@@ -272,17 +284,17 @@ const DettagliAuto = () => {
               <hr className="border-t-3 border-black  my-3" />
 
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/3 font-semibold">Lunghezza:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Lunghezza:</p>
                 <p>{auto.length} mm </p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/3 font-semibold">Larghezza:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Larghezza:</p>
                 <p>{auto.width} mm</p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/3 font-semibold">Potenza:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Potenza:</p>
                 <p>{auto.height} mm</p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
@@ -294,12 +306,16 @@ const DettagliAuto = () => {
                 <hr className="border-t-3 border-black  my-3" />
               </div>
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/3 font-semibold">Unità Vendute:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">
+                  Unità Vendute:
+                </p>
                 <p>{auto.unitaVendute} </p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/3 font-semibold">Prezzo all'uscita:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">
+                  Prezzo all'uscita:
+                </p>
                 <p>
                   {' '}
                   {new Intl.NumberFormat('it-IT', {
