@@ -224,16 +224,14 @@ const DettagliAuto = () => {
               </h3>
               <hr className="border-t-3 border-black  my-3" />
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Cilindri:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Struttura:</p>
                 <p>
                   {auto.strutturaMotore} {auto.motore.toLowerCase()}
                 </p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">
-                  Dimensione Motore:
-                </p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Cilindrata:</p>
                 <p>{auto.cilindrata} cm3</p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
@@ -259,6 +257,13 @@ const DettagliAuto = () => {
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
                 <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Trazione:</p>
                 <p>{auto.trazione} </p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">
+                  Posizionamento motore:
+                </p>
+                <p>{auto.posizioneMotore} </p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
             </div>
@@ -294,8 +299,13 @@ const DettagliAuto = () => {
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
-                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Potenza:</p>
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Altezza:</p>
                 <p>{auto.height} mm</p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Peso:</p>
+                <p>{auto.peso} kg</p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
 
