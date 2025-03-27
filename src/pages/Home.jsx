@@ -228,7 +228,7 @@ const Home = () => {
               <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                 <span class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-transactions)] before:content-[counter(num)] text-gray-900 dark:text-gray-200 ">
                   {' '}
-                  <span class="sr-only ">8</span>{' '}
+                  <span class="sr-only ">12</span>{' '}
                 </span>
               </dd>
             </div>

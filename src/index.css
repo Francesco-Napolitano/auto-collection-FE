@@ -54,7 +54,7 @@
     --num-users: 0;
   }
   to {
-    --num-transactions: 8;
+    --num-transactions: 12;
     --num-assets: 50;
     --num-users: 8;
   }
