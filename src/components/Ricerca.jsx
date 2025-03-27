@@ -46,7 +46,7 @@ const Ricerca = () => {
     )
 
   return (
-    <div className=" px-50 bg-white border-gray-200 dark:bg-gray-900 py-38">
+    <div className="px-5 lg:px-30 bg-white border-gray-200 dark:bg-gray-900 py-38">
       <h1 className="!text-2xl text-start py-3 dark:text-gray-200">
         {auto.length} risultati della ricerca
       </h1>
@@ -82,7 +82,7 @@ const Ricerca = () => {
           </form>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-3 pt-10">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-3 pt-10">
         <div className=" mb-5 flex flex-col items-start  text-gray-900 dark:text-gray-200 col-span-1">
           <div className="p-3 shadow-md w-full flex flex-col items-start border-1 bg-white border-gray-200 dark:bg-gray-800 rounded-lg  dark:border-gray-700 duration-300 transition">
             <p>Filtri utilizzati ({searchParams.size})</p>
@@ -91,9 +91,9 @@ const Ricerca = () => {
         <div className="col-span-3 grid grid-cols-1 gap-10">
           {auto.length > 0 ? (
             auto.map((a) => (
-              <div className="p-5 flex items-start bg-white border-gray-200 dark:bg-gray-800 rounded-lg shadow-md dark:border-gray-700 duration-300 transition text-gray-900 dark:text-gray-200 col-span-3 border-1 gap-3">
+              <div className="p-5 flex max-md:flex-col items-center lg:items-start bg-white border-gray-200 dark:bg-gray-800 rounded-lg shadow-md dark:border-gray-700 duration-300 transition text-gray-900 dark:text-gray-200 col-span-3 border-1 gap-3">
                 <Link to={`/auto/${a.id}`}>
-                  <div className="flex flex-col items-start w-86 ">
+                  <div className="flex flex-col items-start  lg:w-86 ">
                     <h3 className="text-gray-900 text-2xl dark:text-gray-200 ">
                       {a.nome} {a.modello}
                     </h3>
@@ -102,7 +102,7 @@ const Ricerca = () => {
                     </div>
                   </div>
                 </Link>
-                <div className="flex flex-col text-gray-900 dark:text-gray-200 items-start pr-25 h-full border-r-1 grow basis-70 justify-center ">
+                <div className="flex flex-col text-gray-900 dark:text-gray-200 items-start   h-full xl:border-r-1 grow sm:basis-70 justify-start lg:justify-center ">
                   <p className="font-semibold text-2xl pt-10 pb-5">
                     {new Intl.NumberFormat('it-IT', {
                       style: 'decimal',
@@ -130,7 +130,7 @@ const Ricerca = () => {
                     </span>
                   </p>
                 </div>
-                <div className="w-60 flex flex-col bg-gray-400  text-gray-900 dark:text-gray-200 justify-center  items-center h-full">
+                <div className="hidden  xl:flex w-60  flex-col bg-gray-400  text-gray-900 dark:text-gray-200 justify-center  items-center h-full">
                   <span className="text-gray-50 dark:text-gray-200 flex items-center gap-1">
                     <svg
                       class="h-5 text-gray-00 w-5 dark:text-gray-200 mr-1"
