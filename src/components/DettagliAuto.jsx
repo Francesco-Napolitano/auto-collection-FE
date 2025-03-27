@@ -316,10 +316,20 @@ const DettagliAuto = () => {
                 <hr className="border-t-3 border-black  my-3" />
               </div>
               <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Tipo:</p>
+                <p>{auto.carrozzeria} </p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
                 <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">
                   Unità Vendute:
                 </p>
                 <p>{auto.unitaVendute} </p>
+              </div>
+              <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
+              <div className="flex justify-start text-gray-900 dark:text-gray-200">
+                <p className="w-1/2 pr-1 lg:w-1/3 font-semibold">Anno:</p>
+                <p>{auto.anno} </p>
               </div>
               <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-3" />
               <div className="flex justify-start text-gray-900 dark:text-gray-200">

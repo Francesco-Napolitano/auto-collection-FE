@@ -10,28 +10,28 @@ const BrandPopolariHomepage = () => {
       <h2 className="color-website mb-15 !text-[45px]">I brand più popolari</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center gap-10 ">
         <div class=" bg-white border transition duration-300 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 py-10">
-          <a href="#">
+          <Link to={'/brand/1'}>
             <FerrariSvg width="full" height={300} />
-          </a>
+          </Link>
         </div>
         <div class="  bg-white border transition duration-300 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 py-10 flex items-center justify-center">
-          <a href="#">
+          <Link to={'/brand/3'}>
             <img src={Porsche} alt="porsche logo" className="mx-auto w-1/2 " />
-          </a>
+          </Link>
         </div>
         <div class="max-lg:h-90 bg-white border transition duration-300 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 py-10 flex items-center justify-center">
-          <a href="#">
+          <Link to={'/brand/10'}>
             <img
               src={Mercedes}
               alt="mercedes logo"
               className="w-1/2 mx-auto "
             />
-          </a>
+          </Link>
         </div>
         <div class=" bg-white border transition duration-300 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 py-10 flex items-center justify-center">
-          <a href="#">
+          <Link to={'/brand/5'}>
             <img src={Bugatti} alt="bugatti logo" className="w-5/6 mx-auto" />
-          </a>
+          </Link>
         </div>
       </div>
       <div className="mt-10 lg:mt-5">
@@ -40,7 +40,7 @@ const BrandPopolariHomepage = () => {
             type="button"
             class="focus:outline-none text-gray-200 !bg-[#22881b] !font-bold rounded-lg text-sm px-5 py-2.5 mt-7 !shadow-md"
           >
-            Esplora tutti i marchi
+            Esplora tutti i brand
           </button>
         </Link>
       </div>
