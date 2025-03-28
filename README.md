@@ -1,13 +1,14 @@
 🏎️ AutoIconiche
 
-Benvenuto su AutoDB, il progetto che unisce la mia passione per le automobili e il mio amore per lo sviluppo software! 🚀 Non trovando un sito web che mi permettesse di gestire in modo intuitivo e potente un database di automobili, ho deciso di crearlo io stesso! Questo progetto è il frutto di settimane di lavoro, studio e perfezionamento per realizzare una soluzione full-stack completa e performante.
+Benvenuto su AutoIconiche, il progetto che unisce la mia passione per le automobili e il mio amore per lo sviluppo software! 🚀 Non trovando un sito web che mi permettesse di gestire in modo intuitivo e potente un database di automobili, ho deciso di crearlo io stesso! Questo progetto è il frutto di settimane di lavoro, studio e perfezionamento per realizzare una soluzione full-stack completa e performante.
 
 AutoDB offre una gestione avanzata delle automobili, con funzionalità di autenticazione, protezione dati e interfaccia moderna, perfetta sia per utenti casuali che per professionisti del settore. Se sei un’azienda o un recruiter, questo progetto è la dimostrazione pratica delle mie capacità nello sviluppo web e backend, nella gestione della sicurezza e nell’integrazione di tecnologie moderne. 👨🏻‍💻
 
 🌍 Versione Pubblicata
 
-🔗 Frontend live: auto-collection-fe.vercel.app
-🔗 Backend live: suspicious-mae-autoiconiche-c817b685.koyeb.app/
+🔗 Frontend live: https://auto-collection-fe.vercel.app/
+
+🔗 Backend live: https://suspicious-mae-autoiconiche-c817b685.koyeb.app/
 
 📂 Struttura del Progetto
 
@@ -26,8 +27,11 @@ Deployment: Render, Koyeb, Vercel
 🔑 Funzionalità Principali
 
 ✅ Gestione CRUD delle automobili
+
 ✅ Autenticazione con Spring Security e OAuth2 (Google attivo, GitHub in manutenzione)
+
 ✅ Ruoli utente e protezione API con Spring Security
+
 ✅ Custom Hooks per la gestione delle chiamate API e autenticazione
 
 🔧 Installazione e Avvio Locale
@@ -39,6 +43,7 @@ git clone https://github.com/Francesco-Napolitano/auto-collection-FE
 2️⃣ Installare le dipendenze
 
 cd auto-collection-FE
+
 npm install
 
 3️⃣ Avviare il Frontend
