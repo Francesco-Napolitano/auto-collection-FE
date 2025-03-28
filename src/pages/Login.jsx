@@ -103,14 +103,6 @@ const Login = () => {
                     alt="Google"
                   />
                 </button>
-                <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
-                  <img
-                    class="w-6 h-6"
-                    loading="lazy"
-                    src="https://ucarecdn.com/95eebb9c-85cf-4d12-942f-3c40d7044dc6/"
-                    alt="LinkedIn"
-                  />
-                </button>
                 <button
                   onClick={() => oauthLogin('github')}
                   class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg"
@@ -120,14 +112,6 @@ const Login = () => {
                     loading="lazy"
                     src="https://ucarecdn.com/be5b0ffd-85e8-4639-83a6-5162dfa15a16/"
                     alt="GitHub"
-                  />
-                </button>
-                <button class="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg">
-                  <img
-                    class="w-6 h-6"
-                    loading="lazy"
-                    src="https://ucarecdn.com/82d7ca0a-c380-44c4-ba24-658723e2ab07/"
-                    alt="Twitter"
                   />
                 </button>
               </div>
