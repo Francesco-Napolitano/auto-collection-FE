@@ -9,7 +9,7 @@ const useAxios = () => {
   const { token } = useContext(AuthContext)
 
   const axiosInstance = axios.create({
-    baseURL: 'suspicious-mae-autoiconiche-c817b685.koyeb.app',
+    baseURL: 'https://suspicious-mae-autoiconiche-c817b685.koyeb.app',
   })
 
   //Qui stiamo intercettando la richiesta prima che venga effettuata e settiamo l'header Authorization con il token prima di inviarla, in questo modo prima di ogni richiesta avrà sempre il token aggiornato
