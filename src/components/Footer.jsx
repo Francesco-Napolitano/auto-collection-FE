@@ -37,7 +37,7 @@ const Footer = () => {
           </ul>
         </div>
         <hr class="border-gray-200 dark:border-gray-700 lg:my-8 my-6 sm:mx-auto" />
-        <span class="text-gray-500 text-sm block dark:text-gray-400 sm:text-center">
+        <span class="text-gray-500 text-sm block dark:text-gray-400 sm:text-center pb-2">
           © 2025{' '}
           <a href="#" class="hover:underline">
             AutoIconiche™

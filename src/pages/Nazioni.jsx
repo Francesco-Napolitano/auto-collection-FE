@@ -20,10 +20,10 @@ const Nazioni = () => {
       </div>
     )
   return (
-    <section className="h-screen max-sm:mt-17 max-md:mb-130 pt-30 mx-auto bg-white border-gray-200 dark:bg-gray-900 ">
+    <section className=" max-sm:mt-17 pt-30 mx-auto bg-white border-gray-200 dark:bg-gray-900 pb-5">
       <div className="container flex flex-col items-center justify-center gap-10 px-6 py-8 mx-auto">
         <h1 className="color-website ">Nazioni</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-2 gap-10 lg:grid-cols-4">
           {nazione.length > 0 ? (
             nazione
               .sort((a, b) => a.name.localeCompare(b.name)) // Ordina alfabeticamente

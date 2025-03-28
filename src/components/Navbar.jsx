@@ -115,7 +115,7 @@ const Navbar = () => {
             </button>
           )}
         </div>
-        <ul className="flex grow justify-center   font-medium  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 ">
+        <ul className="flex grow justify-center   font-medium  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
           <li>
             <a
               href="#"

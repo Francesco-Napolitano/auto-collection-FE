@@ -26,8 +26,8 @@ const AutoPerBrand = () => {
   if (error) return <p>Errore nel caricamento.</p>
 
   return (
-    <section className="h-screen bg-white border-gray-200 dark:bg-gray-900 md:pt-25 mx-auto pt-40 max-sm:mt-10 max-lg:mb-80">
-      <div className="container flex flex-col justify-center gap-10 items-center mx-auto px-6 ">
+    <section className=" bg-white border-gray-200 dark:bg-gray-900 md:pt-25 mx-auto pt-40 max-sm:mt-10">
+      <div className="container flex flex-col justify-center gap-10 items-center mx-auto px-6 pb-10">
         <h1 className="color-website ">{brand[0]?.brand.name}</h1>
         <div className="grid grid-cols-1 gap-x-5  gap-y-15 lg:grid-cols-3 md:grid-cols-2 2xl:grid-cols-4">
           {brand.length > 0 ? (

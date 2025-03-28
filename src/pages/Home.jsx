@@ -102,7 +102,7 @@ const Home = () => {
           scritto <br />
           la storia dell’automobilismo!
         </p>
-        <div className="flex flex-col lg:flex-row items-center gap-10">
+        <div className="flex flex-col lg:flex-row items-center gap-10 pb-10">
           <div className="flex items-center">
             <div className="border border-black ">
               <FerrariSvg width="25" height="full" />

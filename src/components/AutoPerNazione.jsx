@@ -33,7 +33,7 @@ const AutoPerNazione = () => {
   if (error) return <p>Errore nel caricamento.</p>
 
   return (
-    <section className=" bg-white border-gray-200 dark:bg-gray-900 md:pt-25 mx-auto pt-40 max-sm:mt-10 max-lg:mb-80">
+    <section className=" bg-white border-gray-200 dark:bg-gray-900 md:pt-25 mx-auto pt-40 max-sm:mt-10 ">
       {token ? (
         <div className="container flex flex-col justify-center gap-10 items-center mx-auto px-6 py-8">
           <h1 className="color-website ">{nazione[0]?.nazione.name}</h1>
