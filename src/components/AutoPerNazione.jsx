@@ -56,7 +56,7 @@ const AutoPerNazione = () => {
                     key={automobile.id}
                   >
                     <img
-                      className={`h-50 rounded-t-lg w-80 mb-2 md:h-55 transition-opacity duration-500 ${
+                      className={`object-cover rounded-t-lg w-80 mb-2 md:h-55 transition-opacity duration-500 ${
                         loadedImages[automobile.id]
                           ? 'opacity-100'
                           : 'opacity-0'

@@ -97,27 +97,27 @@ const DettagliAuto = () => {
                 <img
                   src={auto.immagini[1].immagineUrl}
                   alt={auto.modello}
-                  className="rounded-t-md w-full hover:scale-102 duration-300 transition"
+                  className="rounded-t-md w-full hover:scale-102 duration-300 transition object-cover"
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-0.5 ">
                 <div>
                   <img
-                    className=" rounded-bl-md w-full h-full hover:scale-120 duration-200 transition "
+                    className=" rounded-bl-md w-full h-full hover:scale-120 duration-200 transition object-cover"
                     src={auto.immagini[2].immagineUrl}
                     alt={auto.modello}
                   />
                 </div>
                 <div>
                   <img
-                    className="rounded-bl-md w-full h-full hover:scale-120 duration-200 transition"
+                    className="rounded-bl-md w-full h-full hover:scale-120 duration-200 transition object-cover"
                     src={auto.immagini[0].immagineUrl}
                     alt={auto.modello}
                   />
                 </div>
                 <div>
                   <img
-                    className=" rounded-br-md w-full h-full hover:scale-120 duration-200 transition"
+                    className=" rounded-br-md w-full h-full hover:scale-120 duration-200 transition object-cover"
                     src={auto.immagini[3].immagineUrl}
                     alt={auto.modello}
                   />

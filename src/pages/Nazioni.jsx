@@ -33,7 +33,7 @@ const Nazioni = () => {
                     key={nazioni.id}
                     className="cursor-pointer flex flex-col items-center gap-3 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 pb-3 justify-center transition duration-300 hover:bg-gradient-to-tl hover:from-gray-200 dark:hover:from-gray-700"
                   >
-                    <div className="h-full rounded-lg px-2 pt-2 pb-1 bg-gray-100 dark:bg-gray-900">
+                    <div className="h-full rounded-t-lg px-2 pt-2 pb-1  border-1 border-gray-100  dark:bg-gray-900">
                       <img
                         src={nazioni.imageNation}
                         alt={nazioni.name}

@@ -43,7 +43,7 @@ const Brand = () => {
                     <img
                       src={brand.logoUrl}
                       alt={brand.name}
-                      className={`h-20 w-35 object-contain ${
+                      className={`h-20 md:h-20 w-35 object-contain ${
                         loadedImages[brand.id] ? 'opacity-100' : 'opacity-0'
                       }`}
                       onLoad={() => handleImageLoad(brand.id)}
