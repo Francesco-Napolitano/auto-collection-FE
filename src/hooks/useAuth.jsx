@@ -26,7 +26,7 @@ const useAuth = () => {
 
   // Funzione per avviare il login con OAuth2
   const oauthLogin = async (provider) => {
-    window.location.href = `http://localhost:8080/oauth2/authorization/${provider}`
+    window.location.href = `https://suspicious-mae-autoiconiche-c817b685.koyeb.app/oauth2/authorization/${provider}`
   }
 
   // Funzione per ottenere il token JWT dal backend dopo l'OAuth2
