@@ -4,17 +4,23 @@ Benvenuto su AutoIconiche, il progetto che unisce la mia passione per le automob
 
 AutoDB offre una gestione avanzata delle automobili, con funzionalità di autenticazione, protezione dati e interfaccia moderna, perfetta sia per utenti casuali che per professionisti del settore. Se sei un’azienda o un recruiter, questo progetto è la dimostrazione pratica delle mie capacità nello sviluppo web e backend, nella gestione della sicurezza e nell’integrazione di tecnologie moderne. 👨🏻‍💻
 
+---
+
 🌍 Versione Pubblicata
 
 🔗 Frontend live: https://auto-collection-fe.vercel.app/
 
 🔗 Backend live: https://suspicious-mae-autoiconiche-c817b685.koyeb.app/
 
+---
+
 📂 Struttura del Progetto
 
 Backend → Java + Spring Boot, PostgreSQL, Spring Security, OAuth2
 
 Frontend → Vite + React, TailwindCSS, Gestione Autenticazione con Context API e Custom Hooks
+
+---
 
 🚀 Tecnologie Utilizzate
 
@@ -23,6 +29,8 @@ Backend: Java, Spring Boot, Spring Security, OAuth2, PostgreSQL
 Frontend: React, Vite, TailwindCSS, Context API
 
 Deployment: Render, Koyeb, Vercel
+
+---
 
 🔑 Funzionalità Principali
 
@@ -33,6 +41,8 @@ Deployment: Render, Koyeb, Vercel
 ✅ Ruoli utente e protezione API con Spring Security
 
 ✅ Custom Hooks per la gestione delle chiamate API e autenticazione
+
+---
 
 🔧 Installazione e Avvio Locale
 
@@ -54,6 +64,12 @@ npm run dev
 
 Clonare il backend da Backend Repo, configurare PostgreSQL e avviare Spring Boot.
 
+---
+
 ⚠️ Importante: Per eseguire il backend, crea un database PostgreSQL locale e modifica il file application.properties con le tue credenziali.
+
+---
+
+📖 Docs
 
 🔗 Backend Repository: https://github.com/Francesco-Napolitano/auto-collection
