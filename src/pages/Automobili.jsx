@@ -55,7 +55,7 @@ const Automobili = () => {
       </div>
     )
   return (
-    <section className="bg-white border-gray-200 dark:bg-gray-900 md:pt-25 mx-auto pt-40 ">
+    <section className="bg-white border-gray-200 dark:bg-gray-900 md:pt-25 mx-auto pt-42 ">
       <div className="container flex flex-col justify-center gap-10 items-center  mx-auto px-6 py-8">
         <h1 className="color-website self-start">
           Esplora le Auto più Iconiche di Sempre

@@ -93,14 +93,7 @@ const App = () => {
             </ProtectedRoute>
           }
         />
-        <Route
-          path="/brand/:id"
-          element={
-            <ProtectedRoute>
-              <AutoPerBrand />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/brand/:id" element={<AutoPerBrand />} />
         <Route
           path="/creazione/auto"
           element={

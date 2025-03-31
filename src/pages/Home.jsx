@@ -17,6 +17,7 @@ const Home = () => {
 
   const [brandSelezionato, setBrandSelezionato] = useState('')
   const [modelli, setModelli] = useState('')
+  const [modelloSelezionato, setModelloSelezionato] = useState('')
   const [prezzoMin, setPrezzoMin] = useState('')
   const [annoMin, setAnnoMin] = useState('')
   const [nazioneSelezionata, setNazioneSelezionata] = useState('')
@@ -43,7 +44,7 @@ const Home = () => {
   const buildQueryParams = () => {
     const params = new URLSearchParams()
 
-    if (modelli.length > 0) params.append('modello', modelli.join(','))
+    if (modelloSelezionato) params.append('modello', modelloSelezionato)
     if (prezzoMin) params.append('prezzoMin', Number(prezzoMin))
     if (annoMin) params.append('annoMin', Number(annoMin))
     if (brandSelezionato) params.append('brandID', brandMap[brandSelezionato])
@@ -157,6 +158,7 @@ const Home = () => {
               id="modello"
               disabled={!brandSelezionato}
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b] disabled:opacity-50 z-1 "
+              onChange={(e) => setModelloSelezionato(e.target.value)}
             >
               <option value="">Modello</option>
               {modelli.map((modello) => (
