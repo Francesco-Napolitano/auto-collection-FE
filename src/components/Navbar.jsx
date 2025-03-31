@@ -87,7 +87,7 @@ const Navbar = () => {
                 type="text"
                 id="search-navbar"
                 className="stop block mr-2 w-40 p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-transparent  dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 h-10 focus:ring-2 focus:ring-[#22881b] transition duration-500"
-                placeholder="Search..."
+                placeholder="Cerca..."
                 onChange={(e) => setModelli(e.target.value)}
                 value={modelli}
               />

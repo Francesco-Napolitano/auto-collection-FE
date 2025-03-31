@@ -15,11 +15,11 @@ const Home = () => {
   const { data: auto, loading, error } = useFetch('/auto', 'GET')
   const { login } = useContext(AuthContext)
 
-  //aggiungere anno max
   const [brandSelezionato, setBrandSelezionato] = useState('')
   const [modelli, setModelli] = useState('')
   const [modelloSelezionato, setModelloSelezionato] = useState('')
   const [prezzoMin, setPrezzoMin] = useState('')
+  const [prezzoMax, setPrezzoMax] = useState('')
   const [annoMin, setAnnoMin] = useState('')
   const [nazioneSelezionata, setNazioneSelezionata] = useState('')
 
@@ -47,6 +47,7 @@ const Home = () => {
 
     if (modelloSelezionato) params.append('modello', modelloSelezionato)
     if (prezzoMin) params.append('prezzoMin', Number(prezzoMin))
+    if (prezzoMax) params.append('prezzoMax', Number(prezzoMax))
     if (annoMin) params.append('annoMin', Number(annoMin))
     if (brandSelezionato) params.append('brandID', brandMap[brandSelezionato])
     if (nazioneSelezionata)
@@ -135,7 +136,7 @@ const Home = () => {
           <source className="rounded" src={videoSrc} />
         </video>
         <section className="bg-white border border-gray-200 rounded-lg shadow-xs transition duration-300 dark:bg-gray-800 dark:border-gray-700 w-4/5 mx-auto py-10 md:p-10 flex justify-around">
-          <form className="grid grid-cols-2 lg:grid-cols-3 w-4/5 gap-3 ">
+          <form className="grid grid-cols-2 lg:grid-cols-3 w-4/5 gap-3 justify-center items-center">
             <label htmlFor="brand" className="sr-only">
               Marca
             </label>
@@ -189,6 +190,19 @@ const Home = () => {
               id="number-input"
               aria-describedby="helper-text-explanation"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              placeholder="Fino a (€)"
+              min={0}
+              value={prezzoMax}
+              onChange={(e) => setPrezzoMax(e.target.value)}
+            />
+            <label for="number-input" class="sr-only">
+              Select a number:
+            </label>
+            <input
+              type="number"
+              id="number-input"
+              aria-describedby="helper-text-explanation"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
               placeholder="Anno da"
               min={1886}
               value={annoMin}
@@ -208,12 +222,13 @@ const Home = () => {
                 </option>
               ))}
             </select>
+            <div className="hidden lg:block"></div>
             <Link to={`/ricerca?${buildQueryParams()}`}>
               <button
                 type="submit"
-                className="text-gray-200 w-full !font-bold !bg-[#22881b] h-full shadow-sm shadow-[#22881b]"
+                className="text-gray-200 w-full !font-bold !bg-[#22881b] p-1  shadow-sm shadow-[#22881b] "
               >
-                Search
+                Cerca
               </button>
             </Link>
           </form>
