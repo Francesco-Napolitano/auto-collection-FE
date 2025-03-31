@@ -48,7 +48,7 @@ const Automobili = () => {
     return (
       <div
         role="status"
-        className="h-screen flex items-center gap-2 justify-center"
+        className="h-screen flex items-center gap-2 justify-center bg-white dark:bg-gray-900"
       >
         <svg
           aria-hidden="true"
@@ -67,7 +67,7 @@ const Automobili = () => {
           />
         </svg>
         <span class="sr-only">Loading...</span>
-        <span className="">Caricamento</span>
+        <span className="text-gray-900 dark:text-gray-200">Caricamento</span>
       </div>
     )
 

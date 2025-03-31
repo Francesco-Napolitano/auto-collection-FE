@@ -28,13 +28,11 @@ const AutoPerNazione = () => {
     ev.currentTarget.classList.toggle('fill-red-500')
   }
 
-  if (!nazione) return null
-
   if (loading)
     return (
       <div
         role="status"
-        className="h-screen flex items-center gap-2 justify-center"
+        className="h-screen flex items-center gap-2 justify-center bg-white dark:bg-gray-900"
       >
         <svg
           aria-hidden="true"
@@ -53,11 +51,12 @@ const AutoPerNazione = () => {
           />
         </svg>
         <span class="sr-only">Loading...</span>
-        <span className="">Caricamento</span>
+        <span className="text-gray-900 dark:text-gray-200">Caricamento</span>
       </div>
     )
 
   if (error) return <p>Errore nel caricamento.</p>
+  if (!nazione) return null
 
   return (
     <section className=" bg-white border-gray-200 dark:bg-gray-900 md:pt-25 mx-auto pt-40 max-sm:mt-10 ">

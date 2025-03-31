@@ -16,11 +16,11 @@ const DettagliAuto = () => {
     return (
       <div
         role="status"
-        className="h-screen flex items-center gap-2 justify-center"
+        className="h-screen flex items-center gap-2 justify-center bg-white dark:bg-gray-900"
       >
         <svg
           aria-hidden="true"
-          class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#22881B]"
+          className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#22881B]"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -34,13 +34,12 @@ const DettagliAuto = () => {
             fill="currentFill"
           />
         </svg>
-        <span class="sr-only">Loading...</span>
-        <span className="">Caricamento</span>
+        <span className="sr-only">Loading...</span>
+        <span className="text-gray-900 dark:text-gray-200">Caricamento</span>
       </div>
     )
 
   if (error) return <p>Errore</p>
-
   if (!auto) return <div>Caricamento...</div>
 
   return (
@@ -53,13 +52,13 @@ const DettagliAuto = () => {
           <p className=" text-sm text-gray-900 dark:text-gray-200 gap-3 flex">
             <span className="text-gray-900 dark:text-gray-200 flex items-center gap-1 ">
               <svg
-                class="h-5 w-5 "
+                className="h-5 w-5 "
                 viewBox="0 0 24 24"
-                stroke-width="1.2"
+                strokeWidth="1.2"
                 stroke="currentColor"
                 fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 {' '}
                 <path stroke="none" d="M0 0h24v24H0z" />{' '}
@@ -69,21 +68,21 @@ const DettagliAuto = () => {
             </span>
             <span className="text-gray-900 dark:text-gray-200 flex items-center gap-1">
               <svg
-                class="h-5 w-5 "
+                className="h-5 w-5 "
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.2"
                   d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"
                 />
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"
                 />
               </svg>
@@ -91,13 +90,13 @@ const DettagliAuto = () => {
             </span>
             <span className="text-gray-900 dark:text-gray-200 flex items-center gap-1">
               <svg
-                class="h-5 text-gray-00 w-5 dark:text-gray-200 mr-1"
+                className="h-5 text-gray-00 w-5 dark:text-gray-200 mr-1"
                 viewBox="0 0 24 24"
-                stroke-width="1.2"
+                strokeWidth="1.2"
                 stroke="currentColor"
                 fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 {' '}
                 <path stroke="none" d="M0 0h24v24H0z" />{' '}
@@ -113,52 +112,75 @@ const DettagliAuto = () => {
             <h2 className="!text-[22px] dark:text-gray-200 text-start mb-2 color-website">
               Fotogallery :
             </h2>
-            <div className="grid grid-cols-1 gap-0.5 ">
-              <div>
-                <img
-                  src={auto.immagini[1].immagineUrl}
-                  alt={auto.modello}
-                  className="rounded-t-md w-full hover:scale-102 duration-300 transition object-cover"
-                />
+            {auto.immagini ? (
+              <div className="grid grid-cols-1 gap-0.5 ">
+                <div>
+                  <img
+                    src={auto.immagini[1].immagineUrl}
+                    alt={auto.modello}
+                    className="rounded-t-md w-full hover:scale-102 duration-300 transition object-cover"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-0.5 ">
+                  <div>
+                    <img
+                      className=" rounded-bl-md w-full h-full hover:scale-120 duration-200 transition object-cover"
+                      src={auto.immagini[2].immagineUrl}
+                      alt={auto.modello}
+                    />
+                  </div>
+                  <div>
+                    <img
+                      className="rounded-bl-md w-full h-full hover:scale-120 duration-200 transition object-cover"
+                      src={auto.immagini[0].immagineUrl}
+                      alt={auto.modello}
+                    />
+                  </div>
+                  <div>
+                    <img
+                      className=" rounded-br-md w-full h-full hover:scale-120 duration-200 transition object-cover"
+                      src={auto.immagini[3].immagineUrl}
+                      alt={auto.modello}
+                    />
+                  </div>
+                </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-0.5 ">
-                <div>
-                  <img
-                    className=" rounded-bl-md w-full h-full hover:scale-120 duration-200 transition object-cover"
-                    src={auto.immagini[2].immagineUrl}
-                    alt={auto.modello}
+            ) : (
+              <div
+                role="status"
+                className="h-screen flex items-center gap-2 justify-center bg-white dark:bg-gray-900"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#22881B]"
+                  viewBox="0 0 100 101"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                    fill="currentColor"
                   />
-                </div>
-                <div>
-                  <img
-                    className="rounded-bl-md w-full h-full hover:scale-120 duration-200 transition object-cover"
-                    src={auto.immagini[0].immagineUrl}
-                    alt={auto.modello}
+                  <path
+                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                    fill="currentFill"
                   />
-                </div>
-                <div>
-                  <img
-                    className=" rounded-br-md w-full h-full hover:scale-120 duration-200 transition object-cover"
-                    src={auto.immagini[3].immagineUrl}
-                    alt={auto.modello}
-                  />
-                </div>
+                </svg>
+                <span className="sr-only">Loading...</span>
               </div>
-            </div>
+            )}
           </div>
           <aside className="flex flex-col basis-[46%] items-center">
-            <form class="w-1/2 flex flex-col items-center">
-              <label
-                for="countries"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white "
-              >
+            <form className="w-1/2 flex flex-col items-center">
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">
                 Paragona con...
               </label>
               <select
                 id="countries"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-5/6 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-5/6 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >
-                <option selected>Scegli una marca</option>
+                <option defaultValue="">Scegli una marca</option>
                 <option value="CA">Ferrari</option>
                 <option value="FR">Porsche</option>
                 <option value="DE">Aston Martin</option>
@@ -172,8 +194,8 @@ const DettagliAuto = () => {
               Principali Caratteristiche
             </h2>
             <hr className="border-t-2 border-gray-200 dark:border-gray-700 my-2" />
-            <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 py-5 text-gray-900 dark:text-gray-200">
-              <div className="flex gap-1 items-baseline justify-center">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4 py-5 text-gray-900 dark:text-gray-200 ">
+              <div className="flex gap-1 items-baseline md:justify-center">
                 <p className="text-lg">Potenza:</p>
                 <p className="font-bold">
                   {' '}
@@ -181,15 +203,15 @@ const DettagliAuto = () => {
                   {Math.round(auto.potenza * 0.735 * 100) / 100} kW)
                 </p>
               </div>
-              <div className="flex gap-1 items-baseline justify-center">
+              <div className="flex gap-1 items-baseline md:justify-center">
                 <p className="text-lg">Coppia:</p>
                 <p className="font-semibold"> {auto.coppia} Nm </p>
               </div>
-              <div className="flex gap-1 items-baseline justify-center">
+              <div className="flex gap-1 items-baseline md:justify-center">
                 <p className="text-lg">Velocità Massima:</p>
                 <p className="font-semibold"> {auto.velocitaMax} km/h </p>
               </div>
-              <div className="flex gap-1 items-baseline justify-center">
+              <div className="flex gap-1 items-baseline md:justify-center">
                 <p className="text-lg">Motore:</p>
                 <p className="font-semibold">
                   {' '}
