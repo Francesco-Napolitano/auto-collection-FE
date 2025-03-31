@@ -47,7 +47,7 @@ const Ricerca = () => {
 
   return (
     <div className="px-5 lg:px-30 bg-white border-gray-200 dark:bg-gray-900 py-38">
-      <h1 className="!text-2xl text-start py-3 dark:text-gray-200">
+      <h1 className="!text-2xl text-start py-3 dark:text-gray-200 pt-20 sm:pt-0">
         {auto.length} risultati della ricerca
       </h1>
       <div className="p-3 mb-5 flex flex-col items-start bg-white border-gray-200 dark:bg-gray-800 rounded-lg shadow-sm dark:border-gray-700 duration-300 transition text-gray-900 dark:text-gray-200 border-1">
@@ -98,7 +98,11 @@ const Ricerca = () => {
                       {a.nome} {a.modello}
                     </h3>
                     <div className="w-70 pt-3">
-                      <img src={a.immagini[2].immagineUrl} alt={auto.modello} />
+                      <img
+                        src={a.immagini[2].immagineUrl}
+                        alt={auto.modello}
+                        className="h-45 object-cover"
+                      />
                     </div>
                   </div>
                 </Link>
