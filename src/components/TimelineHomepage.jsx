@@ -87,7 +87,7 @@ const Timeline = () => {
       </div>
       <button
         type="button"
-        class="focus:outline-none text-gray-200 !bg-[#22881b] !font-bold rounded-lg text-sm px-5 py-2.5 !shadow-md"
+        className="focus:outline-none text-gray-200 !bg-[#22881b] !font-bold rounded-lg text-sm px-5 py-2.5 !shadow-md"
       >
         Ripercorri la storia
       </button>

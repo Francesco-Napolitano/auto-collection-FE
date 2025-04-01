@@ -29,7 +29,7 @@ const AutoPerBrand = () => {
       >
         <svg
           aria-hidden="true"
-          class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#22881B]"
+          className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#22881B]"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ const AutoPerBrand = () => {
             fill="currentFill"
           />
         </svg>
-        <span class="sr-only">Loading...</span>
+        <span className="sr-only">Loading...</span>
         <span className="text-gray-900 dark:text-gray-200">Caricamento</span>
       </div>
     )
@@ -97,7 +97,7 @@ const AutoPerBrand = () => {
                         viewBox="0 0 24 24"
                         stroke-width="1"
                         stroke="currentColor"
-                        class="size-6 text-gray-900 dark:text-gray-200"
+                        className="size-6 text-gray-900 dark:text-gray-200"
                         onClick={(e) => {
                           favouriteColor(e)
                         }}
@@ -113,7 +113,7 @@ const AutoPerBrand = () => {
                     <div className="flex justify-between items-center">
                       <span className="flex text-gray-900 dark:text-gray-200 items-center g">
                         <svg
-                          class="h-5 w-5 mb-0.5 mr-1"
+                          className="h-5 w-5 mb-0.5 mr-1"
                           width="24"
                           height="24"
                           viewBox="0 0 24 24"
@@ -140,7 +140,7 @@ const AutoPerBrand = () => {
                           viewBox="0 0 24 24"
                           stroke-width="1.2"
                           stroke="currentColor"
-                          class="h-5 w-5 mr-1"
+                          className="h-5 w-5 mr-1"
                         >
                           <path
                             stroke-linecap="round"
@@ -152,7 +152,7 @@ const AutoPerBrand = () => {
                       </span>
                       <span className="flex text-gray-900 dark:text-gray-200 items-center">
                         <svg
-                          class="h-5 text-gray-00 w-5 dark:text-gray-200 mr-1"
+                          className="h-5 text-gray-00 w-5 dark:text-gray-200 mr-1"
                           viewBox="0 0 24 24"
                           stroke-width="1.2"
                           stroke="currentColor"

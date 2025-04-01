@@ -91,7 +91,7 @@ const Home = () => {
       >
         <svg
           aria-hidden="true"
-          class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#22881B]"
+          className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#22881B]"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ const Home = () => {
             fill="currentFill"
           />
         </svg>
-        <span class="sr-only">Loading...</span>
+        <span className="sr-only">Loading...</span>
         <span className="text-gray-900 dark:text-gray-200">Caricamento</span>
       </div>
     )
@@ -188,40 +188,40 @@ const Home = () => {
                 </option>
               ))}
             </select>
-            <label for="number-input" class="sr-only">
+            <label htmlFor="number-input" className="sr-only">
               Select a number:
             </label>
             <input
               type="number"
               id="number-input"
               aria-describedby="helper-text-explanation"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
               placeholder="A partire da (€)"
               min={0}
               value={prezzoMin}
               onChange={(e) => setPrezzoMin(e.target.value)}
             />
-            <label for="number-input" class="sr-only">
+            <label htmlFor="number-input" className="sr-only">
               Select a number:
             </label>
             <input
               type="number"
               id="number-input"
               aria-describedby="helper-text-explanation"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
               placeholder="Fino a (€)"
               min={0}
               value={prezzoMax}
               onChange={(e) => setPrezzoMax(e.target.value)}
             />
-            <label for="number-input" class="sr-only">
+            <label htmlFor="number-input" className="sr-only">
               Select a number:
             </label>
             <input
               type="number"
               id="number-input"
               aria-describedby="helper-text-explanation"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
               placeholder="Anno da"
               min={1886}
               value={annoMin}
@@ -254,39 +254,39 @@ const Home = () => {
         </section>
       </div>
 
-      <div id="stats" class="bg-white py-10 dark:bg-gray-900 ">
+      <div id="stats" className="bg-white py-10 dark:bg-gray-900 ">
         <h2 className="color-website mb-15 !text-[45px]">Alcune Statistiche</h2>
-        <div class="mx-auto max-w-7xl px-6 lg:px-8 ">
-          <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
-            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-              <dt class="text-lg leading-7 text-gray-900 dark:text-gray-200">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 ">
+          <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+            <div className="mx-auto flex max-w-xs flex-col gap-y-4">
+              <dt className="text-lg leading-7 text-gray-900 dark:text-gray-200">
                 Brand
               </dt>
-              <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                <span class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-transactions)] before:content-[counter(num)] text-gray-900 dark:text-gray-200 ">
+              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                <span className="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-transactions)] before:content-[counter(num)] text-gray-900 dark:text-gray-200 ">
                   {' '}
-                  <span class="sr-only ">12</span>{' '}
+                  <span className="sr-only ">12</span>{' '}
                 </span>
               </dd>
             </div>
-            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-              <dt class="text-lg leading-7 text-gray-900 dark:text-gray-200">
+            <div className="mx-auto flex max-w-xs flex-col gap-y-4">
+              <dt className="text-lg leading-7 text-gray-900 dark:text-gray-200">
                 Modelli
               </dt>
-              <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                <span class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-assets)] before:content-[counter(num)] text-gray-900 dark:text-gray-200">
+              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                <span className="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-assets)] before:content-[counter(num)] text-gray-900 dark:text-gray-200">
                   {' '}
-                  <span class="sr-only ">8</span>
+                  <span className="sr-only ">8</span>
                 </span>
               </dd>
             </div>
-            <div class="mx-auto flex max-w-xs flex-col gap-y-4">
-              <dt class="text-lg leading-7 text-gray-900 dark:text-gray-200">
+            <div className="mx-auto flex max-w-xs flex-col gap-y-4">
+              <dt className="text-lg leading-7 text-gray-900 dark:text-gray-200">
                 Paesi
               </dt>
-              <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-                <span class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-users)] before:content-[counter(num)] text-gray-900 dark:text-gray-200 before:left-[calc(0.4em * var(--n, 1))]">
-                  <span class="sr-only">7</span>
+              <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                <span className="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-users)] before:content-[counter(num)] text-gray-900 dark:text-gray-200 before:left-[calc(0.4em * var(--n, 1))]">
+                  <span className="sr-only">7</span>
                 </span>
               </dd>
             </div>

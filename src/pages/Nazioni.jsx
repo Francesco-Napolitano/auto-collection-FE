@@ -17,7 +17,7 @@ const Nazioni = () => {
       >
         <svg
           aria-hidden="true"
-          class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#22881B]"
+          className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-[#22881B]"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ const Nazioni = () => {
             fill="currentFill"
           />
         </svg>
-        <span class="sr-only">Loading...</span>
+        <span className="sr-only">Loading...</span>
         <span className="text-gray-900 dark:text-gray-200">Caricamento</span>
       </div>
     )
@@ -39,7 +39,7 @@ const Nazioni = () => {
   if (error) return <p>Errore nel caricamento.</p>
   if (!nazione)
     return (
-      <div class="flex items-center w-full justify-center mx-auto h-100 rounded-3xl dark:bg-gray-800 ">
+      <div className="flex items-center w-full justify-center mx-auto h-100 rounded-3xl dark:bg-gray-800 ">
         <div className="px-5 py-2 text-lg font-semibold text-white bg-[#22881B] rounded-lg animate-pulse">
           Caricamento...
         </div>

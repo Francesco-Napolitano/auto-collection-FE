@@ -2,7 +2,7 @@
 // In particolare, salva il token in sessionStorage e fornisce due metodi per effettuare il login e il logout.
 // Il token viene salvato in sessionStorage per evitare che venga perso quando si ricarica la pagina.
 import { jwtDecode } from 'jwt-decode'
-import React, { createContext, useEffect, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 
 // Il contesto AuthContext serve a condividere informazioni sull'autenticazione tra i componenti della App.
 // In particolare, contiene un oggetto con tre valori:
