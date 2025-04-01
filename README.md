@@ -2,7 +2,7 @@
 
 Benvenuto su AutoIconiche, il progetto che unisce la mia passione per le automobili e il mio amore per lo sviluppo software! 🚀 Non trovando un sito web che mi permettesse di gestire in modo intuitivo e potente un database di automobili, ho deciso di crearlo io stesso! Questo progetto è il frutto di settimane di lavoro, studio e perfezionamento per realizzare una soluzione full-stack completa e performante.
 
-AutoDB offre una gestione avanzata delle automobili, con funzionalità di autenticazione, protezione dati e interfaccia moderna, perfetta sia per utenti casuali che per professionisti del settore. Se sei un’azienda o un recruiter, questo progetto è la dimostrazione pratica delle mie capacità nello sviluppo web e backend, nella gestione della sicurezza e nell’integrazione di tecnologie moderne. 👨🏻‍💻
+AutoIconiche offre una gestione avanzata delle automobili, con funzionalità di autenticazione, protezione dati e interfaccia moderna, perfetta sia per utenti casuali che per professionisti del settore. Se sei un’azienda o un recruiter, questo progetto è la dimostrazione pratica delle mie capacità nello sviluppo web e backend, nella gestione della sicurezza e nell’integrazione di tecnologie moderne. 👨🏻‍💻
 
 ---
 
