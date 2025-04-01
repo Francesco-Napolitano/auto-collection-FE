@@ -1,16 +1,11 @@
 import { useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
-import { useEffect } from 'react'
 
 const DettagliAuto = () => {
   const { id } = useParams()
 
   // Fetch dei dettagli dell'auto
   const { data: auto, loading, error } = useFetch(`auto/${id}`, 'GET')
-
-  useEffect(() => {
-    console.log('Dati Auto Specifica:', auto)
-  }, [auto])
 
   if (loading)
     return (

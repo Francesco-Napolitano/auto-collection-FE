@@ -1,13 +1,8 @@
 import { Link } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
-import { useEffect } from 'react'
 
 const Nazioni = () => {
   const { data: nazione, loading, error } = useFetch('/nazioni', 'GET')
-
-  useEffect(() => {
-    if (nazione) console.log('Dati Nazioni:', nazione)
-  }, [nazione])
 
   if (loading)
     return (

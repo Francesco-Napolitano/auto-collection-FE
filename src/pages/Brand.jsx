@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import useFetch from '../hooks/useFetch'
 import { Link } from 'react-router-dom'
 
@@ -6,10 +6,6 @@ const Brand = () => {
   const { data: brand, loading, error } = useFetch('/brand', 'GET')
 
   const [loadedImages, setLoadedImages] = useState({})
-
-  useEffect(() => {
-    if (brand) console.log('Tutte le Auto:', brand)
-  }, [brand])
 
   const handleImageLoad = (id) => {
     setLoadedImages((prev) => ({ ...prev, [id]: true }))

@@ -1,6 +1,6 @@
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const Ricerca = () => {
   const [searchParams] = useSearchParams()
@@ -10,10 +10,6 @@ const Ricerca = () => {
     loading,
     error,
   } = useFetch(`/auto/filtri?${searchParams.toString()}`, 'GET')
-
-  useEffect(() => {
-    console.log('Auto filtrate: ', auto, searchParams)
-  }, [searchParams, auto])
 
   const [modelli, setModelli] = useState('')
   const navigate = useNavigate() // Hook per la navigazione

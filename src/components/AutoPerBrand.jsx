@@ -1,14 +1,10 @@
 import { Link, useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const AutoPerBrand = () => {
   const { id } = useParams()
   const { data: brand, loading, error } = useFetch(`brand/${id}/auto`, 'GET')
-
-  useEffect(() => {
-    if (brand) console.log('Dati Auto:', brand)
-  }, [brand])
 
   const [loadedImages, setLoadedImages] = useState({})
   //funzione che si occupa del caricamento delle immagini delle auto

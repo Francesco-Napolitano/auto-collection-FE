@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import AuthContext from '../context/AuthContext'
 
 const AutoPerNazione = () => {
@@ -12,10 +12,6 @@ const AutoPerNazione = () => {
   } = useFetch(`nazioni/${id}/automobili`, 'GET')
 
   const { token } = useContext(AuthContext)
-
-  useEffect(() => {
-    if (nazione) console.log('Dati Auto:', nazione)
-  }, [nazione])
 
   const [loadedImages, setLoadedImages] = useState({})
   //funzione che si occupa del caricamento delle immagini delle auto

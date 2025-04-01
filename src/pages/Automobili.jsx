@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import useFetch from '../hooks/useFetch'
 import { Link } from 'react-router-dom'
 import AuthContext from '../context/AuthContext'
@@ -34,10 +34,6 @@ const Automobili = () => {
   const favouriteColor = (ev) => {
     ev.currentTarget.classList.toggle('fill-red-500')
   }
-
-  useEffect(() => {
-    auto ? console.log('Automobili sezione:', auto) : 'Nessun auto'
-  })
 
   //funzione che si occupa del caricamento delle immagini delle auto
   const handleImageLoad = (id) => {

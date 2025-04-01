@@ -68,10 +68,6 @@ const Home = () => {
   }, [brandSelezionato, auto])
 
   useEffect(() => {
-    if (auto) console.log('Tutte le Auto:', auto)
-  }, [auto])
-
-  useEffect(() => {
     // Controlla se c'è un token nell'URL
     const urlParams = new URLSearchParams(window.location.search)
     const token = urlParams.get('token')

@@ -70,8 +70,6 @@ const Creazione = () => {
     delete formattedData.brandId
     delete formattedData.nazioneId
 
-    console.log('Dati inviati', JSON.stringify(formattedData, null, 2))
-
     const success = await sendRequest(formattedData)
     if (success) {
       alert('Auto aggiunta con successo!')
