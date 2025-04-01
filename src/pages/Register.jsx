@@ -21,7 +21,7 @@ const Register = () => {
     e.preventDefault()
     const success = await sendRequest(formData)
     if (success) {
-      navigate('/') // Reindirizza alla home dopo la registrazione
+      navigate('/login') // Reindirizza alla home dopo la registrazione
     }
   }
 
@@ -72,7 +72,7 @@ const Register = () => {
                   </label>
                   <input
                     id="email"
-                    className="border p-3 shadow-md dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 border-gray-200 rounded-lg w-full  transition transform hover:scale-105 duration-300"
+                    className="border p-3 shadow-md dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 border-gray-200 rounded-lg w-full  transition transform hover:scale-105 duration-300 ring-[#22881b]"
                     type="text"
                     placeholder="Email"
                     name="email"
@@ -90,7 +90,7 @@ const Register = () => {
                   </label>
                   <input
                     id="username"
-                    className="border p-3 shadow-md dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 border-gray-200 rounded-lg w-full  transition transform hover:scale-105 duration-300"
+                    className="border p-3 shadow-md dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 border-gray-200 rounded-lg w-full  transition transform hover:scale-105 duration-300 ring-[#22881b]"
                     type="text"
                     placeholder="Username"
                     name="username"
@@ -109,7 +109,7 @@ const Register = () => {
                   <input
                     id="password"
                     name="password"
-                    className="border p-3 shadow-md dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 border-gray-200 rounded-lg w-full  transition transform hover:scale-105 duration-300"
+                    className="border p-3 shadow-md dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 border-gray-200 rounded-lg w-full  transition transform hover:scale-105 duration-300 ring-[#22881b]"
                     type="password"
                     placeholder="Password"
                     required
@@ -118,10 +118,10 @@ const Register = () => {
                   />
                 </div>
                 <button
-                  className="w-full p-3 mt-4 text-white bg-gradient-to-r from-[#2a9d8f] to-[#22881b] rounded-lg hover:scale-105 transition transform duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-3 mt-4 text-white bg-gradient-to-r from-[#2a9d8f] to-[#22881b] rounded-lg hover:scale-105 transition transform duration-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-[#22881b]"
                   type="submit"
                 >
-                  Crea
+                  REGISTRATI
                 </button>
               </form>
               <div className="flex flex-col mt-4 text-sm text-center dark:text-gray-200">

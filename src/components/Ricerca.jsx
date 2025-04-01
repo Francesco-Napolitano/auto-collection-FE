@@ -18,9 +18,9 @@ const Ricerca = () => {
     const params = new URLSearchParams()
 
     if (modelli) {
-      const modelloCapitalizzato =
+      const modelloMaiuscolo =
         modelli.charAt(0).toUpperCase() + modelli.slice(1).toLowerCase()
-      params.append('modello', modelloCapitalizzato)
+      params.append('modello', modelloMaiuscolo)
     }
     return params.toString() // Restituisce la query string
   }

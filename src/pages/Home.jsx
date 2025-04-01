@@ -150,8 +150,8 @@ const Home = () => {
         >
           <source className="rounded" src={videoSrc} />
         </video>
-        <section className="bg-white border border-gray-200 rounded-lg shadow-xs transition duration-300 dark:bg-gray-800 dark:border-gray-700 w-4/5 mx-auto py-10 md:p-10 flex justify-around">
-          <form className="grid grid-cols-2 lg:grid-cols-3 w-4/5 gap-3 justify-center items-center focus:ring-[#22881b] focus:border-[#22881b] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]">
+        <section className="bg-white border border-gray-200 rounded-lg shadow-xs transition duration-300 dark:bg-gray-900 dark:border-gray-700 w-4/5 mx-auto py-10 md:p-10 flex justify-around">
+          <form className="grid grid-cols-2 lg:grid-cols-3 w-4/5 gap-3 justify-center items-center focus:ring-[#22881b] focus:border-[#22881b] p-2.5 dark:bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]">
             <label htmlFor="brand" className="sr-only">
               Marca
             </label>
