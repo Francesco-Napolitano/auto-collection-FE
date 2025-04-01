@@ -127,13 +127,13 @@ const Home = () => {
         <div className="flex flex-col lg:flex-row items-center gap-10 pb-10">
           <div className="flex items-center">
             <div className="border border-black ">
-              <FerrariSvg width="25" height="full" />
+              <FerrariSvg width="25" height="50" />
             </div>
             <p className="pl-2 text-gray-900 dark:text-gray-200">Ferrari</p>
           </div>
           <div className="flex items-center">
             <div>
-              <McLarenSvg width="50" height="full" />
+              <McLarenSvg width="50" height="50" />
             </div>
             <p className="pl-2 text-gray-900 dark:text-gray-200">McLaren</p>
           </div>
@@ -155,7 +155,7 @@ const Home = () => {
           <source className="rounded" src={videoSrc} />
         </video>
         <section className="bg-white border border-gray-200 rounded-lg shadow-xs transition duration-300 dark:bg-gray-800 dark:border-gray-700 w-4/5 mx-auto py-10 md:p-10 flex justify-around">
-          <form className="grid grid-cols-2 lg:grid-cols-3 w-4/5 gap-3 justify-center items-center">
+          <form className="grid grid-cols-2 lg:grid-cols-3 w-4/5 gap-3 justify-center items-center focus:ring-[#22881b] focus:border-[#22881b] p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]">
             <label htmlFor="brand" className="sr-only">
               Marca
             </label>
@@ -163,7 +163,7 @@ const Home = () => {
               id="brand"
               value={brandSelezionato}
               onChange={(e) => setBrandSelezionato(e.target.value)}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full "
             >
               <option value="">Marca</option>
               {brandUnici.map((brand) => (
@@ -178,7 +178,7 @@ const Home = () => {
             <select
               id="modello"
               disabled={!brandSelezionato}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b] disabled:opacity-50 z-1 "
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full  disabled:opacity-50 z-1 "
               onChange={(e) => setModelloSelezionato(e.target.value)}
             >
               <option value="">Modello</option>
@@ -195,7 +195,7 @@ const Home = () => {
               type="number"
               id="number-input"
               aria-describedby="helper-text-explanation"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full "
               placeholder="A partire da (€)"
               min={0}
               value={prezzoMin}
@@ -208,7 +208,7 @@ const Home = () => {
               type="number"
               id="number-input"
               aria-describedby="helper-text-explanation"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full "
               placeholder="Fino a (€)"
               min={0}
               value={prezzoMax}
@@ -221,7 +221,7 @@ const Home = () => {
               type="number"
               id="number-input"
               aria-describedby="helper-text-explanation"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full "
               placeholder="Anno da"
               min={1886}
               value={annoMin}
@@ -232,7 +232,7 @@ const Home = () => {
               id="nazione"
               value={nazioneSelezionata}
               onChange={(e) => setNazioneSelezionata(e.target.value)}
-              className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-[#22881b] focus:border-[#22881b] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-[#22881b] dark:focus:border-[#22881b]"
+              className="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg block w-full "
             >
               <option value="">Nazione di provenienza</option>
               {nazioniUniche.map((nazione) => (

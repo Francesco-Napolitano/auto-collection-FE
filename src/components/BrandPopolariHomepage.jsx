@@ -8,10 +8,10 @@ const BrandPopolariHomepage = () => {
   return (
     <section className="flex flex-col items-center justify-center py-15 px-10 ">
       <h2 className="color-website mb-15 !text-[45px]">I brand più popolari</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center gap-10 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center gap-10 ">
         <div className=" bg-white border transition duration-300 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 py-10">
-          <Link to={'/brand/1'}>
-            <FerrariSvg width="full" height={300} />
+          <Link to={'/brand/1'} className="flex items-center justify-center">
+            <FerrariSvg height={300} />
           </Link>
         </div>
         <div className="  bg-white border transition duration-300 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 py-10 flex items-center justify-center">
