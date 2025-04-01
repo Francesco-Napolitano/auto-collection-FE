@@ -18,6 +18,7 @@ import Ricerca from './components/Ricerca'
 import Creazione from './pages/Creazione'
 import AutoPerBrand from './components/AutoPerBrand'
 import Modifiche from './pages/Modifiche'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 
 const App = () => {
   useEffect(() => {
@@ -123,6 +124,7 @@ const App = () => {
         <Route path="*" element={<h1>404 - Pagina non trovata</h1>} />
       </Routes>
       <Footer />
+      <SpeedInsights />
     </>
   )
 }

@@ -13,6 +13,7 @@
     "@cloudinary/react": "^1.14.1",
     "@cloudinary/url-gen": "^1.21.0",
     "@tailwindcss/vite": "^4.0.12",
+    "@vercel/speed-insights": "^1.2.0",
     "axios": "^1.8.2",
     "cloudinary-video-player": "^2.3.3",
     "flowbite": "^3.1.2",

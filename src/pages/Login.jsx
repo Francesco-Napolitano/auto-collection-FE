@@ -111,7 +111,7 @@ const Login = () => {
                   className="p-2 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg"
                 >
                   <img
-                    className="w-6 h-6 dark:invert"
+                    className="w-6 h-6 "
                     loading="lazy"
                     src="https://ucarecdn.com/be5b0ffd-85e8-4639-83a6-5162dfa15a16/"
                     alt="GitHub"

@@ -18,14 +18,24 @@ const Footer = () => {
               </span>
             </span>
           </Link>
-          <ul className="flex flex-wrap text-gray-500 text-sm dark:text-gray-400 font-medium items-center mb-6 sm:mb-0">
+          <ul className="flex flex-wrap text-gray-500 text-sm dark:text-gray-400 font-medium items-center mb-6 sm:mb-0 gap-5">
             <li>
-              <span className="hover:underline md:me-6 me-4">
+              <a href="https://github.com/Francesco-Napolitano/auto-collection-FE">
+                <img
+                  className="w-6 h-6 dark:invert"
+                  loading="lazy"
+                  src="https://ucarecdn.com/be5b0ffd-85e8-4639-83a6-5162dfa15a16/"
+                  alt="GitHub"
+                />
+              </a>
+            </li>
+            <li>
+              <span className="hover:underline ">
                 <Link to="/common/about">About</Link>
               </span>
             </li>
             <li>
-              <a href="#" className="hover:underline md:me-6 me-4">
+              <a href="#" className="hover:underline ">
                 Torna su
               </a>
             </li>
