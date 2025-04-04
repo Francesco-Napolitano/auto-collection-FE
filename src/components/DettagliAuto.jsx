@@ -141,31 +141,102 @@ const DettagliAuto = () => {
                     />
                   </div>
                 </div>
-                <p className="flex text-sm text-gray-500 font-light gap-0.5">
+                <p className="flex text-xs text-gray-500 font-light gap-0.5 flex-wrap">
                   Le immagini provengono da fonti gratuite:
-                  {auto.id === 1 ? (
-                    <a href={auto.immagini[0].immagineUrl} target="_blank">
+                  <div>
+                    <a
+                      href="https://creativecommons.org/licenses/by-sa/4.0/"
+                      target="_blank"
+                    >
                       Wikipedia,
                     </a>
+                    <a href="https://pixabay.com/" target="_blank">
+                      Pixabay
+                    </a>
+                    ,
+                    <a href="https://www.pexels.com/" target="_blank">
+                      Pexels
+                    </a>
+                    ,
+                    <a href="https://unsplash.com/" target="_blank">
+                      Unsplash
+                    </a>
+                    .
+                  </div>
+                  {auto.id === 3 ? (
+                    <div className="flex flex-wrap text-xs">
+                      <a href="https://commons.wikimedia.org/wiki/File:Carrera_GT_at_Rector.jpg">
+                        Sam Pullara from San Francisco, CA, USA ,{' '}
+                      </a>
+                      <a href="https://creativecommons.org/licenses/by/2.0">
+                        CC BY 2.0 , via Wikimedia Commons.{' '}
+                      </a>
+                      <a href="https://commons.wikimedia.org/wiki/File:Porsche_Carrera_GT_-_Goodwood_Breakfast_Club_(July_2008).jpg">
+                        {' '}
+                        Brian Snelson from Hockley, Essex, England
+                      </a>
+                      ,{' '}
+                      <a href="https://creativecommons.org/licenses/by/2.0">
+                        CC BY 2.0 , via Wikimedia Commons
+                      </a>
+                    </div>
                   ) : null}
-                  <a
-                    href="https://creativecommons.org/licenses/by-sa/4.0/"
-                    target="_blank"
-                  >
-                    Wikipedia,
-                  </a>
-                  <a href="https://pixabay.com/" target="_blank">
-                    Pixabay
-                  </a>
-                  ,
-                  <a href="https://www.pexels.com/" target="_blank">
-                    Pexels
-                  </a>
-                  ,
-                  <a href="https://unsplash.com/" target="_blank">
-                    Unsplash
-                  </a>
-                  .
+                  {auto.id === 12 ? (
+                    <div className="flex flex-wrap text-xs">
+                      <a
+                        href="https://commons.wikimedia.org/wiki/File:Zenvo_TS1_cropped.jpg"
+                        target="_blank"
+                      >
+                        Karsakov
+                      </a>
+                      ,{' '}
+                      <a
+                        href="https://creativecommons.org/licenses/by-sa/4.0"
+                        target="_blank"
+                      >
+                        CC BY-SA 4.0 , via Wikimedia Commons -
+                      </a>
+                      <a
+                        href="https://commons.wikimedia.org/wiki/File:Zenvo_TS1_front_wing.jpg"
+                        target="_blank"
+                      >
+                        Bulletfoss
+                      </a>
+                      ,{' '}
+                      <a
+                        href="https://creativecommons.org/licenses/by-sa/4.0"
+                        target="_blank"
+                      >
+                        CC BY-SA 4.0 , via Wikimedia Commons
+                      </a>
+                      <a
+                        href="https://commons.wikimedia.org/wiki/File:2009_Zenvo_ST1.jpg"
+                        target="_blank"
+                      >
+                        G patkar at English Wikipedia
+                      </a>
+                      ,{' '}
+                      <a
+                        href="https://creativecommons.org/licenses/by-sa/3.0"
+                        target="_blank"
+                      >
+                        CC BY-SA 3.0 , via Wikimedia Commons
+                      </a>
+                      <a
+                        href="https://commons.wikimedia.org/wiki/File:Lime_Green_Zenvo_ST1_at_GIMS_2015_(Ank_Kumar)_06.jpg"
+                        target="_blank"
+                      >
+                        Ank Kumar
+                      </a>
+                      ,{' '}
+                      <a
+                        href="https://creativecommons.org/licenses/by-sa/4.0"
+                        target="_blank"
+                      >
+                        CC BY-SA 4.0 , via Wikimedia Commons
+                      </a>
+                    </div>
+                  ) : null}
                 </p>
               </div>
             ) : (
