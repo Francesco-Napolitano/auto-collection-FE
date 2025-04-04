@@ -19,6 +19,7 @@ import Creazione from './pages/Creazione'
 import AutoPerBrand from './components/AutoPerBrand'
 import Modifiche from './pages/Modifiche'
 import { SpeedInsights } from '@vercel/speed-insights/react'
+import { Analytics } from '@vercel/analytics/react'
 
 const App = () => {
   useEffect(() => {
@@ -125,6 +126,7 @@ const App = () => {
       </Routes>
       <Footer />
       <SpeedInsights />
+      <Analytics />
     </>
   )
 }
