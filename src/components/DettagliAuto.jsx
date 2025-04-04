@@ -110,7 +110,6 @@ const DettagliAuto = () => {
             {auto.immagini ? (
               <div className="grid grid-cols-1 gap-0.5 ">
                 <div>
-                  {console.log(auto)}
                   <img
                     src={auto.immagini[1].immagineUrl}
                     alt={auto.modello}
