@@ -110,6 +110,7 @@ const DettagliAuto = () => {
             {auto.immagini ? (
               <div className="grid grid-cols-1 gap-0.5 ">
                 <div>
+                  {console.log(auto)}
                   <img
                     src={auto.immagini[1].immagineUrl}
                     alt={auto.modello}
@@ -140,6 +141,32 @@ const DettagliAuto = () => {
                     />
                   </div>
                 </div>
+                <p className="flex text-sm text-gray-500 font-light gap-0.5">
+                  Le immagini provengono da fonti gratuite:
+                  {auto.id === 1 ? (
+                    <a href={auto.immagini[0].immagineUrl} target="_blank">
+                      Wikipedia,
+                    </a>
+                  ) : null}
+                  <a
+                    href="https://creativecommons.org/licenses/by-sa/4.0/"
+                    target="_blank"
+                  >
+                    Wikipedia,
+                  </a>
+                  <a href="https://pixabay.com/" target="_blank">
+                    Pixabay
+                  </a>
+                  ,
+                  <a href="https://www.pexels.com/" target="_blank">
+                    Pexels
+                  </a>
+                  ,
+                  <a href="https://unsplash.com/" target="_blank">
+                    Unsplash
+                  </a>
+                  .
+                </p>
               </div>
             ) : (
               <div

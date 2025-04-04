@@ -47,13 +47,26 @@ const Footer = () => {
           </ul>
         </div>
         <hr className="border-gray-200 dark:border-gray-700 lg:my-8 my-6 sm:mx-auto" />
-        <span className="text-gray-500 text-sm block dark:text-gray-400 sm:text-center pb-2">
+        <p className="text-gray-500 text-sm block dark:text-gray-400 sm:text-center pb-2">
           © 2025{' '}
           <a href="#" className="hover:underline">
             AutoIconiche™
           </a>
-          . Tutti i diritti riservati.
-        </span>
+          . Tutti i diritti riservati. <br />
+          Sito creato a fini educativi. Le immagini utilizzate sono di pubblico
+          dominio o concesse sotto licenza Creative Commons; si rimanda alle
+          fonti originali per i dettagli. <br />
+          *Le immagini provenienti da Wikipedia possono essere soggette a
+          diverse licenze{' '}
+          <a
+            className="!underline"
+            href="https://creativecommons.org/licenses/by-sa/4.0/"
+            target="_blank"
+          >
+            Creative Commons
+          </a>
+          . Si invita a consultare la pagina specifica di ogni immagine.
+        </p>
       </div>
     </footer>
   )
