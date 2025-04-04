@@ -80,6 +80,16 @@ const Brand = () => {
             <p className="text-gray-500">Nessun brand disponibile</p>
           )}
         </div>
+        <div className="self-end text-xs">
+          No changes were made:{' '}
+          <a href="https://commons.wikimedia.org/wiki/File:ZENVO_Logo.svg">
+            Zenvo Automotive A/S
+          </a>
+          ,{' '}
+          <a href="https://creativecommons.org/licenses/by-sa/4.0">
+            CC BY-SA 4.0 , via Wikimedia Commons{' '}
+          </a>
+        </div>
       </div>
     </section>
   )

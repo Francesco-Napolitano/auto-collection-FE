@@ -2,9 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import videoSrc from '../assets/cars-women.mp4'
-import FerrariSvg from '../utils/FerrariSvg'
-import McLarenSvg from '../utils/McLarenSvg'
-import Porsche from '../assets/Logo_della_Porsche.svg.png'
 import '../styles/homepage.css'
 import TimelineHomepage from '../components/TimelineHomepage'
 import CategoriePrincipaliHomepage from '../components/CategoriePrincipaliHomepage'
@@ -120,26 +117,6 @@ const Home = () => {
           scritto <br />
           la storia dell’automobilismo!
         </p>
-        <div className="flex flex-col lg:flex-row items-center gap-10 pb-10">
-          <div className="flex items-center">
-            <div className="border border-black ">
-              <FerrariSvg width="25" height="50" />
-            </div>
-            <p className="pl-2 text-gray-900 dark:text-gray-200">Ferrari</p>
-          </div>
-          <div className="flex items-center">
-            <div>
-              <McLarenSvg width="50" height="50" />
-            </div>
-            <p className="pl-2 text-gray-900 dark:text-gray-200">McLaren</p>
-          </div>
-          <div className="flex items-center">
-            <div>
-              <img src={Porsche} alt="porsche logo" className="w-10" />
-            </div>
-            <p className="pl-2 text-gray-900 dark:text-gray-200">Porsche</p>
-          </div>
-        </div>
       </section>
       <div className="  ">
         <video

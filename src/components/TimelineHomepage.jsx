@@ -11,14 +11,15 @@ const Timeline = () => {
       description:
         "Nicolas-Joseph Cugnot creò il primo veicolo a vapore nel 1769, aprendo la strada all'automobile moderna.",
       image:
-        'https://adityacars.car.blog/wp-content/uploads/2019/09/1769_cugnot_steamtractor6.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Joseph_Cugnot%27s_1770_Fardier_%C3%A0_Vapeur%2C_Mus%C3%A9e_des_arts_et_m%C3%A9tiers%2C_Paris_2015.jpg/640px-Joseph_Cugnot%27s_1770_Fardier_%C3%A0_Vapeur%2C_Mus%C3%A9e_des_arts_et_m%C3%A9tiers%2C_Paris_2015.jpg',
     },
     {
       id: 2,
       title: 'La Nascita dell’Automobile',
       description:
         'Karl Benz brevettò la prima vera automobile con motore a combustione interna nel 1886.',
-      image: 'https://www.historyhit.com/app/uploads/2022/05/Carl_Benz.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/1885Benz.jpg/640px-1885Benz.jpg',
     },
     {
       id: 3,
@@ -26,7 +27,7 @@ const Timeline = () => {
       description:
         'Henry Ford rivoluzionò il settore con la produzione di massa del Model T nel 1908.',
       image:
-        'https://assets.editorial.aetnd.com/uploads/2010/04/ford-model-t-four-seat-tourer-motor-car-1916.jpg',
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/1919_Model_T_Centre_door_%288114591546%29.jpg/640px-1919_Model_T_Centre_door_%288114591546%29.jpg',
     },
   ]
 

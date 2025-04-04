@@ -52,15 +52,13 @@ const Footer = () => {
           <a href="#" className="hover:underline">
             AutoIconiche™
           </a>
-          . Tutti i diritti riservati. <br />
-          I marchi e i loghi presenti nelle immagini (es. Ferrari, Pagani, Aston
-          Martin, ecc.) sono proprietà dei rispettivi titolari. Questo sito è un
-          progetto educativo e non ha alcuna affiliazione ufficiale con le
-          aziende citate. Le immagini utilizzate sono di pubblico dominio o
-          concesse sotto licenza Creative Commons; si rimanda alle fonti
-          originali per i dettagli. <br />
-          *Le immagini provenienti da Wikipedia possono essere soggette a
-          diverse licenze{' '}
+          . Tutti i diritti riservati. <br />I marchi e i loghi presenti
+          appartengono ai rispettivi proprietari. Questo sito è un progetto
+          educativo, senza affiliazioni ufficiali con le aziende citate. Le
+          immagini sono di pubblico dominio o con licenza Creative Commons; per
+          i dettagli, si rimanda alle fonti originali. *Alcune immagini da
+          Wikipedia potrebbero avere licenze diverse; verificare la pagina
+          specifica.
           <a
             className="!underline"
             href="https://creativecommons.org/licenses/by-sa/4.0/"
