@@ -165,6 +165,7 @@ const DettagliAuto = () => {
                   </div>
                   {auto.id === 3 ? (
                     <div className="flex flex-wrap text-xs">
+                      No changes were made:{' '}
                       <a href="https://commons.wikimedia.org/wiki/File:Carrera_GT_at_Rector.jpg">
                         Sam Pullara from San Francisco, CA, USA ,{' '}
                       </a>
@@ -183,6 +184,7 @@ const DettagliAuto = () => {
                   ) : null}
                   {auto.id === 12 ? (
                     <div className="flex flex-wrap text-xs">
+                      No changes were made:{' '}
                       <a
                         href="https://commons.wikimedia.org/wiki/File:Zenvo_TS1_cropped.jpg"
                         target="_blank"
@@ -234,6 +236,18 @@ const DettagliAuto = () => {
                         target="_blank"
                       >
                         CC BY-SA 4.0 , via Wikimedia Commons
+                      </a>
+                    </div>
+                  ) : null}
+                  {auto.id === 18 ? (
+                    <div className="flex flex-wrap text-xs">
+                      No changes were made:{' '}
+                      <a href="https://commons.wikimedia.org/wiki/File:2013_IAA_DSC01994_DxO_(9879239544)_(2).jpg">
+                        youkeys
+                      </a>
+                      ,{' '}
+                      <a href="https://creativecommons.org/licenses/by/2.0">
+                        CC BY 2.0 , via Wikimedia Commons
                       </a>
                     </div>
                   ) : null}
