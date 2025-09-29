@@ -5,6 +5,8 @@ Benvenuto su AutoIconiche, il progetto che unisce la mia passione per le automob
 AutoIconiche offre una gestione avanzata delle automobili, con funzionalità di autenticazione, protezione dati e interfaccia moderna, perfetta sia per utenti casuali che per professionisti del settore. Se sei un’azienda o un recruiter, questo progetto è la dimostrazione pratica delle mie capacità nello sviluppo web e backend, nella gestione della sicurezza e nell’integrazione di tecnologie moderne. 👨🏻‍💻
 
 ---
+**ALL'INIZIO IL SITO WEB IMPIEGA QUALCHE SECONDO A CARICARSI PERCHE' IL SERVER E' DORMIENTE, MA DOPO UN PO' DI ATTESA FUNZIONA**
+---
 
 🌍 Versione Pubblicata
 
