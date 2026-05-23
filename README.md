@@ -11,7 +11,7 @@ AutoIconiche offre una gestione avanzata delle automobili, con funzionalità di 
 
 🌍 Versione Pubblicata
 
-🔗 Frontend live: https://www.autoiconiche.it/
+🔗 Frontend live: https://www.autoiconiche.it/ oppure https://auto-collection-fe.vercel.app/
 
 🔗 Backend live: https://suspicious-mae-autoiconiche-c817b685.koyeb.app/
 
